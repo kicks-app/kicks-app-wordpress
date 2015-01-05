@@ -1,5 +1,5 @@
 kicks-app-wordpress
-==================
+===================
 
 > Wordpress kickstarter template
 
