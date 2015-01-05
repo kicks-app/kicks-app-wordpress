@@ -84,7 +84,7 @@ module.exports = function(grunt) {
       },
       development: {
         options: {
-          dest: "/Applications/MAMP/htdocs/kicksapp/",
+          dest: "/Applications/MAMP/htdocs/kicks-app/",
           delete: true
         }
       },
