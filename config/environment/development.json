@@ -1,6 +1,6 @@
 {
   "db": {
-    "name": "kicksapp",
+    "name": "kicks-app",
     "user": "root",
     "password": "root",
     "host": "localhost",
