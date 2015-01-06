@@ -1,5 +1,5 @@
 {
-  "name": "kicksapp-wp",
+  "name": "kicks-app-wordpress",
   "version": "1.0.0",
   "description": "Wordpress kickstarter template",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "http://github.com/kicksapp/kicksapp-wp"
   },
   "keywords": [
-    "wordpress"
+    "wordpress", "kickstarter template"
   ],
   "author": "Rafael Nowrotek",
   "license": "MIT",
