@@ -3,10 +3,11 @@ var path = require('path');
 
 module.exports = function(grunt) {
  
+  var pkg = grunt.file.readJSON('package.json');
   grunt.initConfig({
     dist: grunt.option('output') || 'dist',
     phpbin: '/Applications/MAMP/bin/php/php5.6.2/bin',
-    pkg: grunt.file.readJSON('package.json'),
+    pkg: pkg,
     clean: {
       'build': "<%= dist %>",
       'tmp': ['tmp']
@@ -48,10 +49,13 @@ module.exports = function(grunt) {
       'dist': {
           options: {
             data: function() {
-              return merge( 
-                grunt.file.readJSON('config/application.json'), 
-                grunt.file.readJSON('config/environment/' + ( grunt.option("environment")  || 'development' ) + '.json') 
-              );
+              return {
+                pkg: pkg,
+                config: merge( 
+                  grunt.file.readJSON('config/application.json'), 
+                  grunt.file.readJSON('config/environment/' + ( grunt.option("environment")  || 'development' ) + '.json') 
+                )
+              };
             }
           },
           src: 'wp-config.php',
