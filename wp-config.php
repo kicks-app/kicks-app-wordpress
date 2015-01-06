@@ -16,7 +16,7 @@
 
  /** Setup paths */
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/app' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/kicksapp/app' );
+define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/kicks-app/app' );
 define( 'WPMU_PLUGIN_DIR', dirname( __FILE__ ) . '/app/mu-plugins' );
 define( 'WPMU_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/app/mu-plugins' );
  
@@ -26,27 +26,27 @@ define('ABSPATH', dirname(__FILE__) . '/wp');
 //require( dirname( __FILE__ ) . '/wp/wp-blog-header.php' );
 
 /** Set the default Theme */
-define( 'WP_DEFAULT_THEME', 'kicksapp' );
+define( 'WP_DEFAULT_THEME', 'kicks-app' );
 
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', '<%= db.name %>');
+define('DB_NAME', '<%= config.db.name %>');
 
 /** MySQL database username */
-define('DB_USER', '<%= db.user %>');
+define('DB_USER', '<%= config.db.user %>');
 
 /** MySQL database password */
-define('DB_PASSWORD', '<%= db.password %>');
+define('DB_PASSWORD', '<%= config.db.password %>');
 
 /** MySQL hostname */
-define('DB_HOST', '<%= db.host %>');
+define('DB_HOST', '<%= config.db.host %>');
 
 /** Database Charset to use in creating database tables. */
-define('DB_CHARSET', '<%= db.charset %>');
+define('DB_CHARSET', '<%= config.db.charset %>');
 
 /** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '<%= db.collate %>');
+define('DB_COLLATE', '<%= config.db.collate %>');
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -83,7 +83,7 @@ $table_prefix  = 'wp_';
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', <%= debug %>);
+define('WP_DEBUG', <%= config.debug %>);
 
 /* That's all, stop editing! Happy blogging. */
 
