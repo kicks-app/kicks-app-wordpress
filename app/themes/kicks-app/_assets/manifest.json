@@ -1,0 +1,20 @@
+{
+  "assets": {
+    "js/functions.js": "js/functions-d232a1b6a5d25a61da99d55672028bf7.js",
+    "style.css": "style-0275f3f60fe8e96cae9445860c08fc89.css"
+  },
+  "files": {
+    "js/functions-d232a1b6a5d25a61da99d55672028bf7.js": {
+      "logical_path": "js/functions.js",
+      "mtime": "2015-01-20T00:56:26.000Z",
+      "size": 66790,
+      "digest": "d232a1b6a5d25a61da99d55672028bf7"
+    },
+    "style-0275f3f60fe8e96cae9445860c08fc89.css": {
+      "logical_path": "style.css",
+      "mtime": "2015-01-21T17:08:34.000Z",
+      "size": 167224,
+      "digest": "0275f3f60fe8e96cae9445860c08fc89"
+    }
+  }
+}

@@ -16,7 +16,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 	  <div class="container">
-  		<div class="site-info">
+  		<div class="site-info well well-sm">
   			<?php
   				/**
   				 * Fires before the Twenty Fifteen footer text for footer customization.

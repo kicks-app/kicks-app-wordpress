@@ -22,3 +22,7 @@ test
 # Vendor
 wp
 vendor
+
+# App dependencies
+app/mu-plugins/**
+app/plugins/**

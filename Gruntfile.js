@@ -6,10 +6,9 @@ module.exports = function(grunt) {
   var pkg = grunt.file.readJSON('package.json');
   grunt.initConfig({
     dist: grunt.option('output') || 'dist',
-    phpbin: '/Applications/MAMP/bin/php/php5.6.2/bin',
     pkg: pkg,
     clean: {
-      'build': "<%= dist %>",
+      'dist': "<%= dist %>",
       'tmp': ['tmp']
     },
     copy: {
@@ -17,32 +16,14 @@ module.exports = function(grunt) {
         dot: true,
         expand: true, 
         cwd: '.',
-        src: ['wp/**/*', 'vendor/**/*', 'index.php', '.htaccess'], 
+        src: ['app/**/*', 'wp/**/*', 'vendor/**/*', 'index.php', 'wp-config.php', '.htaccess'], 
         dest: grunt.option('output') || "<%= dist %>"
-      },
-      'broccoli': {
-        dot: true,
-        expand: true, 
-        cwd: 'tmp/broccoli_build',
-        src: ['**/*.*'], 
-        dest: grunt.option('output') || "<%= dist %>/app"
       }
     },
     curl: {
-      'wordpress': {
-          src: 'http://wordpress.org/latest.zip',
-          dest: 'tmp/downloads/wordpress/latest.zip'
-      }, 
       'composer': {
         src: 'https://getcomposer.org/installer',
         dest: 'composer.phar'
-      }
-    },
-    unzip: {
-      "wordpress": {
-        cwd: 'wordpress',
-        src: "tmp/downloads/wordpress/latest.zip",
-        dest: "tmp/wordpress"
       }
     },
     template: {
@@ -51,10 +32,8 @@ module.exports = function(grunt) {
             data: function() {
               return {
                 pkg: pkg,
-                config: merge( 
-                  grunt.file.readJSON('config/application.json'), 
-                  grunt.file.readJSON('config/environment/' + ( grunt.option("environment")  || 'development' ) + '.json') 
-                )
+                environment: grunt.option("environment")  || 'development',
+                database: grunt.file.readYAML('config/database.yml')[( grunt.option("environment")  || 'development' )]  
               };
             }
           },
@@ -72,12 +51,19 @@ module.exports = function(grunt) {
         }
       }
     },
-    broccoli: {
-      dist: {
-        cwd: 'app',
-        env: ( grunt.option('target') || 'development' ),
-        dest: 'tmp/broccoli_build',
-        config: 'Brocfile.js'
+    'mincerrc': {
+      themes: {
+        options: {
+          clean: true
+        },
+        cwd: 'app/themes',
+        src: ['**/.mincerrc']
+      }
+    },
+    'bowerrc': {
+      themes: {
+        cwd: 'app/themes',
+        src: ['**/.bowerrc']
       }
     },
     rsync: {
@@ -89,39 +75,35 @@ module.exports = function(grunt) {
       development: {
         options: {
           dest: "/Applications/MAMP/htdocs/kicks-app/",
-          delete: true
+          //delete: true
         }
       },
       test: {
         options: {
           dest: "/var/www/site",
           host: "user@staging-host",
-          delete: true // Careful this option could cause data loss, read the docs!
+          //delete: true // Careful this option could cause data loss, read the docs!
         }
       },
       production: {
         options: {
           dest: "/var/www/site",
           host: "user@live-host",
-          delete: true // Careful this option could cause data loss, read the docs!
+          //delete: true // Careful this option could cause data loss, read the docs!
         }
       }
     }
   });
   
-  grunt.loadNpmTasks('grunt-broccoli');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-template');
-  grunt.loadNpmTasks('grunt-php');
   grunt.loadNpmTasks('grunt-curl');
-  grunt.loadNpmTasks('grunt-zip');
-  grunt.loadNpmTasks('grunt-phpdocumentor');
-  grunt.loadNpmTasks('grunt-wp-i18n');
   grunt.loadNpmTasks('grunt-rsync');
+  
+  grunt.loadNpmTasks('grunt-bowerrc');
+  grunt.loadNpmTasks('grunt-mincerrc');
  
   /**
    * This task downloads the latest wordpress to dist
@@ -135,18 +117,15 @@ module.exports = function(grunt) {
   ]);
   
   grunt.registerTask('build', [
-    'clean:build',
-    'clean:tmp',
-    'broccoli:dist:build',
+    'mincerrc',
+    'clean:dist',
     'copy:dist',
-    'copy:broccoli',
-    'template:dist',
-    //'clean:tmp'
+    'template:dist'
   ]);
   
   grunt.registerTask('deploy', [
     'build',
-    'rsync:' + (grunt.option('target') || 'development')
+    'rsync:' + (grunt.option('environment') || 'development')
   ]);
   
   grunt.registerTask('serve', [

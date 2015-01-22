@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The base configurations of the WordPress.
  *
@@ -14,16 +15,20 @@
  * @package WordPress
  */
 
- /** Setup paths */
-define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/app' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/kicks-app/app' );
-define( 'WPMU_PLUGIN_DIR', dirname( __FILE__ ) . '/app/mu-plugins' );
-define( 'WPMU_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/app/mu-plugins' );
- 
-define('ABSPATH', dirname(__FILE__) . '/wp');
+require_once(dirname(__FILE__) . '/vendor/lib/autoload.php');
 
-// Require blog-header
-//require( dirname( __FILE__ ) . '/wp/wp-blog-header.php' );
+define( 'BASE_DIR', dirname(__FILE__) );
+define( 'BASE_URL', 'http://' . preg_replace('/[^a-zA-Z0-9]/i', '', $_SERVER['HTTP_HOST']) . '/' . ltrim(str_replace('\\', '/', substr(dirname(__FILE__), strlen($_SERVER['DOCUMENT_ROOT']))), "/"));
+
+define ('WP_HOME', BASE_URL);
+define ('WP_SITEURL', WP_HOME  . "/wp" );
+
+/** Setup paths */
+define( 'WP_CONTENT_DIR', BASE_DIR . '/app' );
+define( 'WP_CONTENT_URL', BASE_URL . '/app' );
+
+/** Absolute path to the WordPress directory. */
+define('ABSPATH', BASE_DIR . '/wp/');
 
 /** Set the default Theme */
 define( 'WP_DEFAULT_THEME', 'kicks-app' );
@@ -31,22 +36,22 @@ define( 'WP_DEFAULT_THEME', 'kicks-app' );
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', '<%= config.db.name %>');
+define('DB_NAME', '<%= database.name %>');
 
 /** MySQL database username */
-define('DB_USER', '<%= config.db.user %>');
+define('DB_USER', '<%= database.user %>');
 
 /** MySQL database password */
-define('DB_PASSWORD', '<%= config.db.password %>');
+define('DB_PASSWORD', '<%= database.password %>');
 
 /** MySQL hostname */
-define('DB_HOST', '<%= config.db.host %>');
+define('DB_HOST', '<%= database.host %>');
 
 /** Database Charset to use in creating database tables. */
-define('DB_CHARSET', '<%= config.db.charset %>');
+define('DB_CHARSET', '<%= database.charset %>');
 
 /** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '<%= config.db.collate %>');
+define('DB_COLLATE', '');
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -83,13 +88,12 @@ $table_prefix  = 'wp_';
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', <%= config.debug %>);
+define('WP_DEBUG', <%= environment === 'development' ? true : false %>);
 
 /* That's all, stop editing! Happy blogging. */
-
-/** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+  
 
 /** Sets up WordPress vars and included files. */
+
 require_once(ABSPATH . 'wp-settings.php');
+

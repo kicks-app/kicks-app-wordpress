@@ -1,5 +1,5 @@
 /*
-Theme Name: KicksApp
+Theme Name: Kicks App
 Theme URI: https://wordpress.org/themes/twentyfifteen
 Author: Benignware
 Author URI: https://wordpress.org/
@@ -16,11 +16,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /**
 *= require_self
-*= require layout
-*= require accessibility
+*= require main
+*= require css/accessibility
 **/
-@import "_bootstrap-mincer";
-@import "variables";
-@import "_bootstrap";
-@import "bootstrap/theme";
-
