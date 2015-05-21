@@ -13,24 +13,25 @@
       </div><!-- .col-* -->
     </div><!-- .row -->
   </div><!-- .container -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-	  <div class="container">
-  		<div class="site-info well well-sm">
-  			<?php
-  				/**
-  				 * Fires before the Twenty Fifteen footer text for footer customization.
-  				 *
-  				 * @since Twenty Fifteen 1.0
-  				 */
-  				do_action( 'twentyfifteen_credits' );
-  			?>
-  			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentyfifteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentyfifteen' ), 'WordPress' ); ?></a>
-  		</div><!-- .site-info -->
-    </div><!-- .container -->
-	</footer><!-- .site-footer -->
-
 </div><!-- .site -->
+
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="container">
+		<div class="site-info well well-sm">
+			<?php
+				/**
+				 * Fires before the Twenty Fifteen footer text for footer customization.
+				 *
+				 * @since Twenty Fifteen 1.0
+				 */
+				do_action( 'twentyfifteen_credits' );
+			?>
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentyfifteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentyfifteen' ), 'WordPress' ); ?></a>
+		</div><!-- .site-info -->
+  </div><!-- .container -->
+</footer><!-- .site-footer -->
+
+
 
 <?php wp_footer(); ?>
 
