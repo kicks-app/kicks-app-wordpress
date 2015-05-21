@@ -17,9 +17,6 @@
         "dist": {
           "type": "zip",
           "url": "https://github.com/WordPress/WordPress/archive/4.1.zip"
-        },
-        "require" : {
-          "fancyguy/webroot-installer": "1.*"
         }
       }
     },
@@ -52,19 +49,15 @@
   ],
   "require": {
     "wordpress": "4.1",
-    "fancyguy/webroot-installer": "1.0.0",
     "wemakecustom/wp-mu-loader": "*",
-    "wp-bootstrap-hooks": "master",
     "wp-asset-manifest": "master"
   },
   "scripts": {
-      "post-autoload-dump": [
-          "php -r \"copy('app/mu-plugins/mu-loader/mu-require.php', 'app/mu-plugins/mu-require.php');\""
-      ]
+    "post-autoload-dump": [
+        "php -r \"copy('app/mu-plugins/mu-loader/mu-require.php', 'app/mu-plugins/mu-require.php');\""
+    ]
   },
   "extra": {
-    "webroot-dir": "wp",
-    "webroot-package": "wordpress",
     "installer-paths": {
         "app/plugins/{$name}/": ["type:wordpress-plugin"],
         "app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
