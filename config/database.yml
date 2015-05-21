@@ -1,6 +1,6 @@
 # Development
 development:
-  name: dr-thede-test
+  name: kicks-app
   user: root
   password: root
   host: localhost
