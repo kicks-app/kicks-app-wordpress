@@ -194,6 +194,12 @@ module.exports = function(grunt) {
     }
   });
   
+  grunt.registerTask('install', [
+    'composer:get',
+    'composer:install',
+    'themes:install'
+  ]);
+  
   grunt.registerTask('build', [
     'themes:build',
     'clean:assets',
@@ -201,7 +207,6 @@ module.exports = function(grunt) {
     'sync:app',
     'template:dist'
   ]);
-  
   
   grunt.registerTask('serve', ['build', 'php:serve', 'watch']);
   
