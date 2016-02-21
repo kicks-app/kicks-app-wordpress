@@ -163,7 +163,7 @@ module.exports = function(grunt) {
   
   grunt.registerTask('composer', 'Basic composer integration', function() {
     switch (this.args[0]) {
-      case 'download':
+      case 'get':
         grunt.task.run('curl:composer');
         break;
       case 'install':
