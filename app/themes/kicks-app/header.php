@@ -44,15 +44,8 @@
             // Primary navigation menu.
             wp_nav_menu( array(
               'menu'              => 'primary',
-              'theme_location'    => 'primary',
-              'depth'             => 2,
-              'container'         => 'div',
-              'container_class'   => 'collapse navbar-collapse',
-              'container_id'      => 'navbar-collapse',
-              'menu_class'        => 'nav navbar-nav',
-              'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-              'walker'            => new wp_bootstrap_navwalker())
-            );
+              'theme_location'    => 'primary'
+            ));
           ?>
       </div>
     </div>
