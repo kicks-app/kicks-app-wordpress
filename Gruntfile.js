@@ -94,6 +94,9 @@ module.exports = function(grunt) {
       options: {
           stderr: false
       },
+      composer_get: {
+        command: 'curl -sS https://getcomposer.org/installer | php'
+      },
       composer_install: {
         command: 'php composer.phar install'
       },
@@ -164,7 +167,7 @@ module.exports = function(grunt) {
   grunt.registerTask('composer', 'Basic composer integration', function() {
     switch (this.args[0]) {
       case 'get':
-        grunt.task.run('curl:composer');
+        grunt.task.run('shell:composer_get');
         break;
       case 'install':
         grunt.task.run('shell:composer_install');
