@@ -109,18 +109,18 @@ module.exports = function(grunt) {
     },
     template: {
       'dist': {
-          options: {
-            data: function() {
-              return {
-                pkg: pkg,
-                environment: environment,
-                salt: grunt.file.readYAML('config/salt.yml')[environment],
-                database: grunt.file.readYAML('config/database.yml')[environment]  
-              };
-            }
-          },
-          src: 'config/wp-config.php',
-          dest: ( grunt.option('output') || "<%= dist %>" ) + "/wp-config.php"
+        options: {
+          data: function() {
+            return {
+              pkg: pkg,
+              environment: environment,
+              salt: grunt.file.readYAML('config/salt.yml')[environment],
+              database: grunt.file.readYAML('config/database.yml')[environment]  
+            };
+          }
+        },
+        src: 'config/wp-config.php',
+        dest: ( grunt.option('output') || "<%= dist %>" ) + "/wp-config.php"
       }
     },
     php: {
@@ -130,13 +130,13 @@ module.exports = function(grunt) {
           base: 'dist',
           keepalive: false,
           open: true,
-          port: 5053
+          //port: 5053
         }
       }
     },
     watch: {
       files: ['app/**/*', '!app/**/_assets/**/*'],
-      tasks: ['clean:assets', 'mincerrc:themes', 'sync:app']
+      tasks: ['clean:assets', 'themes:build', 'sync:app']
     },
     'mincerrc': {
       themes: {
@@ -144,7 +144,7 @@ module.exports = function(grunt) {
           clean: true,
           sourceMaps: false,
           enable: [
-            'autoprefixer'
+            //'autoprefixer'
           ],
           jsCompressor: grunt.option('environment') === 'production' ? 'uglify' : '',
           //cssCompressor: grunt.option('environment') === 'production' ? 'csswring' : ''
@@ -178,14 +178,29 @@ module.exports = function(grunt) {
     
   });
   
+  grunt.registerTask('themes', 'Theme builder', function() {
+    switch (this.args[0]) {
+      case 'install':
+        grunt.task.run('bowerrc:themes');
+        break;
+      case 'build':
+        grunt.task.run('mincerrc');
+        break;
+      default:
+        grunt.task.run('install', 'build');
+    }
+  });
+  
   grunt.registerTask('build', [
-    'mincerrc',
+    'themes:build',
     'clean:assets',
     'sync:wordpress',
     'sync:app',
     'template:dist'
   ]);
   
+  
   grunt.registerTask('serve', ['build', 'php:serve', 'watch']);
+  
   
 };
