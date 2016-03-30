@@ -1,20 +1,20 @@
 {
   "assets": {
-    "js/functions.js": "js/functions-98efe4fe57c7461842c4010e724b0bb2.js",
-    "style.css": "style-e7e197258c8a64ee1cb5c8d782485260.css"
+    "js/functions.js": "js/functions-5371fdd1650d206535c4bb08c9214dc9.js",
+    "style.css": "style-a736900a5a9cddcea66fa6c564d35d37.css"
   },
   "files": {
-    "js/functions-98efe4fe57c7461842c4010e724b0bb2.js": {
+    "js/functions-5371fdd1650d206535c4bb08c9214dc9.js": {
       "logical_path": "js/functions.js",
-      "mtime": "2015-05-21T13:54:52.000Z",
-      "size": 67604,
-      "digest": "98efe4fe57c7461842c4010e724b0bb2"
+      "mtime": "2016-03-30T17:03:48.000Z",
+      "size": 152279,
+      "digest": "5371fdd1650d206535c4bb08c9214dc9"
     },
-    "style-e7e197258c8a64ee1cb5c8d782485260.css": {
+    "style-a736900a5a9cddcea66fa6c564d35d37.css": {
       "logical_path": "style.css",
-      "mtime": "2015-05-21T13:54:52.000Z",
-      "size": 156997,
-      "digest": "e7e197258c8a64ee1cb5c8d782485260"
+      "mtime": "2016-03-30T19:10:19.000Z",
+      "size": 115700,
+      "digest": "a736900a5a9cddcea66fa6c564d35d37"
     }
   }
 }

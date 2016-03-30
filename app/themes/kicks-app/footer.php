@@ -15,19 +15,11 @@
   </div><!-- .container -->
 </div><!-- .site -->
 
-<footer id="colophon" class="site-footer" role="contentinfo">
+<footer id="colophon" class="site-footer navbar navbar-dark bg-inverse" role="contentinfo">
   <div class="container">
-		<div class="site-info well well-sm">
-			<?php
-				/**
-				 * Fires before the Twenty Fifteen footer text for footer customization.
-				 *
-				 * @since Twenty Fifteen 1.0
-				 */
-				do_action( 'twentyfifteen_credits' );
-			?>
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentyfifteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentyfifteen' ), 'WordPress' ); ?></a>
-		</div><!-- .site-info -->
+    <ul class="nav navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentyfifteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentyfifteen' ), 'WordPress' ); ?></a></li>
+    </ul>
   </div><!-- .container -->
 </footer><!-- .site-footer -->
 

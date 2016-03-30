@@ -1,9 +1,7 @@
---include ./vendor/assets/components
---include ./vendor/assets/components/bootstrap-sass-official/assets/javascripts
---include ./vendor/assets/components/bootstrap-sass-official/assets/stylesheets
---include . 
+--include .
 --include ./js 
 --include ./css
 --include ./fonts
+--include ./vendor/assets/components/
 --output _assets
 js/functions.js style.css

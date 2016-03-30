@@ -15,7 +15,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 /**
+*= require tether/dist/css/tether
 *= require_self
 *= require main
-*= require css/accessibility
 **/

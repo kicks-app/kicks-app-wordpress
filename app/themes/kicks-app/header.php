@@ -26,20 +26,17 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyfifteen' ); ?></a>
 	
-	<header id="masthead" class="site-header" role="banner">
-	  
-  <div class="container">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-        </div>
+	
+  <header id="masthead" class="site-header navbar navbar-fixed-top navbar-dark bg-inverse">
+    <div class="container">
+      <!-- Toggle Button -->
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#nav-content">
+      ☰
+      </button>
+      
+      <!-- Nav Content -->
+      <div class="collapse navbar-toggleable-xs" id="nav-content">
+        <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
         <?php
             // Primary navigation menu.
             wp_nav_menu( array(
@@ -47,26 +44,16 @@
               'theme_location'    => 'primary'
             ));
           ?>
-      </div>
-    </div>
-  </nav>
-	  
-	  
+     
+        </div>
+     </div>
+   </header>
 		
-	</header><!-- .site-header -->
-	
-	
-	<?php if ( has_nav_menu( 'primary' ) ) : ?>
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-      
-    </nav><!-- .main-navigation -->
-  <?php endif; ?>
-  
   <?php if (is_front_page()): ?>
     <div class="container">
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+        <h1 class="display-3"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
         <?php
           $description = get_bloginfo( 'description', 'display' );
           if ( $description || is_customize_preview() ) : ?>

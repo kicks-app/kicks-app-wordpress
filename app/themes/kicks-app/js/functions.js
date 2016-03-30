@@ -4,8 +4,8 @@
  *
  * Contains handlers for navigation and widget area.
  */
-
-//= require bootstrap-sprockets
+//= require tether/dist/js/tether
+//= require bootstrap/dist/js/bootstrap
 
 ( function( $ ) {
 	

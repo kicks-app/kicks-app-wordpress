@@ -15,7 +15,6 @@ body {
     flex: 1 0 auto;
     -webkit-flex: 1 0 auto;
     -ms-flex: 1 0 auto;
-    padding-top: 20px;
     
     .page-header {
       margin-top: 0;
@@ -36,5 +35,21 @@ body {
     
   }
   
+  article {
+    margin-bottom: 50px;
+  }
   
+}
+
+.admin-bar .navbar-fixed-top {
+  top: 46px;
+}
+@media screen and (min-width: 783px) {
+  .admin-bar .navbar-fixed-top {
+    top: 32px;
+  }
+}
+
+.navbar-fixed-top + .container {
+  padding-top: 100px;
 }
