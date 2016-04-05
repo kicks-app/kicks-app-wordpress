@@ -1,20 +1,20 @@
 {
   "assets": {
-    "js/functions.js": "js/functions-98efe4fe57c7461842c4010e724b0bb2.js",
-    "style.css": "style-e7e197258c8a64ee1cb5c8d782485260.css"
+    "js/functions.js": "js/functions-d159784c5547d70f5c10a77538c5aba0.js",
+    "style.css": "style-d54736e9b4d902c1f8cc72a2d8e810ac.css"
   },
   "files": {
-    "js/functions-98efe4fe57c7461842c4010e724b0bb2.js": {
+    "js/functions-d159784c5547d70f5c10a77538c5aba0.js": {
       "logical_path": "js/functions.js",
-      "mtime": "2015-05-21T13:54:52.000Z",
-      "size": 67604,
-      "digest": "98efe4fe57c7461842c4010e724b0bb2"
+      "mtime": "2016-04-04T21:02:54.000Z",
+      "size": 69010,
+      "digest": "d159784c5547d70f5c10a77538c5aba0"
     },
-    "style-e7e197258c8a64ee1cb5c8d782485260.css": {
+    "style-d54736e9b4d902c1f8cc72a2d8e810ac.css": {
       "logical_path": "style.css",
-      "mtime": "2015-05-21T13:54:52.000Z",
-      "size": 156997,
-      "digest": "e7e197258c8a64ee1cb5c8d782485260"
+      "mtime": "2016-04-03T18:45:08.000Z",
+      "size": 177501,
+      "digest": "d54736e9b4d902c1f8cc72a2d8e810ac"
     }
   }
 }
