@@ -28,4 +28,4 @@ app/plugins/**
 
 
 # Theme assets
-app/themes/**/_assets
+app/themes/*/_assets
