@@ -26,7 +26,8 @@
  * @since Twenty Fifteen 1.0
  */
 
- 
+
+wp_bootstrap_hooks(3);
 
 /**
  * Set the content width based on the theme's design and stylesheet.
