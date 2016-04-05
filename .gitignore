@@ -24,4 +24,8 @@ vendor
 
 # App dependencies
 app/mu-plugins/**
-app/plugins/**
+app/plugins/** 
+
+
+# Theme assets
+app/themes/**/_assets
