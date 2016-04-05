@@ -133,7 +133,7 @@ module.exports = function(grunt) {
           base: 'dist',
           keepalive: false,
           open: true,
-          //port: 5053
+          port: 9090
         }
       }
     },
