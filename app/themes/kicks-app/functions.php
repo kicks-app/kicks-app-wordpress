@@ -27,7 +27,7 @@
  */
 
  
-wp_bootstrap_hooks();
+wp_bootstrap_hooks(4);
 
 /**
  * Set the content width based on the theme's design and stylesheet.
