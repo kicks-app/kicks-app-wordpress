@@ -20,6 +20,11 @@ define ('WP_HOME', (((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') |
 define ('WP_SITEURL', WP_HOME);
 
 
+if (!defined('WP_DEFAULT_THEME')) {
+  define( 'WP_DEFAULT_THEME', array_map('basename', glob(ABSPATH . "/wp-content/themes/*", GLOB_ONLYDIR))[0] );
+}
+
+
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
