@@ -1,5 +1,4 @@
 <?php
-//require_once(BASE_DIR . "/vendor/lib/wp-bootstrap/wp-bootstrap.php");
 /**
  * Twenty Fifteen functions and definitions
  *
@@ -26,8 +25,9 @@
  * @since Twenty Fifteen 1.0
  */
 
- 
-wp_bootstrap_hooks(4);
+if (function_exists('wp_bootstrap_hooks')) {
+  wp_bootstrap_hooks(4);
+}
 
 /**
  * Set the content width based on the theme's design and stylesheet.
