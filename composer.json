@@ -48,7 +48,7 @@
     }
   ],
   "require": {
-    "wordpress": "4.4",
+    "wordpress": "4.4.2",
     "wemakecustom/wp-mu-loader": "*",
     "wp-asset-manifest": "master",
     "wp-bootstrap-hooks": "master"
