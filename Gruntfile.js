@@ -37,7 +37,7 @@ module.exports = function(grunt) {
         dot: true,
         expand: true, 
         cwd: 'vendor/lib/wordpress',
-        src: ['**/*', '!wp-content/**'], 
+        src: ['**/*', '!wp-content/themes/**'], 
         dest: grunt.option('output') || "<%= dist %>"
       },
       'app': {
