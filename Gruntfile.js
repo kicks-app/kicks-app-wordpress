@@ -30,14 +30,14 @@ module.exports = function(grunt) {
         dot: true,
         expand: true,
         cwd: '.',
-        src: ['app/**/*', 'wp/**/*', 'vendor/**/*', 'index.php', 'wp-config.php', '.htaccess'], 
+        src: ['router.php', 'index.php', 'wp-config.php', '.htaccess'], 
         dest: grunt.option('output') || "<%= dist %>"
       },
       'wordpress': {
         dot: true,
         expand: true, 
         cwd: 'vendor/lib/wordpress',
-        src: ['**/*', '!wp-content'], 
+        src: ['**/*', '!wp-content/**'], 
         dest: grunt.option('output') || "<%= dist %>"
       },
       'app': {
@@ -133,13 +133,13 @@ module.exports = function(grunt) {
           base: 'dist',
           keepalive: false,
           open: true,
-          //port: 5053
+          router: './router.php'
         }
       }
     },
     watch: {
-      files: ['app/**/*', '!app/**/_assets/**/*'],
-      tasks: ['clean:assets', 'themes:build', 'sync:app']
+      files: ['router.php', 'index.php', 'wp-config.php', '.htaccess', 'app/**/*', '!app/**/_assets/**/*'],
+      tasks: ['clean:assets', 'themes:build', 'sync:dist', 'sync:app']
     },
     'mincerrc': {
       themes: {
@@ -204,6 +204,7 @@ module.exports = function(grunt) {
     'themes:build',
     'clean:assets',
     'sync:wordpress',
+    'sync:dist',
     'sync:app',
     'template:dist'
   ]);
