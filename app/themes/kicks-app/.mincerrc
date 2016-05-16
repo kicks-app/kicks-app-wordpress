@@ -1,7 +1,8 @@
 --include .
 --include ./js 
 --include ./css
+--include ./scss
 --include ./fonts
 --include ./vendor/assets/components/
 --output _assets
-js/functions.js style.css
+js/functions.js editor.css style.css

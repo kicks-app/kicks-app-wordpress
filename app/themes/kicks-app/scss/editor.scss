@@ -1,0 +1,10 @@
+@import "_mixins";
+@import "_variables";
+@import "bootstrap/scss/bootstrap";
+@import "accessibility";
+@import "typography";
+
+body {
+  margin: $grid-gutter-width;
+  max-width: 768px;
+}

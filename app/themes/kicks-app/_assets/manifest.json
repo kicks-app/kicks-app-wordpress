@@ -1,20 +1,27 @@
 {
   "assets": {
-    "js/functions.js": "js/functions-5371fdd1650d206535c4bb08c9214dc9.js",
-    "style.css": "style-71bf05eb4f9bd2e895d9f05ad614cbb8.css"
+    "editor.css": "editor-dd4d1ea602efca7b50e2cdbf86ac5b70.css",
+    "js/functions.js": "js/functions-206934fce43b0efa4349cd34da54d3b1.js",
+    "style.css": "style-ab8bc431ebfba00c7880d5210def92e8.css"
   },
   "files": {
-    "js/functions-5371fdd1650d206535c4bb08c9214dc9.js": {
-      "logical_path": "js/functions.js",
-      "mtime": "2016-04-05T19:45:12.000Z",
-      "size": 152279,
-      "digest": "5371fdd1650d206535c4bb08c9214dc9"
+    "editor-dd4d1ea602efca7b50e2cdbf86ac5b70.css": {
+      "logical_path": "editor.css",
+      "mtime": "2016-05-16T12:32:19.000Z",
+      "size": 113246,
+      "digest": "dd4d1ea602efca7b50e2cdbf86ac5b70"
     },
-    "style-71bf05eb4f9bd2e895d9f05ad614cbb8.css": {
+    "js/functions-206934fce43b0efa4349cd34da54d3b1.js": {
+      "logical_path": "js/functions.js",
+      "mtime": "2016-05-15T19:57:09.000Z",
+      "size": 154333,
+      "digest": "206934fce43b0efa4349cd34da54d3b1"
+    },
+    "style-ab8bc431ebfba00c7880d5210def92e8.css": {
       "logical_path": "style.css",
-      "mtime": "2016-04-05T20:48:14.000Z",
-      "size": 116127,
-      "digest": "71bf05eb4f9bd2e895d9f05ad614cbb8"
+      "mtime": "2016-05-16T12:33:07.000Z",
+      "size": 116132,
+      "digest": "ab8bc431ebfba00c7880d5210def92e8"
     }
   }
 }

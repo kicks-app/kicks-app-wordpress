@@ -1,5 +1,21 @@
-@include media-breakpoint-down(xs) {
-  .navbar {
+.navbar {
+  
+  // Fixed navbar layout
+  &-fixed-top {
+    + .container {
+      padding-top: 80px;
+    }
+    
+    .admin-bar & {
+      top: 46px;
+      @media screen and (min-width: 783px) {
+        top: 32px;
+      }
+    }
+  }
+  
+  // Show dropdown as menu on mobile
+  @include media-breakpoint-down(xs) {
     .container {
       padding-left: 0;
     }

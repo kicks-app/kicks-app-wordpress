@@ -1,3 +1,11 @@
+@import "_mixins";
+@import "_variables";
+@import "accessibility";
+@import "../vendor/assets/components/bootstrap/scss/bootstrap";
+@import "typography";
+@import "header";
+
+
 body {
   
   position: relative;
@@ -39,17 +47,4 @@ body {
     margin-bottom: 50px;
   }
   
-}
-
-.admin-bar .navbar-fixed-top {
-  top: 46px;
-}
-@media screen and (min-width: 783px) {
-  .admin-bar .navbar-fixed-top {
-    top: 32px;
-  }
-}
-
-.navbar-fixed-top + .container {
-  padding-top: 80px;
 }
