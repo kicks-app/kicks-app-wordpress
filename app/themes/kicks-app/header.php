@@ -26,12 +26,12 @@
   <header id="masthead" class="site-header navbar navbar-fixed-top navbar-dark bg-inverse">
     <div class="container">
       <!-- Toggle Button -->
-      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#nav-content">
+      <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#nav-content">
       ☰
       </button> <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
         
       <!-- Nav Content -->
-      <div class="collapse navbar-toggleable-xs" id="nav-content">
+      <div class="collapse navbar-toggleable-sm" id="nav-content">
         <?php
             // Primary navigation menu.
             wp_nav_menu( array(
