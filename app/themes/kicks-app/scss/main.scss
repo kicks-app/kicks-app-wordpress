@@ -1,10 +1,13 @@
 @import "_mixins";
 @import "_variables";
-@import "accessibility";
 @import "../vendor/assets/components/bootstrap/scss/bootstrap";
-@import "typography";
+@import "accessibility";
 @import "header";
+@import "content";
 
+* {
+  box-sizing: border-box;
+}
 
 body {
   
@@ -47,4 +50,21 @@ body {
     margin-bottom: 50px;
   }
   
+}
+.jumbotron {
+  min-height: 400px;
+  overflow: hidden;
+  img {
+    width: auto;
+    max-width: none;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 50%;
+  }
+  h1,
+  h1+p {
+    position: relative;
+  }
 }
