@@ -15,7 +15,7 @@
   }
   
   // Show dropdown as menu on mobile
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     .container {
       padding-left: 0;
     }
