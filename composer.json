@@ -6,17 +6,17 @@
   "repositories": [
     {
       "type":"composer",
-      "url":"http://wpackagist.org"
+      "url":"https://wpackagist.org"
     },
     {
       "type": "package",
       "package": {
         "name": "wordpress",
         "type": "webroot",
-        "version": "4.4.2",
+        "version": "4.5.3",
         "dist": {
           "type": "zip",
-          "url": "https://github.com/WordPress/WordPress/archive/4.4.2.zip"
+          "url": "https://github.com/WordPress/WordPress/archive/4.5.3.zip"
         }
       }
     },
@@ -48,7 +48,7 @@
     }
   ],
   "require": {
-    "wordpress": "4.4.2",
+    "wordpress": "4.5.3",
     "wemakecustom/wp-mu-loader": "*",
     "wp-asset-manifest": "master",
     "wp-bootstrap-hooks": "master"
