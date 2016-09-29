@@ -1,0 +1,46 @@
+{
+  "name": "twentysixteen",
+  "version": "0.0.1",
+  "description": "Bootstrap Sass TwentySixteen",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.4",
+    "tether": "^1.3.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.14.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.1.2",
+    "babel-preset-es2015-auto": "^1.1.0",
+    "babel-preset-es2015-node4": "^1.0.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "browserify-shim": "^3.8.12",
+    "copy": "^0.3.0",
+    "eslint": "^1.9.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^3.10.0"
+  },
+  "scripts": {
+    "clean": "rm -rf _assets",
+    "build-css": "node-sass --source-map true --output-style expanded ./scss/main.scss ./_assets/css/main.css --include-path node_modules ",
+    "watch-css": "npm run build-css -- --watch",
+    "watch-js": "npm run build-js -- -w",
+    "build": "npm run build-css && npm run build-js",
+    "watch": "npm run watch-js | npm run watch-css",
+    "copy-js": "mkdir -p _assets/js && cp node_modules/tether/dist/js/tether.min.js _assets/js/tether.min.js",
+    "build-js": "npm run copy-js && browserify js/main.js -t [ babelify --presets [ es2015 ] --plugins add-module-exports  ]  -t [browserify-shim]  -o _assets/js/main.js --im --source-maps"
+  },
+  "keywords": [
+    "wordpress-theme"
+  ],
+  "author": "Rafael Nowrotek",
+  "license": "ISC",
+  "browserify-shim": {
+    "jquery": "global:jQuery",
+    "tether": "global:Tether"
+  }
+}

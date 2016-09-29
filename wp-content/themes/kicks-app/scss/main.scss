@@ -1,0 +1,16 @@
+@import "variables";
+@import "bootstrap/scss/bootstrap";
+@import "accessibility";
+@import "site";
+@import "card";
+@import "sidebar";
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  > svg {
+    display: none;
+  }
+}

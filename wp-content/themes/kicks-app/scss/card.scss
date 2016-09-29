@@ -1,0 +1,19 @@
+// FIXME: https://github.com/twbs/bootstrap/issues/20395
+.card > .list-group {
+  > .list-group-item {
+    border-left: 0;
+    border-right: 0;
+  }
+  &:first-child .list-group-item:first-of-type {
+    border-top: 0;
+  }
+
+  &:last-child .list-group-item:last-of-type {
+    border-bottom: 0;
+  }
+}
+// FIXME: https://github.com/twbs/bootstrap/issues/19047
+.card > .card-header + .list-group > .list-group-item:first-child,
+.card > .list-group + .card-footer {
+    border-top: 0;
+}
