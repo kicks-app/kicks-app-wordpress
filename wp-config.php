@@ -19,28 +19,45 @@
  * 
  */
 
+// Autoload vendor libraries
+require __DIR__ . '/vendor/lib/autoload.php';
+
+// Determine Environment
+define ( 'ENV', $_SERVER['SERVER_ADDR'] === '127.0.0.1' ? 'development' : (strpos(array_shift(explode(".", $_SERVER['HTTP_HOST'])), 'test') !== FALSE ? 'test' : 'production' ));
+define ( 'ENV_FILE', ENV ? '.env' . (ENV !== 'development' ? '-' . ENV : '') : '');
+
+// Load Environment Variables from .env file
+if (file_exists( ENV_FILE )) {
+	$dotenv = new Dotenv\Dotenv(__DIR__, ENV_FILE);
+	$dotenv->load();
+}
+
+// Setup Base URL
 define( 'BASE_URL', (((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://") . $_SERVER['HTTP_HOST'] . "/" . dirname(str_replace($_SERVER['DOCUMENT_ROOT'], '', __FILE__)) );
 
+// Setup Site URL
 define( 'WP_HOME', BASE_URL);
 define( 'WP_SITEURL', WP_HOME);
 
+// Setup Content Dirs
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
 define( 'WP_CONTENT_URL', WP_HOME . '/wp-content' );
 
+// Choose any theme as default
 define( 'WP_DEFAULT_THEME', array_map('basename', glob(dirname( __FILE__ ) . "/wp-content/themes/*", GLOB_ONLYDIR))[0]);
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'wpstack2');
+define('DB_NAME', getenv('DB_NAME'));
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', getenv('DB_USER'));
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', getenv('DB_PASSWORD'));
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', getenv('DB_HOST'));
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
