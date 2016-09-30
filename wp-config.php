@@ -16,7 +16,13 @@
  * @link https://codex.wordpress.org/Editing_wp-config.php
  *
  * @package WordPress
+ * 
  */
+
+define( 'BASE_URL', (((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://") . $_SERVER['HTTP_HOST'] . "/" . dirname(str_replace($_SERVER['DOCUMENT_ROOT'], '', __FILE__)) );
+
+define( 'WP_HOME', BASE_URL);
+define( 'WP_SITEURL', WP_HOME);
 
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
 define( 'WP_CONTENT_URL', WP_HOME . '/wp-content' );
