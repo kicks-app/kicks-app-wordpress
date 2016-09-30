@@ -28,8 +28,7 @@
 
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-header-main">
-				
-				<nav class="navbar navbar-light bg-faded navbar-fixed-top">
+				<nav class="navbar navbar-light bg-faded">
 					<div class="container">
 					  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
 					    &#9776;
@@ -75,4 +74,5 @@
 			<?php endif; // End header image check. ?>
 		</header><!-- .site-header -->
 
-		<div id="content" class="site-content container">
+		<div id="content" class="site-content">
+			<div class="container">

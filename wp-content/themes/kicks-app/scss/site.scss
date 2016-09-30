@@ -1,12 +1,22 @@
 .site {
   height: 100%;
+  .admin-bar & {
+    margin-top: 32px;
+  }
   &-header {
     margin-bottom: 3rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    .admin-bar & {
+      top: 46px;
+      @media screen and (min-width: 783px) {
+        top: 32px;
+      }
+    }
   }
   &-content {
-  }
-  &-content {
-    padding-top: 100px;
+    padding: 100px 0;
     box-sizing: border-box;
     flex: 1 0 auto;
   }

@@ -23,3 +23,6 @@ add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 if (function_exists('wp_bootstrap_hooks')) {
 	wp_bootstrap_hooks(4);
 }
+
+// Include Custom Template Tags
+require get_template_directory() . '/inc/remove-admin-bar-css.php';

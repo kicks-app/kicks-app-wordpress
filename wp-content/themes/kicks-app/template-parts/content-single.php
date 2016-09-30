@@ -13,7 +13,11 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php the_excerpt(); ?>
+	<?php if (has_excerpt()): ?>
+		<div class="entry-summary lead">
+			<?php the_excerpt(); ?>
+		</div>
+	<?php endif; ?>
 
 	<?php the_post_thumbnail(); ?>
 
