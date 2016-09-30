@@ -33,7 +33,7 @@ if (file_exists( __DIR__ . DIRECTORY_SEPARATOR . ENV_FILE )) {
 }
 
 // Setup Base URL
-define( 'BASE_URL', (((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://") . $_SERVER['HTTP_HOST'] . "/" . dirname(str_replace($_SERVER['DOCUMENT_ROOT'], '', __FILE__)) );
+define( 'BASE_URL', (((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://") . $_SERVER['HTTP_HOST'] . "/" . rtrim(dirname(str_replace($_SERVER['DOCUMENT_ROOT'], '', __FILE__)), ".") );
 
 // Setup Site URL
 define( 'WP_HOME', BASE_URL);
@@ -64,6 +64,8 @@ define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
+define( 'COOKIE_DOMAIN', $_SERVER['HTTP_HOST'] );
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -106,6 +108,7 @@ $table_prefix  = 'wp_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', true);
+define('WP_DEBUG_DISPLAY', true);
 
 /* That's all, stop editing! Happy blogging. */
 /** Absolute path to the WordPress directory. */
