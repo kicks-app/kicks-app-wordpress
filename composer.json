@@ -52,12 +52,9 @@
     "post-autoload-dump": [
       "php -r \"copy('wp-content/mu-plugins/mu-loader/mu-require.php', 'wp-content/mu-plugins/mu-require.php');\""
     ],
-    "post-update-cmd": [
-      "php -r \"copy('vendor/lib/banago/phploy/bin/phploy.phar', 'phploy.phar');\""
-    ],
     "deploy": "php vendor/lib/banago/phploy/bin/phploy.phar",
     "deploy-production": "php vendor/lib/banago/phploy/bin/phploy.phar -s production",
-    "deploy-staging": "php vendor/lib/banago/phploy/bin/phploy.phar -s staging"
+    "deploy-test": "php vendor/lib/banago/phploy/bin/phploy.phar -s test"
   },
   "extra": {
   	"webroot-dir": "wp-core",
