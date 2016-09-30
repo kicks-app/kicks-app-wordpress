@@ -30,15 +30,15 @@ wp-content/themes/**/_assets
 
 # PHPLoy
 phploy.phar
-deploy.ini
-phploy.ini
 !deploy.ini.sample
+deploy.ini
 !phploy.ini.sample
+phploy.ini
 
 # Wordpress
 wp-core
 
 # Env Files
+!.env.sample
 .env
 .env-*
-!.env.sample
