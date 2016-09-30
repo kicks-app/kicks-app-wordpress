@@ -14,31 +14,22 @@ vendor
 composer.phar
 composer.lock
 
-# Build
-tmp
-dist
-
 # Test
 test
 
-# App dependencies
-wp-content/mu-plugins/**
-wp-content/plugins/** 
-
-# Theme assets
-wp-content/themes/**/_assets
+# Wordpress
+wp-core
+!wp-content/themes
+wp-content
 
 # PHPLoy
 phploy.phar
-!deploy.ini.sample
+!deploy.ini-sample
 deploy.ini
-!phploy.ini.sample
+!phploy.ini-sample
 phploy.ini
 
-# Wordpress
-wp-core
-
 # Env Files
-!.env.sample
+!.env-sample
 .env
 .env-*
