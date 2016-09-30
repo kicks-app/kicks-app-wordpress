@@ -45,7 +45,6 @@
     "wemakecustom/wp-mu-loader": "*",
     "wp-bootstrap-hooks": "master",
     "wpackagist-plugin/regenerate-thumbnails":">=2.2.6",
-    "wpackagist-theme/twentysixteen":"*",
     "vlucas/phpdotenv": "*",
     "banago/phploy": "*"
   },
