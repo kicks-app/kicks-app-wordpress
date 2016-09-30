@@ -32,6 +32,8 @@ wp-content/themes/**/_assets
 phploy.phar
 deploy.ini
 phploy.ini
+!deploy.ini.sample
+!phploy.ini.sample
 
 # Wordpress
 wp-core
@@ -39,3 +41,4 @@ wp-core
 # Env Files
 .env
 .env-*
+!.env.sample
