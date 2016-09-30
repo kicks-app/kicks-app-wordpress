@@ -1,6 +1,6 @@
 {
-  "name": "wp-stack",
-  "version": "0.0.1",
+  "name": "kicks-app-wordpress",
+  "version": "0.1.0pre",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "config": {
