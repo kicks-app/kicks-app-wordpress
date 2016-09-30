@@ -34,3 +34,7 @@ deploy.ini
 
 # Wordpress
 wp-core
+
+# Env Files
+.env
+.env-*
