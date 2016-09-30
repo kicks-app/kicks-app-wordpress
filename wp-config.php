@@ -27,7 +27,7 @@ define ( 'ENV', $_SERVER['SERVER_ADDR'] === '127.0.0.1' ? 'development' : (strpo
 define ( 'ENV_FILE', ENV ? '.env' . (ENV !== 'development' ? '-' . ENV : '') : '');
 
 // Load Environment Variables from .env file
-if (file_exists( ENV_FILE )) {
+if (file_exists( __DIR__ . DIRECTORY_SEPARATOR . ENV_FILE )) {
 	$dotenv = new Dotenv\Dotenv(__DIR__, ENV_FILE);
 	$dotenv->load();
 }
