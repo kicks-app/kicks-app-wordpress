@@ -19,17 +19,17 @@ test
 
 # Wordpress
 wp-core
-!wp-content/themes
 wp-content
+!wp-content/themes
 
 # PHPLoy
 phploy.phar
-!deploy.ini-sample
 deploy.ini
-!phploy.ini-sample
+!deploy.ini-sample
 phploy.ini
+!phploy.ini-sample
 
 # Env Files
+.env-*
 !.env-sample
 .env
-.env-*
