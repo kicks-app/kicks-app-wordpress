@@ -1,6 +1,6 @@
 {
   "name": "kicks-app-wordpress",
-  "version": "0.1.0pre",
+  "version": "0.1.0",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "config": {
