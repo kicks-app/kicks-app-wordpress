@@ -3,5 +3,5 @@ import tether from 'tether';
 import bootstrap from 'bootstrap';
 
 $( () => {
-	console.log("hello world 123123");
+	console.log("dom ready");
 } );
