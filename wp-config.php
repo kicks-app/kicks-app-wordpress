@@ -28,12 +28,12 @@ define ( 'ENV_FILE', ENV ? '.env' . (ENV !== 'development' ? '-' . ENV : '') : '
 
 // Load Environment Variables from .env file
 if (file_exists( __DIR__ . DIRECTORY_SEPARATOR . ENV_FILE )) {
-	$dotenv = new Dotenv\Dotenv(__DIR__, ENV_FILE);
-	$dotenv->load();
+  $dotenv = new Dotenv\Dotenv(__DIR__, ENV_FILE);
+  $dotenv->load();
 }
 
 // Setup Base URL
-define( 'BASE_URL', (((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://") . $_SERVER['HTTP_HOST'] . "/" . rtrim(dirname(str_replace($_SERVER['DOCUMENT_ROOT'], '', __FILE__)), ".") );
+define( 'BASE_URL', rtrim( (((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://") . $_SERVER['HTTP_HOST'] . "/" . rtrim(dirname(str_replace($_SERVER['DOCUMENT_ROOT'], '', __FILE__)), "./"), "/" ) );
 
 // Setup Site URL
 define( 'WP_HOME', BASE_URL);
@@ -64,6 +64,8 @@ define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
+define( 'COOKIE_DOMAIN', $_SERVER['HTTP_HOST'] );
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -111,7 +113,7 @@ define('WP_DEBUG_DISPLAY', true);
 /* That's all, stop editing! Happy blogging. */
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/wp-core/');
+  define('ABSPATH', dirname(__FILE__) . '/wp-core/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

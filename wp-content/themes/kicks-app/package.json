@@ -9,10 +9,11 @@
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
-    "babel-core": "^6.14.0",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-polyfill": "^6.13.0",
-    "babel-preset-es2015": "^6.1.2",
+    "babel-preset-es2015": "^6.16.0",
     "babel-preset-es2015-auto": "^1.1.0",
     "babel-preset-es2015-node4": "^1.0.1",
     "babel-preset-stage-0": "^6.5.0",
@@ -20,27 +21,26 @@
     "browserify": "^13.1.0",
     "browserify-shim": "^3.8.12",
     "copy": "^0.3.0",
+    "css-loader": "^0.25.0",
     "eslint": "^1.9.0",
+    "expose-loader": "^0.7.1",
     "mkdirp": "^0.5.1",
-    "node-sass": "^3.10.0"
+    "node-sass": "^3.10.1",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
   },
   "scripts": {
-    "clean": "rm -rf _assets",
-    "build-css": "node-sass --source-map true --output-style expanded ./scss/main.scss ./_assets/css/main.css --include-path node_modules ",
+    "build-css": "node-sass --source-map true --output-style expanded ./css/index.scss ./css/index-bundle.css --include-path ./node_modules ",
     "watch-css": "npm run build-css -- --watch",
-    "watch-js": "npm run build-js -- -w",
+    "build-js": "webpack js/index.js js/index-bundle.js",
+    "watch-js": "npm run build-js -- --watch",
     "build": "npm run build-css && npm run build-js",
-    "watch": "npm run watch-js | npm run watch-css",
-    "copy-js": "mkdir -p _assets/js && cp node_modules/tether/dist/js/tether.min.js _assets/js/tether.min.js",
-    "build-js": "npm run copy-js && browserify js/main.js -t [ babelify --presets [ es2015 ] --plugins add-module-exports  ]  -t [browserify-shim]  -o _assets/js/main.js --im --source-maps"
+    "watch": "npm run watch-css | npm run watch-js"
   },
   "keywords": [
     "wordpress-theme"
   ],
   "author": "Rafael Nowrotek",
-  "license": "ISC",
-  "browserify-shim": {
-    "jquery": "global:jQuery",
-    "tether": "global:Tether"
-  }
+  "license": "ISC"
 }

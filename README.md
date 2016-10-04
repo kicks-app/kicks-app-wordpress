@@ -12,9 +12,28 @@ Install composer
 php -r "readfile('https://getcomposer.org/installer');" | php
 ```
 
+Install dependencies
+
+```php
+php composer.phar install
+```
+
 ## Development
 
-### Create a virtual host for local testing
+### Configuration
+
+Rename `.env-sample` to `.env` and edit settings:
+
+```ini
+DB_HOST="localhost"
+DB_NAME="kicks-app"
+DB_USER="root"
+DB_PASSWORD="root"
+```
+
+### Create a local dns entry
+
+### Create a virtual host for local testing and restart apache
 
 ```
 <VirtualHost *:80>
@@ -30,8 +49,4 @@ php -r "readfile('https://getcomposer.org/installer');" | php
     </Directory>
 </VirtualHost>
 ```
-
-### Local configuration
-
-Rename `.env-sample` to `.env` and edit settings
 
