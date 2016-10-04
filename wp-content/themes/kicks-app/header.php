@@ -31,7 +31,7 @@
 				<nav class="navbar navbar-light bg-faded">
 					<div class="container">
 					  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-					    &#9776;
+					    <i class="fa fa-bars"></i>
 					  </button>
 					  <div class="collapse navbar-toggleable-xs" id="navbar-content">
 					    <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
