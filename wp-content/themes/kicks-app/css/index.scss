@@ -1,9 +1,8 @@
 @import "globals/variables";
-@import "font-awesome/scss/font-awesome";
-@import "bootstrap/scss/bootstrap";
+@import "bootstrap-sass/assets/stylesheets/_bootstrap";
 @import "globals/root";
 @import "globals/accessibility";
 @import "organisms/site";
-@import "molecules/card";
+@import "molecules/panel";
 @import "molecules/sidebar";
 @import "molecules/navbar";

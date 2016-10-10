@@ -28,29 +28,26 @@
 
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-header-main">
-				<nav class="navbar navbar-light bg-faded">
-					<div class="container">
-					  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-					    <i class="fa fa-bars"></i>
-					  </button>
-					  <div class="collapse navbar-toggleable-xs" id="navbar-content">
-					    <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-					    <?php
-				            // Primary navigation menu.
-				            wp_nav_menu( array(
-				              'menu'              => 'primary',
-				              'theme_location'    => 'primary'
-				            ));
-				         ?>
-				         <!--
-				         <form class="form-inline pull-xs-right">
-						 	<input class="form-control" placeholder="Search" type="text">
-						 	<button class="btn btn-outline-success" type="submit">Search</button>
-						 </form>
-						 -->
-					  </div>
-					</div>
-				</nav>
+				<nav class="navbar navbar-default">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+              </div>
+              <?php
+                  // Primary navigation menu.
+                  wp_nav_menu( array(
+                    'menu'              => 'primary',
+                    'theme_location'    => 'primary'
+                  ));
+                ?>
+          </div>
+        </nav>
 			</div><!-- .site-header-main -->
 
 			<?php if ( get_header_image() ) : ?>

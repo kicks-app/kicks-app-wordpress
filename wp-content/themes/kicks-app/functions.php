@@ -5,7 +5,7 @@ require get_template_directory() . '/inc/remove-admin-bar-css.php';
 
 // Init Bootstrap Hooks
 if (function_exists('wp_bootstrap_hooks')) {
-  wp_bootstrap_hooks(4);
+  wp_bootstrap_hooks(3);
 }
 
 // Enqueue Scripts
@@ -27,7 +27,7 @@ register_sidebar( array(
 
 function bootstrap_get_search_form_args($args) {
   return array_merge($args, array(
-    'submit_label' => '<i class="fa fa-search"></i>'
+    'submit_label' => '<i class="glyphicon glyphicon-search"></i>'
   ));
 }
 add_filter( 'wp_bootstrap_get_search_form_args', 'bootstrap_get_search_form_args' );

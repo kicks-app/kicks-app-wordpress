@@ -1,3 +1,2 @@
 import $ from 'jquery';
-import tether from 'tether';
-import bootstrap from 'bootstrap';
+import bootstrap from 'bootstrap-sass/assets/javascripts/bootstrap';
