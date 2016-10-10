@@ -16,7 +16,7 @@
     }
   }
   &-content {
-    padding: 100px 0;
+    padding: 100px 0 50px;
     box-sizing: border-box;
     flex: 1 0 auto;
   }
@@ -29,5 +29,6 @@
   &-footer {
     border-top: 1px solid $gray-lighter;
     padding: 1rem 0;
+    flex-grow: 0;
   }
 }
