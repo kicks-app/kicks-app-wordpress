@@ -1,7 +1,5 @@
 var webpack = require('webpack');
-var pkg     = require('./package.json');  //loads npm config file
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CSSSplitWebpackPlugin = require('css-split-webpack-plugin').default;
 var path = require('path');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var VENDOR_PATTERN = /(node_modules|bower_components)/;
