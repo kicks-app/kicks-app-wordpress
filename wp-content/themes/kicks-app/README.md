@@ -1,13 +1,16 @@
 # kicks-app
 
-Wordpress kickstarter theme
+Wordpress Kickstarter template integrating Bootstrap, ES6, SCSS and more
+
+![Kicks App](screenshot.png?raw=true "Optional Title")
 
 * sass
 * es6
+* webpack
 * bootstrap
 * font-awesome
 
-Complement with [wp-bootstrap-hooks](https://github.com/rexblack/wp-bootstrap-hooks) for bootstrap-compatible markup of menus, comments, pagination, etc.
+Use with [wp-bootstrap-hooks](https://github.com/rexblack/wp-bootstrap-hooks) for bootstrap-compatible markup of menus, comments, pagination, etc.
 
 ### Install
 
