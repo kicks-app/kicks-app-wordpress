@@ -13,7 +13,7 @@
 		</div><!-- .site-content -->
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div class="container">
+			<div class="container clearfix">
 				<?php if ( has_nav_menu( 'primary' ) ) : ?>
 					<nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Primary Menu', 'twentysixteen' ); ?>">
 						<?php
@@ -38,8 +38,7 @@
 						?>
 					</nav><!-- .social-navigation -->
 				<?php endif; ?>
-	
-				<div class="site-info">
+				<div class="site-info pull-left">
 					<?php
 						/**
 						 * Fires before the twentysixteen footer text for footer customization.
@@ -48,9 +47,18 @@
 						 */
 						do_action( 'twentysixteen_credits' );
 					?>
-					<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+					<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span> |  
 					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentysixteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentysixteen' ), 'WordPress' ); ?></a>
 				</div><!-- .site-info -->
+				<?php
+          // Secondary menu.
+          wp_nav_menu( array(
+            'menu'              => 'secondary',
+            'menu_class'        => 'nav nav-secondary pull-right',
+            'theme_location'    => 'secondary',
+            'container'   => false
+          ));
+        ?>
 			</div><!-- .container -->
 		</footer><!-- .site-footer -->
 	</div><!-- .site-inner -->
