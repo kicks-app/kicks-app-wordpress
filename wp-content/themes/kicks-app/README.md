@@ -2,7 +2,7 @@
 
 Wordpress Kickstarter template integrating Bootstrap, ES6, SCSS and more
 
-![Kicks App](screenshot.png?raw=true "Optional Title")
+![Kicks App](screenshot.png?raw=true "Kicks App Wordpress Theme")
 
 Use with [wp-bootstrap-hooks](https://github.com/rexblack/wp-bootstrap-hooks) for bootstrap-compatible markup of menus, comments, pagination, etc.
 
@@ -22,3 +22,8 @@ Build assets from command line:
 npm run build
 ```
 
+Watch
+
+```
+npm run watch
+```
