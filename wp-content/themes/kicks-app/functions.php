@@ -27,12 +27,12 @@ register_sidebar( array(
   'after_widget'  => '</aside>'
 ) );
 
-function bootstrap_get_search_form_args($args) {
+function bootstrap_searchform_options($args) {
   return array_merge($args, array(
     'submit_label' => '<i class="fa fa-search"></i>'
   ));
 }
-add_filter( 'wp_bootstrap_get_search_form_args', 'bootstrap_get_search_form_args' );
+add_filter( 'bootstrap_searchform_options', 'bootstrap_searchform_options' );
 
 
 // This theme uses wp_nav_menu() in three locations.
