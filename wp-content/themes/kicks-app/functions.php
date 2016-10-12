@@ -34,6 +34,16 @@ function bootstrap_searchform_options($args) {
 }
 add_filter( 'bootstrap_searchform_options', 'bootstrap_searchform_options' );
 
+function bootstrap_widgets_options($args) {
+  return array_merge($args, array(
+    'widget_class' => 'card',
+    'widget_modifier_class' => '',
+    'widget_header_class' => 'card-header',
+    'widget_content_class' => 'card-block'
+  ));
+}
+add_filter( 'bootstrap_widgets_options', 'bootstrap_widgets_options' );
+
 
 // This theme uses wp_nav_menu() in three locations.
 register_nav_menus( array(
