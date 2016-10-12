@@ -34,25 +34,6 @@ function bootstrap_searchform_options($options) {
 }
 add_filter( 'bootstrap_searchform_options', 'bootstrap_searchform_options' );
 
-// Bootstrap 3
-function bootstrap_widgets_options($options) {
-  return array_merge($options, array(
-    'widget_class' => 'panel',
-    'widget_modifier_class' => 'panel-default',
-    'widget_header_class' => 'panel-heading'
-  ));
-}
-add_filter( 'bootstrap_widgets_options', 'bootstrap_widgets_options' );
-
-function bootstrap_menu_options($options) {
-  return array_merge($options, array(
-    'sub_menu_tag' => 'ul',
-    'sub_menu_item_tag' => 'li'
-  ));
-}
-add_filter( 'bootstrap_menu_options', 'bootstrap_menu_options' );
-
-
 // This theme uses wp_nav_menu() in three locations.
 register_nav_menus( array(
   'primary' => __( 'Primary Menu',      'kicks-app' ),
