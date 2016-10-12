@@ -46,7 +46,6 @@ get_header(); ?>
 				?>
 		
 			</main><!-- .site-main -->
-		
 		</div><!-- .content-area -->
 	</div>
 	<div class="col-md-4">
