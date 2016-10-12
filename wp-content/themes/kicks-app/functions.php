@@ -33,3 +33,11 @@ function bootstrap_get_search_form_args($args) {
   ));
 }
 add_filter( 'wp_bootstrap_get_search_form_args', 'bootstrap_get_search_form_args' );
+
+
+// This theme uses wp_nav_menu() in three locations.
+register_nav_menus( array(
+  'primary' => __( 'Primary Menu',      'kicks-app' ),
+  'secondary' => __( 'Secondary Menu',  'kicks-app' ),
+  'social'  => __( 'Social Links Menu', 'kicks-app' ),
+) );
