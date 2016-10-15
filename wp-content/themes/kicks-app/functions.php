@@ -27,6 +27,7 @@ register_sidebar( array(
   'after_widget'  => '</aside>'
 ) );
 
+// Customize Bootstrap Hooks output
 function bootstrap_searchform_options($args) {
   return array_merge($args, array(
     'submit_label' => '<i class="fa fa-search"></i>'
@@ -45,9 +46,16 @@ function bootstrap_widgets_options($args) {
 add_filter( 'bootstrap_widgets_options', 'bootstrap_widgets_options' );
 
 
-// This theme uses wp_nav_menu() in three locations.
+// Register menus
 register_nav_menus( array(
   'primary' => __( 'Primary Menu',      'kicks-app' ),
   'secondary' => __( 'Secondary Menu',  'kicks-app' ),
   'social'  => __( 'Social Links Menu', 'kicks-app' ),
 ) );
+
+// Limit archives widget
+function limit_archives( $args ) {
+    $args['limit'] = 6;
+    return $args;
+}
+add_filter( 'widget_archives_args', 'limit_archives' );
