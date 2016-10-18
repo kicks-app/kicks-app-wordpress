@@ -9,17 +9,16 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header m-b-1">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+  		<?php if (has_excerpt()): ?>
+      <p class="entry-summary lead">
+        <?php the_excerpt(); ?>
+      </p>
+    <?php endif; ?>
+  
+    <?php the_post_thumbnail(); ?>
 	</header><!-- .entry-header -->
-
-	<?php if (has_excerpt()): ?>
-		<div class="entry-summary lead">
-			<?php the_excerpt(); ?>
-		</div>
-	<?php endif; ?>
-
-	<?php the_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
