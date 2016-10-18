@@ -1,13 +1,35 @@
 <?php
 
+add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption'  ));
+
 // Include Custom Template Tags
 require get_template_directory() . '/inc/remove-admin-bar-css.php';
 
 // Init Bootstrap Hooks
 if (function_exists('wp_bootstrap_hooks')) {
-  wp_bootstrap_hooks(4);
+  wp_bootstrap_hooks();
 }
 
+
+
+//require_once('inc/wp-bootstrap-hooks/bootstrap-hooks.php');
+
+/*
+require_once('inc/wp-bootstrap-hooks/bootstrap-comments.php');
+require_once('inc/wp-bootstrap-hooks/bootstrap-menu.php');
+require_once('inc/wp-bootstrap-hooks/bootstrap-gallery.php');
+require_once('inc/wp-bootstrap-hooks/bootstrap-content.php');
+require_once('inc/wp-bootstrap-hooks/bootstrap-widgets.php');
+require_once('inc/wp-bootstrap-hooks/bootstrap-searchform.php');
+require_once('inc/wp-bootstrap-hooks/bootstrap-pagination.php');
+*/
+
+
+update_option( 'thumbnail_size_w', 230 );
+update_option( 'thumbnail_size_h', 230 );
+update_option( 'thumbnail_crop', 1 );
+  
+  
 // Enqueue Scripts
 function enqueue_scripts() {
 	wp_enqueue_script( 'jquery' );
@@ -28,12 +50,12 @@ register_sidebar( array(
 ) );
 
 // Customize Bootstrap Hooks output
-function bootstrap_searchform_options($args) {
-  return array_merge($args, array(
-    'submit_label' => '<i class="fa fa-search"></i>'
+function bootstrap_forms_options($options) {
+  return array_merge($options, array(
+    'search_submit_label' => '<i class="fa fa-search"></i>'
   ));
 }
-add_filter( 'bootstrap_searchform_options', 'bootstrap_searchform_options' );
+add_filter( 'bootstrap_forms_options', 'bootstrap_forms_options' );
 
 function bootstrap_widgets_options($args) {
   return array_merge($args, array(
