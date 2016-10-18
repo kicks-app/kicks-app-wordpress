@@ -18,6 +18,9 @@ function enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 
+// Register custom image sizes
+add_image_size( 'gallery-zoom', 900, 500, true );
+
 // Register widget area.
 register_sidebar( array(
   'name'          => __( 'Widget Area', 'kicks-app' ),
@@ -27,12 +30,19 @@ register_sidebar( array(
   'after_widget'  => '</aside>'
 ) );
 
-function bootstrap_searchform_options($options) {
+function bootstrap_forms_options($options) {
   return array_merge($options, array(
-    'submit_label' => '<i class="glyphicon glyphicon-search"></i>'
+    'search_submit_label' => '<i class="glyphicon glyphicon-search"></i>'
   ));
 }
-add_filter( 'bootstrap_searchform_options', 'bootstrap_searchform_options' );
+add_filter( 'bootstrap_forms_options', 'bootstrap_forms_options' );
+
+function bootstrap_gallery_options($options) {
+  return array_merge($options, array(
+    'gallery_large_size' => 'gallery-zoom'
+  ));
+}
+add_filter( 'bootstrap_gallery_options', 'bootstrap_gallery_options' );
 
 // This theme uses wp_nav_menu() in three locations.
 register_nav_menus( array(
