@@ -10,8 +10,6 @@ if (function_exists('wp_bootstrap_hooks')) {
   wp_bootstrap_hooks();
 }
 
-
-
 //require_once('inc/wp-bootstrap-hooks/bootstrap-hooks.php');
 
 /*
@@ -57,15 +55,35 @@ function bootstrap_forms_options($options) {
 }
 add_filter( 'bootstrap_forms_options', 'bootstrap_forms_options' );
 
-function bootstrap_widgets_options($args) {
-  return array_merge($args, array(
+// Bootstrap 4 Support
+function bootstrap4_widgets_options($options) {
+  return array_merge($options, array(
     'widget_class' => 'card',
     'widget_modifier_class' => '',
     'widget_header_class' => 'card-header',
     'widget_content_class' => 'card-block'
   ));
 }
-add_filter( 'bootstrap_widgets_options', 'bootstrap_widgets_options' );
+add_filter( 'bootstrap_widgets_options', 'bootstrap4_widgets_options' );
+
+function bootstrap4_gallery_options($options) {
+  return array_merge($options, array(
+    'gallery_thumbnail_class' => '',
+    'gallery_thumbnail_img_class' => 'img-thumbnail m-b-2',
+    'close_button_class' => 'btn btn-secondary',
+    'carousel_item_class' => 'carousel-item'
+  ));
+}
+add_filter( 'bootstrap_gallery_options', 'bootstrap4_gallery_options' );
+
+function bootstrap4_content_options($options) {
+  return array_merge($options, array(
+    'image_class' => 'img-fluid',
+    'align_center_class' => 'm-x-auto',
+    'edit_post_link_class' => 'btn btn-secondary'
+  ));
+}
+add_filter( 'bootstrap_content_options', 'bootstrap4_content_options' );
 
 
 // Register menus
