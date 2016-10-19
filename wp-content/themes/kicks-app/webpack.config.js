@@ -36,7 +36,7 @@ module.exports = [{
       {
         test: /\.js$/,
         exclude: VENDOR_PATTERN,
-        loader: 'babel', // 'babel-loader' is also a valid name to reference
+        loader: 'babel',
         query: {
           presets: ['es2015']
         }
@@ -82,9 +82,7 @@ module.exports = [{
       { test: FILE_PATTERN, loader: "url-loader",  query: "limit=200000&name=" + OUTPUT_PATH + "/[name].[ext]", include: VENDOR_PATTERN },
       {
         test   : /\.scss$/,
-        loader: extractApp.extract('css!sass?source-map', {
-          //publicPath: './'
-        })
+        loader: extractApp.extract('css!sass?source-map')
       }
     ]
   },
@@ -94,11 +92,6 @@ module.exports = [{
   plugins: [
     new webpack.NoErrorsPlugin(),
     extractApp,
-    new OptimizeCssAssetsPlugin({
-      /*assetNameRegExp: /\.optimize\.css$/g,
-      cssProcessor: require('cssnano'),
-      cssProcessorOptions: { discardComments: {removeAll: true } },
-      canPrint: true*/
-    })
+    new OptimizeCssAssetsPlugin()
   ]
 }];
