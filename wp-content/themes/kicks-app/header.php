@@ -42,12 +42,6 @@
 				              'theme_location'    => 'primary'
 				            ));
 				         ?>
-				         <!--
-				         <form class="form-inline pull-xs-right">
-						 	<input class="form-control" placeholder="Search" type="text">
-						 	<button class="btn btn-outline-success" type="submit">Search</button>
-						 </form>
-						 -->
 					  </div>
 					</div>
 				</nav>
