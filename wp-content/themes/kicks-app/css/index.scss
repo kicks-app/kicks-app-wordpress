@@ -1,8 +1,5 @@
 @import "globals/variables";
-@import "bootstrap-sass/assets/stylesheets/_bootstrap";
 @import "globals/root";
 @import "globals/accessibility";
+@import "bootstrap-sass/assets/stylesheets/_bootstrap";
 @import "organisms/site";
-@import "molecules/panel";
-@import "molecules/sidebar";
-@import "molecules/navbar";

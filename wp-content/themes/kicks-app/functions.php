@@ -1,6 +1,8 @@
 <?php
 
-// Include Custom Template Tags
+add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption'  ));
+
+// Remove admin-bar css
 require get_template_directory() . '/inc/remove-admin-bar-css.php';
 
 // Init Bootstrap Hooks
@@ -17,6 +19,12 @@ function enqueue_scripts() {
   wp_enqueue_script( 'app', get_template_directory_uri() . '/_assets/app.js', array( 'vendor'), false, true);
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
+
+// Adjust default image sizes
+update_option( 'thumbnail_size_w', 230 );
+update_option( 'thumbnail_size_h', 230 );
+update_option( 'thumbnail_crop', 1 );
+
 
 // Register custom image sizes
 add_image_size( 'gallery-zoom', 900, 500, true );
@@ -44,9 +52,16 @@ function bootstrap_gallery_options($options) {
 }
 add_filter( 'bootstrap_gallery_options', 'bootstrap_gallery_options' );
 
-// This theme uses wp_nav_menu() in three locations.
+// Register menus
 register_nav_menus( array(
   'primary' => __( 'Primary Menu',      'kicks-app' ),
   'secondary' => __( 'Secondary Menu',  'kicks-app' ),
   'social'  => __( 'Social Links Menu', 'kicks-app' ),
 ) );
+
+// Limit archives widget
+function limit_archives( $args ) {
+    $args['limit'] = 6;
+    return $args;
+}
+add_filter( 'widget_archives_args', 'limit_archives' );
