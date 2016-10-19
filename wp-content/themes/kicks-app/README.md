@@ -6,14 +6,14 @@ Wordpress Kickstarter template integrating Bootstrap, FontAwesome, Webpack, ES6,
 
 ## Demo
 
-Get a quick view by visiting the Demo-Site (Bootstrap 4-alpha)
+Get yourself an impression by visiting the Demo (Bootstrap 4-alpha).
 
 This theme has been tested using Wordpress Theme Unit Data which can be found [here](https://codex.wordpress.org/Theme_Unit_Test).
 
 
 ## Bootstrap
 
-KicksApp Wordpress-Theme is bundled with [wp-bootstrap-hooks](https://github.com/rexblack/wp-bootstrap-hooks) which automatically generates Bootstrap-compatible markup under the hood.
+KicksApp Wordpress-Theme depends on [wp-bootstrap-hooks](https://github.com/rexblack/wp-bootstrap-hooks) which automatically generates Bootstrap-compatible markup under the hood.
 
 We're using the sass-based version of Bootstrap 3. 
 If you're keen on using Bootstrap 4, checkout the `bs4`-branch.
