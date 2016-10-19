@@ -61,9 +61,9 @@ get_header(); ?>
 
 		</main><!-- .site-main -->
 	</section><!-- .content-area -->
-</div>
-	<div class="col-md-4">
-<?php get_sidebar(); ?>
-</div>
+  </div>
+  	<div class="col-md-4">
+  <?php get_sidebar(); ?>
+  </div>
 </div>
 <?php get_footer(); ?>
