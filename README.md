@@ -6,7 +6,7 @@ kicks-app-wordpress
 
 ## Install
 
-Install composer
+Install Composer
 
 ```php
 php -r "readfile('https://getcomposer.org/installer');" | php
@@ -48,10 +48,7 @@ If you installed your project under the document root of your local Apache envir
 In practice, the most comfortable approach is to serve the project directly from your workspace and access via a local domain. 
 To get this working, you need to create a virtual host that points to your project directory.  
 
-#### Create a virtual host
-
-
-##### Add a local dns entry
+#### Add a local dns entry
 
 Make the machine aware of your project's domain name by adding it to your system's hosts file. 
 
@@ -85,7 +82,7 @@ Should look something like this now:
 127.0.0.1 example.local
 ```
 
-##### Add a virtual host entry 
+#### Add a virtual host
 
 Open conf/extra/vhost.conf from your Apache directory and add a virtual host as follows:
 
@@ -109,11 +106,11 @@ Restart Apache for the changes to take effect.
 You're now ready to visit your project at `http://example.local`.
 
 
-### Themes
+### Themes & Plugins
 
-Already contained is a Bootstrap-based Starter Template. See [here](wp-content/theme/kicks-app/) for further details.
+Already contained is a Bootstrap-based Starter Template. See [here](./wp-content/themes/kicks-app/README.md) for further details.
 
-Thanks to composer and wpackagist you can simply require any registered Wordpress Theme and move to your project's theme folder from the command line:
+Thanks to Composer and [Wordpress Packagist](https://wpackagist.org/) you can simply require any registered Wordpress Themes or Plugins from the command line:
 
 ```cli
 php composer.phar require wpackagist/twentysixteen
