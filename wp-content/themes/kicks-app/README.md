@@ -51,10 +51,11 @@ npm run watch
 
 ### SASS
 
-KicksApp's Wordpress-Theme integrates SASS.
+KicksApp's Wordpress-Theme integrates SASS for pre-processing css.
+
 The entry-file of your theme's css is found at `css/index.scss`.
 
-Although you're free to choose your own code-style, KicksApp's Wordpress-Theme encourages Atomic Design and BEM. Your css should be organized as components into different subdirectories, such as atoms, molecules and organisms while your `index.scss` only contains imports and lives on top of them. Keep your house clean from the start. 
+While you're free to choose your own code-style, KicksApp's Wordpress-Theme encourages Atomic Design and BEM. Your css should be organized as components into different subdirectories, such as atoms, molecules and organisms while your `index.scss` only contains imports and lives on top of them. Keep your house clean from the start. 
 
 ##### Resources
 
@@ -63,7 +64,7 @@ Resources that are located under `node_modules` are automatically embedded in th
 
 ### ECMAScript 6
 
-KicksApp's Wordpress-Theme lets you write next-generation JS-Code which is compiled to plain Javascript via Babel.
+KicksApp's Wordpress-Theme lets you write next-generation JS-Code which is compiled to plain Javascript via [Babel](https://babeljs.io/).
 
 The entry-file of your theme's js is located at `js/index.js`.
 
@@ -77,8 +78,3 @@ Since Wordpress is already bundled with jquery, its global reference is injected
 
 Javascript output is split into different chunks for vendor libraries and your application layer. 
 If your application code changes, the vendor bundle is still being cached by the browser. 
-
-
-
-
-
