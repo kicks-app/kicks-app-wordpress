@@ -45,8 +45,7 @@ get_header(); ?>
 				// Previous/next page navigation.
 				call_user_func_array(function_exists('wp_bootstrap_posts_pagination') ? 'wp_bootstrap_posts_pagination' : 'the_posts_pagination', array(
 					'prev_text'          => __( 'Previous page', 'kicks-app' ),
-					'next_text'          => __( 'Next page', 'kicks-app' ),
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'kicks-app' ) . ' </span>',
+					'next_text'          => __( 'Next page', 'kicks-app' )
 				) );
 	
 			// If no content, include the "No posts found" template.

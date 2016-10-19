@@ -30,15 +30,10 @@ get_header(); ?>
 							'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'twentysixteen' ),
 						) );
 					} elseif ( is_singular( 'post' ) ) {
-						// Previous/next post navigation.
 						wp_bootstrap_post_navigation( array(
-							'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'twentysixteen' ) . '</span> ' .
-								'<span class="screen-reader-text">' . __( 'Next post:', 'twentysixteen' ) . '</span> ' .
-								'<span class="post-title">%title</span>',
-							'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'twentysixteen' ) . '</span> ' .
-								'<span class="screen-reader-text">' . __( 'Previous post:', 'twentysixteen' ) . '</span> ' .
-								'<span class="post-title">%title</span>'
-						) );
+              'next_text' => '<span class="post-title">%title</span>',
+              'prev_text' => '<span class="post-title">%title</span>'
+            ) );
 					}
 		
 					// End of the loop.
