@@ -1,6 +1,6 @@
 # kicks-app-wordpress-theme
 
-Wordpress Kickstarter template integrating Bootstrap, FontAwesome, Webpack, ES6, SCSS and more...
+Wordpress Kickstarter template integrating Bootstrap, ES6, SCSS and more...
 
 ![Kicks App](screenshot.png?raw=true "Kicks App Wordpress Theme")
 
