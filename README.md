@@ -52,7 +52,7 @@ To get this working, you need to create a virtual host that points to your proje
 
 Make the machine aware of your project's domain name by adding it to your system's hosts file. 
 
-###### Using hostile to edit hosts
+##### Using hostile to edit hosts
 A convenient way to do this, is to utilize a nifty [node](https://nodejs.org)-based tool called [hostile](https://www.npmjs.com/package/hostile). 
 
 Install hostile via npm:
@@ -68,13 +68,10 @@ Add your project's domain to the list of hosts via command line:
 sudo hostile set 127.0.0.1 example.local
 ```
 
-###### Manually editing hosts
-Otherwise, if you don't like to use hostile, you can take the conventional way by manually editing the hosts-file with the text-editor of your choice.
+##### Manually editing hosts
+Otherwise, if you don't like to use hostile, you can take the conventional way by manually editing the hosts-file. See [here](https://www.captiga.com/tips-tricks/edit-hosts-file-mac-windows/) for a quick reference on how to achieve this for your platform
 
-This file is found at `/etc/hosts` on a Mac. On recent Windows it resides at `c:\windows\system32\drivers\etc\hosts`.
-Note that modifying the host file requires root privileges. Afterwards you'll need to flush dns cache or restart your machine.
-
-Should look something like this now:
+It should look something like this:
 
 ```ini
 127.0.0.1 localhost
@@ -84,7 +81,7 @@ Should look something like this now:
 
 #### Add a virtual host
 
-Open conf/extra/vhost.conf from your Apache directory and add a virtual host as follows:
+Open `conf/extra/vhost.conf` from your Apache home directory and add a virtual host as follows:
 
 ```ini
 <VirtualHost *:80>
@@ -92,7 +89,7 @@ Open conf/extra/vhost.conf from your Apache directory and add a virtual host as 
     DocumentRoot "/path/to/project/"
     ServerName example.local
     AccessFileName .htaccess  
-	<Directory "/Users/username/Documents/example/">
+	<Directory "/path/to/project/">
         Options FollowSymLinks
         AllowOverride All
         Order allow,deny
