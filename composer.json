@@ -46,16 +46,12 @@
     "wemakecustom/wp-mu-loader": "*",
     "wp-bootstrap-hooks": "dev-dev",
     "wpackagist-plugin/regenerate-thumbnails":">=2.2.6",
-    "vlucas/phpdotenv": "*",
-    "banago/phploy": "*"
+    "vlucas/phpdotenv": "*"
   },
   "scripts": {
     "post-autoload-dump": [
       "php -r \"copy('wp-content/mu-plugins/mu-loader/mu-require.php', 'wp-content/mu-plugins/mu-require.php');\""
-    ],
-    "deploy": "php vendor/lib/banago/phploy/bin/phploy.phar",
-    "deploy-production": "php vendor/lib/banago/phploy/bin/phploy.phar -s production",
-    "deploy-test": "php vendor/lib/banago/phploy/bin/phploy.phar -s test"
+    ]
   },
   "extra": {
   	"webroot-dir": "wp-core",
