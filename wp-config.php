@@ -23,8 +23,8 @@
 require __DIR__ . '/vendor/lib/autoload.php';
 
 // Determine Environment
-define ( 'ENV', ($_SERVER['SERVER_ADDR'] == '127.0.0.1' ? 'development' : (strpos($_SERVER['HTTP_HOST'], 'test') !== FALSE ? 'test' : 'production') ));
-define ( 'ENV_FILE', ENV ? '.env' . (ENV !== 'development' ? '-' . ENV : '') : '');
+define ( 'ENV', getenv('ENV') ? getenv('ENV') : ($_SERVER['SERVER_ADDR'] == '127.0.0.1' ? 'development' : (strpos($_SERVER['HTTP_HOST'], 'test') !== FALSE ? 'test' : 'production') ));
+define ( 'ENV_FILE', getenv('ENV_FILE') ? getenv('ENV_FILE') : ENV ? '.env' . (ENV !== 'development' ? '-' . ENV : '') : '');
 
 // Load Environment Variables from .env file
 if (file_exists( __DIR__ . DIRECTORY_SEPARATOR . ENV_FILE )) {
