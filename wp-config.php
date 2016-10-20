@@ -48,16 +48,16 @@ define( 'WP_DEFAULT_THEME', array_map('basename', glob(dirname( __FILE__ ) . "/w
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', getenv('DB_NAME'));
+define('DB_NAME', getenv('DB_NAME') ? getenv('DB_NAME') : "kicks-app");
 
 /** MySQL database username */
-define('DB_USER', getenv('DB_USER'));
+define('DB_USER', getenv('DB_USER') ? getenv('DB_USER') : "root");
 
 /** MySQL database password */
-define('DB_PASSWORD', getenv('DB_PASSWORD'));
+define('DB_PASSWORD', getenv('DB_PASSWORD') ? getenv('DB_PASSWORD') : "root");
 
 /** MySQL hostname */
-define('DB_HOST', getenv('DB_HOST'));
+define('DB_HOST', getenv('DB_HOST') ? getenv('DB_HOST') : "localhost");
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
