@@ -27,7 +27,7 @@ get_header(); ?>
 					if ( is_singular( 'attachment' ) ) {
 						// Parent post navigation.
 						wp_bootstrap_post_navigation( array(
-							'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'twentysixteen' ),
+							'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'kicks-app' ),
 						) );
 					} elseif ( is_singular( 'post' ) ) {
 						// Previous/next post navigation.
@@ -35,7 +35,7 @@ get_header(); ?>
 							'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'kicks-app' ) . '</span> ' .
 								'<span class="screen-reader-text">' . __( 'Next post:', 'kicks-app' ) . '</span> ' .
 								'<span class="post-title">%title</span>',
-							'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'twentysixteen' ) . '</span> ' .
+							'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'kicks-app' ) . '</span> ' .
 								'<span class="screen-reader-text">' . __( 'Previous post:', 'kicks-app' ) . '</span> ' .
 								'<span class="post-title">%title</span>'
 						) );
