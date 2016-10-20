@@ -103,12 +103,40 @@ Restart Apache for the changes to take effect.
 You're now ready to visit your project at `http://example.local`.
 
 
-### Themes & Plugins
+### Themes
 
 Already contained is a Bootstrap-based Starter Template. See [here](./wp-content/themes/kicks-app/README.md) for further details.
 
-Thanks to Composer and [Wordpress Packagist](https://wpackagist.org/) you can simply require any registered Wordpress Themes or Plugins from the command line:
+Thanks to Composer and [Wordpress Packagist](https://wpackagist.org/) you can simply require any registered Wordpress Themes from the command line:
 
 ```cli
 php composer.phar require wpackagist/twentysixteen
 ``` 
+
+### Plugins
+
+Composer initially downloads [Regenerate Thumbnails] since this is needed quite often during development. 
+
+Thanks to Composer and [Wordpress Packagist](https://wpackagist.org/) you can simply require any registered Wordpress Plugins from the command line:
+
+```cli
+php composer.phar require wpackagist/advanced-custom-fields
+```
+
+## Production
+
+It's recommended to configure the server's environment variables over ssh instead of using .env-files, but there are situations, where this is may not be possible, for example on a shared hosting. 
+To cover this case, the environment is determined from server ip-address and hostname and a path to an .env-file is set accordingly. By default, it's set to `.env-production` pointing to the web directory. 
+
+Although access to any files starting with `.env` is denied, you should move your `.env`-files out of the public directory and adjust the path in .htaccess. Please note that this is only an option if `mod_env` is enabled. 
+
+```
+SetEnv ENV=production
+SetEnvIf Remote_Addr ^127\.0\.0\.1 ENV=development # Development
+SetEnvIf Host ^test\b ENV=test # Staging
+SetEnvIf ENV ^development$ ENV_FILE=.env
+SetEnvIf ENV ^test$ ENV_FILE=.env-test
+SetEnvIf ENV ^production$ ENV_FILE=../auth/.env-example
+```
+  
+Otherwise you're always free to setup a different `wp-config.php` in production, hardcode the values there as usual and don't use environment variables at all.
