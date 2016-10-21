@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -82,13 +83,14 @@ module.exports = [{
       { test: FILE_PATTERN, loader: "url-loader",  query: "limit=200000&name=" + OUTPUT_PATH + "/[name].[ext]", include: VENDOR_PATTERN },
       {
         test   : /\.scss$/,
-        loader: extractApp.extract('css!sass?source-map')
+        loader: extractApp.extract('css!postcss!sass?source-map')
       }
     ]
   },
   sassLoader: {
     includePaths: ["./node_modules"]
   },
+  postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
   plugins: [
     new webpack.NoErrorsPlugin(),
     extractApp,
