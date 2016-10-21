@@ -2,30 +2,38 @@
 .settings
 .project
 
+# GFM Preview
+.README.md.html
+
 # Mac OS
 .DS_Store
 
 # Node
 node_modules
+**/node_modules
+npm-debug.log
 
 # Composer
+vendor
 composer.phar
 composer.lock
-
-# Build
-tmp
-dist
 
 # Test
 test
 
-# Vendor
-vendor
+# Wordpress
+wp-core
+wp-content/*
+!wp-content/themes
 
-# App dependencies
-app/mu-plugins/**
-app/plugins/** 
+# PHPLoy
+phploy.phar
+deploy.ini
+phploy.ini
 
+# Env Files
+.env-*
+.env
 
-# Theme assets
-app/themes/*/_assets
+# Include sample files
+!/*-sample

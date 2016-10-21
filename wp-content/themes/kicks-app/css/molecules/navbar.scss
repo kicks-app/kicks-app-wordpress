@@ -1,0 +1,13 @@
+.navbar {
+  &-fixed-top {
+    .admin-bar & {
+      top: 32px;
+      @media screen and (max-width: 783px) {
+        top: 46px;
+      }
+    }
+    + * {
+      margin-top: $navbar-height;
+    }
+  }
+}
