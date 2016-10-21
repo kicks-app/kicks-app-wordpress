@@ -4,10 +4,11 @@
   "description": "Wordpress Kickstarter template integrating Bootstrap, ES6, SCSS and more",
   "main": "index.js",
   "dependencies": {
-    "bootstrap": "4.0.0-alpha.4",
+    "bootstrap": "4.0.0-alpha.5",
     "tether": "^1.3.7"
   },
   "devDependencies": {
+    "autoprefixer": "^6.5.1",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
@@ -28,6 +29,8 @@
     "mkdirp": "^0.5.1",
     "node-sass": "^3.10.1",
     "optimize-css-assets-webpack-plugin": "^1.3.0",
+    "postcss": "^5.2.5",
+    "postcss-loader": "^1.0.0",
     "sass-loader": "^4.0.2",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2"
