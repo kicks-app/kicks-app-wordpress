@@ -1,4 +1,19 @@
 .navbar {
+  &.pos-f-t {
+    .admin-bar & {
+      top: 32px;
+      @media screen and (max-width: 783px) {
+        top: 46px;
+      }
+      @media screen and (max-width: 600px) {
+        position: absolute;
+      }
+    }
+    + * {
+      margin-top: 60px;
+    }
+  }
+  // FIXME: Impossible to align navbar-toggler in markup
   @include media-breakpoint-down(sm) {
     text-align: right;
     padding-left: 0;
@@ -10,44 +25,4 @@
       }
     }
   }
-
-  @include media-breakpoint-down(sm) {
-    //text-align: right;  
-  }
-  
-  /*
-  border-radius: 0;
-  padding-left: 0;
-  padding-right: 0;
-  @include media-breakpoint-down(sm) {
-    &-nav {
-      float:none !important;
-      > .nav-item {
-        float: none;
-        margin-left: .1rem;
-      }
-    }
-    &-content {
-      position: relative;
-      top: $navbar-padding-y;
-      max-height: 250px;
-      overflow-y: auto;
-      overflow-x: hidden;
-      margin-left: -$grid-gutter-width/2;
-      margin-right: -$grid-gutter-width/2;
-      padding-left: $grid-gutter-width/2;
-      padding-right: $grid-gutter-width/2;
-      clear: both;
-      .dropdown-menu {
-        position: relative;
-        float: none;
-        background: none;
-        border: none;
-      }
-    }
-    .nav-item {
-      width: 100%;
-      text-align: left;
-    }
-  }*/
 }

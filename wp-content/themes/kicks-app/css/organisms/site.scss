@@ -4,25 +4,11 @@
     margin-top: 32px;
   }
   &-header {
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-    .admin-bar & {
-      top: 32px;
-      @media screen and (max-width: 783px) {
-        top: 46px;
-        position: static;
-        margin-top: 14px;
-        + .site-content {
-          padding-top: 30px;
-        }
-      }
-    }
   }
   &-content {
     box-sizing: border-box;
     flex: 1 0 auto;
-    padding: 100px 0 50px;
+    padding: 2rem 0;
   }
   &-inner {
     height: 100%;
