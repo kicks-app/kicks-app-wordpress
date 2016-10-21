@@ -138,4 +138,3 @@ SetEnvIf ENV ^production$ ENV_FILE=../auth/.env-example
 ```
   
 Otherwise you're always free to setup a different `wp-config.php` in production, hardcode the values there as usual and don't use environment variables at all.
->>>>>>> dev-bs3
