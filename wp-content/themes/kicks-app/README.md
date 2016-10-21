@@ -1,84 +1,142 @@
-# kicks-app-wordpress-theme
+kicks-app-wordpress
+===================
 
-Wordpress Kickstarter template integrating Bootstrap, FontAwesome, Webpack, ES6, SCSS and more...
-
-![Kicks App](screenshot.png?raw=true "Kicks App Wordpress Theme")
-
-## Demo
-
-Get yourself an impression by visiting the Demo (Bootstrap 4-alpha).
-
-This theme has been tested using Wordpress Theme Unit Data which can be found [here](https://codex.wordpress.org/Theme_Unit_Test).
+> Wordpress development stack
 
 
-## Bootstrap
+## Install
 
-KicksApp Wordpress-Theme depends on [wp-bootstrap-hooks](https://github.com/rexblack/wp-bootstrap-hooks) which automatically generates Bootstrap-compatible markup under the hood.
+Install Composer
 
-We're using the sass-based version of Bootstrap 3. 
-If you're keen on using Bootstrap 4, checkout the `bs4`-branch.
+```php
+php -r "readfile('https://getcomposer.org/installer');" | php
+```
 
+Install dependencies
+
+```php
+php composer.phar install
+```
 
 ## Development
 
-### Install Dependencies
 
-Pull [node](https://nodejs.org/en/) to your local machine and install development dependencies from within your theme directory via npm:
+### Configuration
+
+
+KicksApp-Wordpress is configured by Environment Variables.
+
+In a local environment, [phpdotenv](https://github.com/vlucas/phpdotenv) makes it easy to inject parameters from a text file.  
+Note that it is not recommended to use .env-files in production. 
+
+Move to your project directory and rename `.env-sample` to `.env` and edit settings:
+
+```ini
+DB_HOST="localhost"
+DB_NAME="example"
+DB_USER="root"
+DB_PASSWORD="root"
+```
+
+Don't miss to create the corresponding database on your local mysql-server.
+
+
+### Testing
+
+If you installed your project under the document root of your local Apache environment, you're done.
+
+In practice, the most comfortable approach is to serve the project directly from your workspace and access via a local domain. 
+To get this working, you need to create a virtual host that points to your project directory.  
+
+#### Add a local dns entry
+
+Make the machine aware of your project's domain name by adding it to your system's hosts file. 
+
+##### Using hostile to edit hosts
+A convenient way to do this, is to utilize a nifty [node](https://nodejs.org)-based tool called [hostile](https://www.npmjs.com/package/hostile). 
+
+Install hostile via npm:
 
 ```cli
-npm install
+npm install hostile
 ```
 
-Please note, when adding third-party modules, npm is favoured over bower since we already rely on npm for downloading build tools.
- 
-### Build Assets
+Note that modifying the hosts file requires root privileges, so you may need to prepend `sudo`.
+Add your project's domain to the list of hosts via command line:
 
-KicksApp Wordpress-Theme relies on webpack for compiling assets. Kick off the build process via npm script. 
-
-```
-npm run build
+```cli
+sudo hostile set 127.0.0.1 example.local
 ```
 
-A complete build may take a while.
-When watching source files, we benefit from webpack's incremental build capabilitites, so it becomes quite fast.
+##### Manually editing hosts
+Otherwise, if you don't like to use hostile, you can take the conventional way by manually editing the hosts-file. See [here](https://www.captiga.com/tips-tricks/edit-hosts-file-mac-windows/) for a quick reference on how to achieve this for your platform
 
-Run the watch task to automatically compile assets on file changes:
+It should look something like this:
+
+```ini
+127.0.0.1 localhost
+255.255.255.255 broadcasthost
+127.0.0.1 example.local
+```
+
+#### Add a virtual host
+
+Open `conf/extra/vhost.conf` from your Apache home directory and add a virtual host as follows:
+
+```ini
+<VirtualHost *:80>
+    ServerAdmin webmaster@example.local
+    DocumentRoot "/path/to/project/"
+    ServerName example.local
+    AccessFileName .htaccess  
+  <Directory "/path/to/project/">
+        Options FollowSymLinks
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+```
+
+Restart Apache for the changes to take effect.
+
+You're now ready to visit your project at `http://example.local`.
+
+
+### Themes
+
+Already contained is a Bootstrap-based Starter Template. See [here](./wp-content/themes/kicks-app/README.md) for further details.
+
+Thanks to Composer and [Wordpress Packagist](https://wpackagist.org/) you can simply require any registered Wordpress Themes from the command line:
+
+```cli
+php composer.phar require wpackagist/twentysixteen
+``` 
+
+### Plugins
+
+Composer initially downloads [Regenerate Thumbnails] since this is needed quite often during development. 
+
+Thanks to Composer and [Wordpress Packagist](https://wpackagist.org/) you can simply require any registered Wordpress Plugins from the command line:
+
+```cli
+php composer.phar require wpackagist/advanced-custom-fields
+```
+
+## Production
+
+It's recommended to configure the server's environment variables over ssh instead of using .env-files, but there are situations, where this is may not be possible, for example on a shared hosting. 
+To cover this case, the environment is determined from server ip-address and hostname and a path to an .env-file is set accordingly. By default, it's set to `.env-production` pointing to the web directory. 
+
+Although access to any files starting with `.env` is denied, you should move your `.env`-files out of the public directory and adjust the path in .htaccess. Please note that this is only an option if `mod_env` is enabled. 
 
 ```
-npm run watch
+SetEnv ENV=production
+SetEnvIf Remote_Addr ^127\.0\.0\.1 ENV=development # Development
+SetEnvIf Host ^test\b ENV=test # Staging
+SetEnvIf ENV ^development$ ENV_FILE=.env
+SetEnvIf ENV ^test$ ENV_FILE=.env-test
+SetEnvIf ENV ^production$ ENV_FILE=../auth/.env-example
 ```
-
-
-### SASS
-
-KicksApp's Wordpress-Theme integrates SASS.
-The entry-file of your theme's css is found at `css/index.scss`.
-
-Although you're free to choose your own code-style, KicksApp's Wordpress-Theme encourages Atomic Design and BEM. Your css should be organized as components into different subdirectories, such as atoms, molecules and organisms while your `index.scss` only contains imports and lives on top of them. Keep your house clean from the start. 
-
-##### Resources
-
-When referencing further assets in your css via `url(...)`, use paths relative to the entry-file.
-Resources that are located under `node_modules` are automatically embedded in the resulting css, because vendor packages should never be deployed or put into repositories. 
-
-### ECMAScript 6
-
-KicksApp's Wordpress-Theme lets you write next-generation JS-Code which is compiled to plain Javascript via Babel.
-
-The entry-file of your theme's js is located at `js/index.js`.
-
-It's recommended to let the entry-file only contain imports. All other application assets should go under `js/modules`.
-
-##### jQuery
-
-Since Wordpress is already bundled with jquery, its global reference is injected as a module.
-
-##### Code Splitting
-
-Javascript output is split into different chunks for vendor libraries and your application layer. 
-If your application code changes, the vendor bundle is still being cached by the browser. 
-
-
-
-
-
+  
+Otherwise you're always free to setup a different `wp-config.php` in production, hardcode the values there as usual and don't use environment variables at all.
