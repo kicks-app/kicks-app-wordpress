@@ -37,9 +37,7 @@ add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 register_sidebar( array(
   'name'          => __( 'Widget Area', 'kicks-app' ),
   'id'            => 'sidebar-1',
-  'description'   => __( 'Add widgets here to appear in your sidebar.', 'kicks-app' ),
-  //'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-  //'after_widget'  => '</aside>'
+  'description'   => __( 'Add widgets here to appear in your sidebar.', 'kicks-app' )
 ) );
 
 // Remove admin-bar css
@@ -49,7 +47,7 @@ require get_template_directory() . '/inc/remove-admin-bar-css.php';
 register_nav_menus( array(
   'primary' => __( 'Primary Menu',      'kicks-app' ),
   'secondary' => __( 'Secondary Menu',  'kicks-app' ),
-  'social'  => __( 'Social Links Menu', 'kicks-app' ),
+  'social'  => __( 'Social Links Menu', 'kicks-app' )
 ) );
 
 // Limit archives widget
@@ -59,12 +57,15 @@ function limit_archives( $args ) {
 }
 add_filter( 'widget_archives_args', 'limit_archives' );
 
-// Init Bootstrap Hooks
+
+/**
+ * Bootstrap Hooks Setup
+ */
 if (function_exists('wp_bootstrap_hooks')) {
   wp_bootstrap_hooks();
-}
+} 
 
-// Integrate FontAwesome Search Icon
+// Show Font-Awesome search icon in Searchform
 function bootstrap_forms_options($options) {
   return array_merge($options, array(
     'search_submit_label' => '<i class="fa fa-search"></i>'
@@ -72,15 +73,44 @@ function bootstrap_forms_options($options) {
 }
 add_filter( 'bootstrap_forms_options', 'bootstrap_forms_options' );
 
-// Use gallery-zoom as image-size for gallery slider
+// Apply custom image size to Bootstrap gallery zoom image
 function bootstrap_gallery_options($options) {
   return array_merge($options, array(
-    'gallery_large_size' => 'gallery-zoom'
+    'gallery_zoom_size' => 'gallery-zoom'
   ));
 }
 add_filter( 'bootstrap_gallery_options', 'bootstrap_gallery_options' );
 
-// Bootstrap 4 Support
+// Bootstrap 4 Content Options
+function bootstrap4_content_options($options) {
+  return array_merge($options, array(
+    'img_class' => 'img-fluid',
+    'align_center_class' => 'mx-auto',
+    'edit_post_link_class' => 'btn btn-secondary'
+  ));
+}
+add_filter( 'bootstrap_content_options', 'bootstrap4_content_options', 1 );
+
+// Bootstrap 4 Forms Options
+function bootstrap4_forms_options($options) {
+  return array_merge($options, array(
+    'search_submit_label' => '<i>*</i>'
+  ));
+}
+add_filter( 'bootstrap_forms_options', 'bootstrap4_forms_options', 1 );
+
+// Bootstrap 4 Gallery Options
+function bootstrap4_gallery_options($options) {
+  return array_merge($options, array(
+    'gallery_thumbnail_class' => '',
+    'gallery_thumbnail_img_class' => 'img-thumbnail mb-2',
+    'close_button_class' => 'btn btn-secondary',
+    'carousel_item_class' => 'carousel-item'
+  ));
+}
+add_filter( 'bootstrap_gallery_options', 'bootstrap4_gallery_options', 1 );
+
+// Bootstrap 4 Widget Options
 function bootstrap4_widgets_options($options) {
   return array_merge($options, array(
     'widget_class' => 'card',
@@ -89,23 +119,4 @@ function bootstrap4_widgets_options($options) {
     'widget_content_class' => 'card-block'
   ));
 }
-add_filter( 'bootstrap_widgets_options', 'bootstrap4_widgets_options' );
-
-function bootstrap4_gallery_options($options) {
-  return array_merge($options, array(
-    'gallery_thumbnail_class' => '',
-    'gallery_thumbnail_img_class' => 'img-thumbnail mb-1',
-    'close_button_class' => 'btn btn-secondary',
-    'carousel_item_class' => 'carousel-item'
-  ));
-}
-add_filter( 'bootstrap_gallery_options', 'bootstrap4_gallery_options' );
-
-function bootstrap4_content_options($options) {
-  return array_merge($options, array(
-    'img_class' => 'img-fluid',
-    'align_center_class' => 'mx-auto',
-    'edit_post_link_class' => 'btn btn-secondary'
-  ));
-}
-add_filter( 'bootstrap_content_options', 'bootstrap4_content_options' );
+add_filter( 'bootstrap_widgets_options', 'bootstrap4_widgets_options', 1 );
