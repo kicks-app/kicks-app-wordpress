@@ -26,24 +26,20 @@
 	<div class="site-inner">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
 
-		<header id="masthead" class="site-header" role="banner">
-			<div class="site-header-main">
-				<nav class="navbar navbar-light bg-faded">
-					<div class="container">
-					  <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-					  <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#navbar-content"" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
-					  <div class="navbar-toggleable-sm collapse" id="navbar-content">
-					    <?php
-				            // Primary navigation menu.
-				            wp_nav_menu( array(
-				              'menu'              => 'primary',
-				              'theme_location'    => 'primary',
-				              'container' => 'false' 
-				            ));
-				         ?>
-					  </div>
-					</div>
-				</nav>
+		<header id="masthead" class="site-header navbar navbar-light bg-faded pos-f-t" role="banner">
+			<div class="site-header-main container">
+			  <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			  <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#navbar-content"" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+			  <div class="navbar-toggleable-sm collapse" id="navbar-content">
+			    <?php
+		            // Primary navigation menu.
+		            wp_nav_menu( array(
+		              'menu'              => 'primary',
+		              'theme_location'    => 'primary',
+		              'container' => 'false' 
+		            ));
+		         ?>
+			  </div>
 			</div><!-- .site-header-main -->
 
 			<?php if ( get_header_image() ) : ?>
