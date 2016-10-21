@@ -5,6 +5,8 @@ SetEnvIf ENV ^development$ ENV_FILE=.env
 SetEnvIf ENV ^test$ ENV_FILE=.env-test
 SetEnvIf ENV ^production$ ENV_FILE=.env-production
 RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
 RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
