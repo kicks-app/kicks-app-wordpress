@@ -33,7 +33,7 @@ if (file_exists( __DIR__ . DIRECTORY_SEPARATOR . ENV_FILE )) {
 }
 
 // Setup Base URL
-define( 'BASE_URL', rtrim( (((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://") . $_SERVER['HTTP_HOST'] . "/" . rtrim(dirname(str_replace($_SERVER['DOCUMENT_ROOT'], '', __FILE__)), "./"), "/" ) );
+define( 'BASE_URL', rtrim( (((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://") . $_SERVER['HTTP_HOST'] . "/" . trim(dirname(str_replace($_SERVER['DOCUMENT_ROOT'], '', __FILE__)), "./"), "/" ) );
 
 // Setup Site URL
 define( 'WP_HOME', BASE_URL);
