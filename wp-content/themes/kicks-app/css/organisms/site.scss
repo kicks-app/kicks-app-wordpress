@@ -4,24 +4,11 @@
     margin-top: 32px;
   }
   &-header {
-    margin-bottom: 3rem;
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-    .navbar {
-      border-radius: 0;
-    }
-    .admin-bar & {
-      top: 46px;
-      @media screen and (min-width: 783px) {
-        top: 32px;
-      }
-    }
   }
   &-content {
-    padding: 100px 0 50px;
     box-sizing: border-box;
     flex: 1 0 auto;
+    padding: 2rem 0;
   }
   &-inner {
     height: 100%;
@@ -33,8 +20,5 @@
     border-top: 1px solid $gray-lighter;
     padding: 1rem 0;
     flex-grow: 0;
-  }
-  &-info {
-    padding: $nav-link-padding 0;
   }
 }

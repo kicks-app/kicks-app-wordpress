@@ -26,28 +26,27 @@
 	<div class="site-inner">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
 
-		<header id="masthead" class="site-header" role="banner">
-			<div class="site-header-main">
-				<nav class="navbar navbar-default">
-            <div class="container">
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-              </div>
-              <?php
-                  // Primary navigation menu.
-                  wp_nav_menu( array(
-                    'menu'              => 'primary',
-                    'theme_location'    => 'primary'
-                  ));
-                ?>
-          </div>
-        </nav>
+		<header id="masthead" class="site-header navbar navbar-default navbar-fixed-top" role="banner">
+			<div class="site-header-main container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-content" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+        </div>
+        <div id="navbar-content" class="navbar-collapse collapse">
+        <?php
+            // Primary navigation menu.
+            wp_nav_menu( array(
+              'menu'              => 'primary',
+              'theme_location'    => 'primary',
+              'container'         => false
+            ));
+          ?>
+        </div>
 			</div><!-- .site-header-main -->
 		</header><!-- .site-header -->
 

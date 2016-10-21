@@ -1,0 +1,16 @@
+.panel {
+  &-columns {
+    column-count: 3;
+    column-gap: $grid-gutter-width;
+    &.sidebar {
+      column-count: 1;
+      @media (min-width: $screen-sm) and (max-width: $screen-md) { 
+        column-count: 2;
+      }
+    }
+  }
+  &-columns & {
+    display: inline-block; // Don't let them vertically span multiple columns
+    width: 100%; // Don't let them exceed the column width
+  }
+}
