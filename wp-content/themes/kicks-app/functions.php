@@ -38,8 +38,8 @@ register_sidebar( array(
   'name'          => __( 'Widget Area', 'kicks-app' ),
   'id'            => 'sidebar-1',
   'description'   => __( 'Add widgets here to appear in your sidebar.', 'kicks-app' ),
-  'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-  'after_widget'  => '</aside>'
+  //'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+  //'after_widget'  => '</aside>'
 ) );
 
 // Remove admin-bar css
@@ -94,7 +94,7 @@ add_filter( 'bootstrap_widgets_options', 'bootstrap4_widgets_options' );
 function bootstrap4_gallery_options($options) {
   return array_merge($options, array(
     'gallery_thumbnail_class' => '',
-    'gallery_thumbnail_img_class' => 'img-thumbnail m-b-2',
+    'gallery_thumbnail_img_class' => 'img-thumbnail mb-1',
     'close_button_class' => 'btn btn-secondary',
     'carousel_item_class' => 'carousel-item'
   ));
@@ -103,8 +103,8 @@ add_filter( 'bootstrap_gallery_options', 'bootstrap4_gallery_options' );
 
 function bootstrap4_content_options($options) {
   return array_merge($options, array(
-    'image_class' => 'img-fluid',
-    'align_center_class' => 'm-x-auto',
+    'img_class' => 'img-fluid',
+    'align_center_class' => 'mx-auto',
     'edit_post_link_class' => 'btn btn-secondary'
   ));
 }

@@ -1,0 +1,8 @@
+.sidebar {
+  &.card-columns {
+    column-count: 1;
+    @include media-breakpoint-only(md) {
+      column-count: 2;
+    }
+  }
+}

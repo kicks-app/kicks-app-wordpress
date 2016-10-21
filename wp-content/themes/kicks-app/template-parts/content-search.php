@@ -23,16 +23,16 @@
 			<?php //entry_meta(); 
 			?>
 			<?php
-				edit_post_link(
-					sprintf(
-						/* translators: %s: Name of current post */
-						__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-						get_the_title()
-					),
-					'<span class="edit-link">',
-					'</span>'
-				);
-			?>
+        call_user_func_array(function_exists('wp_bootstrap_edit_post_link') ? 'wp_bootstrap_edit_post_link' : 'edit_post_link', array(
+          sprintf(
+            /* translators: %s: Name of current post */
+            __( 'Edit<span class="screen-reader-text"> "%s"</span>', 'kicks-app' ),
+            get_the_title()
+          ),
+          '<span class="edit-link">',
+          '</span>'
+        ));
+      ?>
 		</footer><!-- .entry-footer -->
 
 	<?php else : ?>
