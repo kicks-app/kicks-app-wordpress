@@ -23,6 +23,7 @@
 			<?php //entry_meta(); 
 			?>
 			<?php
+			  // Edit post link
         call_user_func_array(function_exists('wp_bootstrap_edit_post_link') ? 'wp_bootstrap_edit_post_link' : 'edit_post_link', array(
           sprintf(
             /* translators: %s: Name of current post */
@@ -31,8 +32,8 @@
           ),
           '<span class="edit-link">',
           '</span>'
-        ));
-      ?>
+        ) );
+      ?>  
 		</footer><!-- .entry-footer -->
 
 	<?php else : ?>
