@@ -18,7 +18,7 @@
 
 get_header(); ?>
 <div class="row">
-	<div class="col-md-8">
+	<div class="col-lg-8">
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -45,12 +45,12 @@ get_header(); ?>
 			// End the loop.
 			endwhile;
 
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-				'next_text'          => __( 'Next page', 'twentysixteen' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
-			) );
+      // Previous/next page navigation.
+      call_user_func_array(function_exists('wp_bootstrap_posts_pagination') ? 'wp_bootstrap_posts_pagination' : 'the_posts_pagination', array( array(
+        'prev_text'          => __( 'Previous page', 'kicks-app' ),
+        'next_text'          => __( 'Next page', 'kicks-app' ),
+        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'kicks-app' ) . ' </span>',
+      ) ) );
 
 		// If no content, include the "No posts found" template.
 		else :
@@ -62,7 +62,7 @@ get_header(); ?>
 		</main><!-- .site-main -->
 	</section><!-- .content-area -->
   </div>
-  	<div class="col-md-4">
+  	<div class="col-lg-4">
   <?php get_sidebar(); ?>
   </div>
 </div>

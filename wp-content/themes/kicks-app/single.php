@@ -9,9 +9,10 @@
 
 get_header(); ?>
 <div class="row">
-	<div class="col-md-8">
+	<div class="col-lg-8">
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
+			  SINGLE
 				<?php
 				// Start the loop.
 				while ( have_posts() ) : the_post();
@@ -25,15 +26,21 @@ get_header(); ?>
 					}
 		
 					if ( is_singular( 'attachment' ) ) {
-						// Parent post navigation.
-						the_post_navigation( array(
-							'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'twentysixteen' ),
-						) );
+            // Parent post navigation.
+            call_user_func_array(function_exists('wp_bootstrap_post_nagination') ? 'wp_bootstrap_post_nagination' : 'the_post_navigation', array( array(
+              'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'kicks-app' ),
+            ) ) );
+            
 					} elseif ( is_singular( 'post' ) ) {
-						wp_bootstrap_post_navigation( array(
-              'next_text' => '<span class="post-title">%title</span>',
-              'prev_text' => '<span class="post-title">%title</span>'
-            ) );
+						// Previous/next post navigation.
+					  call_user_func_array(function_exists('wp_bootstrap_post_nagination') ? 'wp_bootstrap_post_nagination' : 'the_post_navigation', array( array(
+              'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'kicks-app' ) . '</span> ' .
+                '<span class="screen-reader-text">' . __( 'Next post:', 'kicks-app' ) . '</span> ' .
+                '<span class="post-title">%title</span>',
+              'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'kicks-app' ) . '</span> ' .
+                '<span class="screen-reader-text">' . __( 'Previous post:', 'kicks-app' ) . '</span> ' .
+                '<span class="post-title">%title</span>',
+            ) ) );
 					}
 		
 					// End of the loop.
@@ -43,7 +50,7 @@ get_header(); ?>
 			</main><!-- .site-main -->
 		</div><!-- .content-area -->
 	</div>
-	<div class="col-md-4">
+	<div class="col-lg-4">
 		<?php get_sidebar(); ?>
 	</div>
 </div>
