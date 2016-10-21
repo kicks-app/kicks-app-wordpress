@@ -110,7 +110,7 @@ Already contained is a Bootstrap-based Starter Template. See [here](./wp-content
 Thanks to Composer and [Wordpress Packagist](https://wpackagist.org/) you can simply require any registered Wordpress Themes from the command line:
 
 ```cli
-php composer.phar require wpackagist/twentysixteen
+php composer.phar require wpackagist-theme/twentysixteen
 ``` 
 
 ### Plugins
@@ -120,7 +120,7 @@ Composer initially downloads [Regenerate Thumbnails] since this is needed quite 
 Thanks to Composer and [Wordpress Packagist](https://wpackagist.org/) you can simply require any registered Wordpress Plugins from the command line:
 
 ```cli
-php composer.phar require wpackagist/advanced-custom-fields
+php composer.phar require wpackagist-plugin/advanced-custom-fields
 ```
 
 ## Production
