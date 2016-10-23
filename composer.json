@@ -2,8 +2,6 @@
   "name": "kicks-app-wordpress",
   "description": "Wordpress Development Stack",
   "version": "0.1.0",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "config": {
     "vendor-dir": "vendor/lib"
   },
@@ -31,12 +29,12 @@
       "type": "package",
       "package": {
         "name": "wp-bootstrap-hooks",
-        "version": "dev-dev",
+        "version": "0.1.0-alpha.1",
         "type": "wordpress-muplugin",
         "source": {
           "type": "git",
           "url": "https://github.com/rexblack/wp-bootstrap-hooks.git",
-          "reference": "dev"
+          "reference": "v0.1.0-alpha.1"
         }
       }
     }
@@ -44,7 +42,7 @@
   "require": {
     "wordpress": "4.6.1",
     "wemakecustom/wp-mu-loader": "*",
-    "wp-bootstrap-hooks": "dev-dev",
+    "wp-bootstrap-hooks": "0.1.0-alpha.1",
     "wpackagist-plugin/regenerate-thumbnails":">=2.2.6",
     "vlucas/phpdotenv": "*"
   },
