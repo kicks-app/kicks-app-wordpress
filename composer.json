@@ -33,8 +33,21 @@
         "type": "wordpress-muplugin",
         "source": {
           "type": "git",
-          "url": "https://github.com/rexblack/wp-bootstrap-hooks.git",
+          "url": "https://github.com/benignware/wp-bootstrap-hooks.git",
           "reference": "v0.1.0-alpha.1"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wp-findus",
+        "version": "dev-master",
+        "type": "wordpress-muplugin",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/rexblack/wp-bootstrap-hooks.git",
+          "reference": "master"
         }
       }
     }
@@ -43,6 +56,7 @@
     "wordpress": "4.6.1",
     "wemakecustom/wp-mu-loader": "*",
     "wp-bootstrap-hooks": "0.1.0-alpha.1",
+    "wp-findus": "dev-master",
     "wpackagist-plugin/regenerate-thumbnails":">=2.2.6",
     "vlucas/phpdotenv": "*"
   },
