@@ -4,7 +4,8 @@
   "description": "Wordpress Kickstarter template integrating Bootstrap, ES6, SCSS and more",
   "main": "index.js",
   "dependencies": {
-    "bootstrap-sass": "^3.3.6"
+    "bootstrap-sass": "^3.3.6",
+    "turbolinks": "^5.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.1",
