@@ -45,7 +45,12 @@ module.exports = [{
       {
         test: require.resolve('tether'),
         loader: 'expose?Tether!expose?$'
+      },
+      {
+        test: require.resolve('turbolinks'),
+        loader: 'expose?turbolinks!expose?$'
       }
+      
     ]
   },
   externals: {
