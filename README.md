@@ -79,6 +79,13 @@ It should look something like this:
 
 #### Add a virtual host
 
+Make sure, you included vhosts-config in apache's `httpd.conf`:
+
+```ini
+# Virtual hosts
+Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
+```
+
 Open `conf/extra/vhost.conf` from your Apache home directory and add a virtual host as follows:
 
 ```ini
