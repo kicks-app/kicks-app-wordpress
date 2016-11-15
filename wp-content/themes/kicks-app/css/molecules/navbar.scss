@@ -1,18 +1,4 @@
 .navbar {
-  &.pos-f-t {
-    .admin-bar & {
-      top: 32px;
-      @media screen and (max-width: 783px) {
-        top: 46px;
-      }
-      @media screen and (max-width: 600px) {
-        position: absolute;
-      }
-    }
-    + * {
-      margin-top: 60px;
-    }
-  }
   // FIXME: Impossible to align navbar-toggler in markup
   @include media-breakpoint-down(sm) {
     text-align: right;

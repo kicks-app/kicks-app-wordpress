@@ -1,0 +1,10 @@
+.pos-f-t {
+  &-r {
+    position: absolute;
+  }
+  &-r & {
+    width: 100%;
+    right: auto;
+    left: auto;
+  }
+}

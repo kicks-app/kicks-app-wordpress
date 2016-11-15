@@ -1,9 +1,24 @@
 .site {
   height: 100%;
+  background: #fff;
   .admin-bar & {
     margin-top: 32px;
   }
   &-header {
+    &.pos-f-t-r {
+      .admin-bar & {
+        top: 32px;
+        @media screen and (max-width: 783px) {
+          top: 46px;
+        }
+        @media screen and (max-width: 600px) {
+          position: absolute;
+        }
+      }
+      + * {
+        padding-top: 58px;
+      }
+    }
   }
   &-content {
     box-sizing: border-box;

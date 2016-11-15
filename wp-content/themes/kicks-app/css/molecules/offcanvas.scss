@@ -1,0 +1,33 @@
+.offcanvas {
+  $offcanvas-width: 250px !default;
+  overflow: auto;
+  height: 100%;
+  width: $offcanvas-width;
+  position: fixed;
+  visibility: hidden;
+  transition: visibility 0s linear 0.5s;
+  top: 0;
+  ~ *:not(#{&}) {
+    position: relative;
+    transition: margin-left 0.5s ease-in;
+    width: 100%;
+    margin-left: 0;
+  }
+  &.active {
+    visibility: visible;
+    transition: visibility 0s linear;
+  }
+  $aligns: left right;
+  @each $align in $aligns {
+    &-#{$align} {
+      #{$align}: 0;
+      &.active ~ *:not(#{&}) {
+        margin-left: if($align == right, -$offcanvas-width, $offcanvas-width);
+        //margin-right: if($align == right, $offcanvas-width, -$offcanvas-width);
+      }
+    }
+  }
+}
+body {
+  overflow-x: hidden;
+}

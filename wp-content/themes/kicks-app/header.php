@@ -22,46 +22,56 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<aside id="offcanvas-left" class="offcanvas offcanvas-left">
+		Hello World Left
+	</aside>
+	<aside id="offcanvas-right" class="offcanvas offcanvas-right">
+		Hello World Right
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+<p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+
+<p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+
+<p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
+
+<p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+
+
+	</aside>
+
+
 <div id="page" class="site">
-	<div class="site-inner">
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
 
-		<header id="masthead" class="site-header navbar navbar-light bg-faded pos-f-t" role="banner">
-			<div class="site-header-main container">
-			  <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-			  <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#navbar-content"" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
-			  <div class="navbar-toggleable-sm collapse" id="navbar-content">
-			    <?php
-		            // Primary navigation menu.
-		            wp_nav_menu( array(
-		              'menu'              => 'primary',
-		              'theme_location'    => 'primary',
-		              'container' => 'false' 
-		            ));
-		         ?>
-			  </div>
-			</div><!-- .site-header-main -->
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
+	<header id="masthead" class="site-header pos-f-t-r" role="banner">
+		<div class="site-header-main">
+		  <!-- <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<?php bloginfo( 'name' ); ?>
+			</a> -->
 
-			<?php if ( get_header_image() ) : ?>
-				<?php
-					/**
-					 * Filter the default twentysixteen custom header sizes attribute.
-					 *
-					 * @since Twenty Sixteen 1.0
-					 *
-					 * @param string $custom_header_sizes sizes attribute
-					 * for Custom Header. Default '(max-width: 709px) 85vw,
-					 * (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px'.
-					 */
-					$custom_header_sizes = apply_filters( 'twentysixteen_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
-				?>
-				<div class="header-image">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-					</a>
-				</div><!-- .header-image -->
-			<?php endif; // End header image check. ?>
-		</header><!-- .site-header -->
-
+			<nav class="pos-f-t navbar navbar-light bg-faded">
+				<div class="container">
+					<button class="navbar-brand hidden-md-up" type="button" data-toggle="offcanvas" data-target="#offcanvas-left" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+						Left
+					</button>
+				  <!-- <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#navbar-content aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button> -->
+					<button class="hidden-md-up" type="button" data-toggle="offcanvas" data-target="#offcanvas-right" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+						Right
+					</button>
+					<div class="navbar-toggleable-sm collapse" id="navbar-content">
+				    <?php
+			            // Primary navigation menu.
+			            wp_nav_menu( array(
+			              'menu'              => 'primary',
+			              'theme_location'    => 'primary',
+			              'container' => 'false'
+			            ));
+			         ?>
+				  </div>
+				</div><!-- .site-header-main -->
+			</nav>
+		</div>
+	</header><!-- .site-header -->
 		<div id="content" class="site-content">
-			<div class="container">
+					<div class="container">
