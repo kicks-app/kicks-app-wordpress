@@ -4600,6 +4600,10 @@ a.bg-danger:focus, a.bg-danger:hover {
   width: auto;
   z-index: 100000; }
 
+img {
+  max-width: 100%;
+  height: auto; }
+
 body {
   margin: 30px;
   max-width: 768px; }

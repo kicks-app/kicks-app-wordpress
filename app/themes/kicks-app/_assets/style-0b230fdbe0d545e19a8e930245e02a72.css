@@ -28,44 +28,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 *(=) require_self
 *(=) require main
 **/
-/**
- * Accessibility
- */
-/* Text meant only for screen readers */
-.says,
-.screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  overflow: hidden;
-  position: absolute !important;
-  width: 1px; }
-
-/* must have higher specificity than alternative color schemes inline styles */
-.site .skip-link {
-  background-color: #f1f1f1;
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
-  color: #21759b;
-  display: block;
-  font: bold 14px/normal "Noto Sans", sans-serif;
-  left: -9999em;
-  outline: none;
-  padding: 15px 23px 14px;
-  text-decoration: none;
-  text-transform: none;
-  top: -9999em; }
-
-.logged-in .site .skip-link {
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  font: bold 14px/normal "Open Sans", sans-serif; }
-
-.site .skip-link:focus {
-  clip: auto;
-  height: auto;
-  left: 6px;
-  top: 7px;
-  width: auto;
-  z-index: 100000; }
-
 /*!
  * Bootstrap v4.0.0-alpha.2 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -4626,6 +4588,44 @@ a.bg-danger:focus, a.bg-danger:hover {
   .hidden-print {
     display: none !important; } }
 
+/**
+ * Accessibility
+ */
+/* Text meant only for screen readers */
+.says,
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px; }
+
+/* must have higher specificity than alternative color schemes inline styles */
+.site .skip-link {
+  background-color: #f1f1f1;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+  color: #21759b;
+  display: block;
+  font: bold 14px/normal "Noto Sans", sans-serif;
+  left: -9999em;
+  outline: none;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  text-transform: none;
+  top: -9999em; }
+
+.logged-in .site .skip-link {
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  font: bold 14px/normal "Open Sans", sans-serif; }
+
+.site .skip-link:focus {
+  clip: auto;
+  height: auto;
+  left: 6px;
+  top: 7px;
+  width: auto;
+  z-index: 100000; }
+
 .navbar-fixed-top + .container {
   padding-top: 80px; }
 
@@ -4635,7 +4635,7 @@ a.bg-danger:focus, a.bg-danger:hover {
     .admin-bar .navbar-fixed-top {
       top: 32px; } }
 
-@media (max-width: 543px) {
+@media (max-width: 767px) {
   .navbar .container {
     padding-left: 0; }
   .navbar .navbar-brand {
@@ -4657,6 +4657,13 @@ a.bg-danger:focus, a.bg-danger:hover {
       color: inherit; }
       .navbar .navbar-nav .dropdown-menu .dropdown-item:hover {
         background: inherit; } }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+* {
+  box-sizing: border-box; }
 
 body {
   position: relative;
@@ -4683,3 +4690,18 @@ body {
       display: block; }
   body article {
     margin-bottom: 50px; }
+
+.jumbotron {
+  min-height: 400px;
+  overflow: hidden; }
+  .jumbotron img {
+    width: auto;
+    max-width: none;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%; }
+  .jumbotron h1,
+  .jumbotron h1 + p {
+    position: relative; }
