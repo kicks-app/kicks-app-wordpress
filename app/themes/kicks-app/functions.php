@@ -26,7 +26,48 @@
  */
 
 if (function_exists('wp_bootstrap_hooks')) {
-  wp_bootstrap_hooks(4);
+  wp_bootstrap_hooks();
+
+  // Bootstrap 4 Content Options
+  function bootstrap4_content_options($options) {
+    return array_merge($options, array(
+      'img_class' => 'img-fluid',
+      'align_center_class' => 'mx-auto',
+      'edit_post_link_class' => 'btn btn-secondary'
+    ));
+  }
+  add_filter( 'bootstrap_content_options', 'bootstrap4_content_options', 1 );
+
+  // Bootstrap 4 Forms Options
+  function bootstrap4_forms_options($options) {
+    return array_merge($options, array(
+      'search_submit_label' => '<i>🔎</i>'
+    ));
+  }
+  add_filter( 'bootstrap_forms_options', 'bootstrap4_forms_options', 1 );
+
+  // Bootstrap 4 Gallery Options
+  function bootstrap4_gallery_options($options) {
+    return array_merge($options, array(
+      'gallery_thumbnail_class' => '',
+      'gallery_thumbnail_img_class' => 'img-thumbnail mb-2',
+      'close_button_class' => 'btn btn-secondary',
+      'carousel_item_class' => 'carousel-item'
+    ));
+  }
+  add_filter( 'bootstrap_gallery_options', 'bootstrap4_gallery_options', 1 );
+
+  // Bootstrap 4 Widget Options
+  function bootstrap4_widgets_options($options) {
+    return array_merge($options, array(
+      'widget_class' => 'card',
+      'widget_modifier_class' => '',
+      'widget_header_class' => 'card-header',
+      'widget_content_class' => 'card-block'
+    ));
+  }
+  add_filter( 'bootstrap_widgets_options', 'bootstrap4_widgets_options', 1 );
+
 }
 
 /**
@@ -250,7 +291,7 @@ function twentyfifteen_scripts() {
     'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen' ) . '</span>',
     'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'twentyfifteen' ) . '</span>',
   ) );
-  
+
 }
 add_action( 'wp_enqueue_scripts', 'twentyfifteen_scripts' );
 
@@ -349,5 +390,3 @@ require get_template_directory() . '/inc/template-tags.php';
  * @since Twenty Fifteen 1.0
  */
 require get_template_directory() . '/inc/customizer.php';
-
- 
