@@ -27,7 +27,9 @@
  */
 
 
-wp_bootstrap_hooks(3);
+ /** Bootstrap Hooks **/
+ wp_bootstrap_hooks();
+
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -250,7 +252,7 @@ function twentyfifteen_scripts() {
     'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'twentyfifteen' ) . '</span>',
     'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'twentyfifteen' ) . '</span>',
   ) );
-  
+
 }
 add_action( 'wp_enqueue_scripts', 'twentyfifteen_scripts' );
 
@@ -349,5 +351,3 @@ require get_template_directory() . '/inc/template-tags.php';
  * @since Twenty Fifteen 1.0
  */
 require get_template_directory() . '/inc/customizer.php';
-
- 
