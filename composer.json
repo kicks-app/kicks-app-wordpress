@@ -15,21 +15,6 @@
     {
       "type": "package",
       "package": {
-        "name": "wordpress",
-        "type": "webroot",
-        "version": "4.8.1",
-        "dist": {
-          "type": "zip",
-          "url": "https://github.com/WordPress/WordPress/archive/4.8.1.zip"
-        },
-        "require" : {
-	    	"fancyguy/webroot-installer": "1.1.0"
-	    }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
         "name": "wp-bootstrap-hooks",
         "version": "dev-dev",
         "type": "wordpress-muplugin",
@@ -42,11 +27,9 @@
     }
   ],
   "require": {
-    "wordpress": "4.8.1",
     "wemakecustom/wp-mu-loader": "*",
     "wp-bootstrap-hooks": "dev-dev",
-    "wpackagist-plugin/regenerate-thumbnails":">=2.2.6",
-    "vlucas/phpdotenv": "*"
+    "wpackagist-plugin/regenerate-thumbnails":">=2.2.6"
   },
   "scripts": {
     "post-autoload-dump": [
