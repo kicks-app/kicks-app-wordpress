@@ -9,7 +9,7 @@ add_theme_support( 'automatic-feed-links' );
 // Enable support for Post Thumbnails on posts and pages.
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 900, 500, true );
-  
+
 // Switch default core markup for search form, comment form, and comments to output valid HTML5.
 add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption'  ));
 
@@ -41,7 +41,7 @@ register_sidebar( array(
 ) );
 
 // Remove admin-bar css
-require get_template_directory() . '/inc/remove-admin-bar-css.php';
+// require get_template_directory() . '/inc/remove-admin-bar-css.php';
 
 // Register menus
 register_nav_menus( array(
@@ -63,7 +63,7 @@ add_filter( 'widget_archives_args', 'limit_archives' );
  */
 if (function_exists('wp_bootstrap_hooks')) {
   wp_bootstrap_hooks();
-} 
+}
 
 // Show Font-Awesome search icon in Searchform
 function bootstrap_forms_options($options) {

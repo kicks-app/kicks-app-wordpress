@@ -22,35 +22,56 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<aside id="offcanvas-left" class="offcanvas offcanvas-left">
-		Hello World Left
-	</aside>
-	<aside id="offcanvas-right" class="offcanvas offcanvas-right">
-		Hello World Right
-		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-
-<p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
-
-<p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-
-<p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
-
-<p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
-
-
-	</aside>
-
-
 <div id="page" class="site">
-
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
-	<header id="masthead" class="site-header pos-f-t-r" role="banner">
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'kicks-app' ); ?></a>
+	<header id="masthead" class="site-header fixed-top " role="banner">
 		<div class="site-header-main">
 		  <!-- <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<?php bloginfo( 'name' ); ?>
 			</a> -->
-
-			<nav class="pos-f-t navbar navbar-light bg-faded">
+			<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+				<div class="container">
+		      <a class="navbar-brand" href="#"><?php bloginfo( 'name' ); ?></a>
+		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="navbar-toggler-icon"></span>
+		      </button>
+		      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+						<?php
+							// Primary navigation menu.
+							wp_nav_menu( array(
+								'menu'              => 'primary',
+								'theme_location'    => 'primary',
+								'container' => 'false'
+							));
+					 	?>
+		        <!-- <ul class="navbar-nav mr-auto">
+		          <li class="nav-item active">
+		            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link" href="#">Link</a>
+		          </li>
+		          <li class="nav-item">
+		            <a class="nav-link disabled" href="#">Disabled</a>
+		          </li>
+		          <li class="nav-item dropdown">
+		            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+		            <div class="dropdown-menu" aria-labelledby="dropdown01">
+		              <a class="dropdown-item" href="#">Action</a>
+		              <a class="dropdown-item" href="#">Another action</a>
+		              <a class="dropdown-item" href="#">Something else here</a>
+		            </div>
+		          </li>
+		        </ul> -->
+		        <!-- <form class="form-inline my-2 my-lg-0">
+		          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+		          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		        </form> -->
+		      </div>
+				</div>
+    </nav>
+<?php /*
+			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 				<div class="container">
 					<button class="navbar-brand hidden-md-up" type="button" data-toggle="offcanvas" data-target="#offcanvas-left" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 						Left
@@ -71,6 +92,7 @@
 				  </div>
 				</div><!-- .site-header-main -->
 			</nav>
+			*/ ?>
 		</div>
 	</header><!-- .site-header -->
 		<div id="content" class="site-content">
