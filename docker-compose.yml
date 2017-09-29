@@ -43,7 +43,7 @@ services:
   composer:
     image: composer/composer:php7
     container_name: composer
-    command: install
+    command: update
     working_dir: /var/www/html
     depends_on:
     - wordpress

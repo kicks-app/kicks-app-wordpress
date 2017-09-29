@@ -40,9 +40,6 @@ register_sidebar( array(
   'description'   => __( 'Add widgets here to appear in your sidebar.', 'kicks-app' )
 ) );
 
-// Remove admin-bar css
-// require get_template_directory() . '/inc/remove-admin-bar-css.php';
-
 // Register menus
 register_nav_menus( array(
   'primary' => __( 'Primary Menu',      'kicks-app' ),

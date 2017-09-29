@@ -1,11 +1,10 @@
 .site {
   height: 100%;
-  height: 100%;
   display: flex;
   min-height: 100%;
   flex-direction: column;
   .admin-bar & {
-    margin-top: 32px;
+    // margin-top: 32px solid transparent;
   }
   &-header {
     $height: 56px;
@@ -19,9 +18,9 @@
         @media screen and (max-width: 600px) {
           position: absolute;
         }
-        + * {
-          flex-basis: calc(100% - $height - 32px);
-        }
+        // + * {
+        //   flex-basis: calc(100% - $height - 32px);
+        // }
       }
       + * {
         flex-basis: calc(100% - $height);
@@ -43,4 +42,8 @@
   &-footer {
     flex: 0 1 auto;
   }
+}
+
+.sidebar {
+  display: none;
 }

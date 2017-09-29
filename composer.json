@@ -24,11 +24,25 @@
           "reference": "dev"
         }
       }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wp-social-menu-icons",
+        "version": "dev-master",
+        "type": "wordpress-plugin",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/benignware-labs/wp-social-menu-icons.git",
+          "reference": "master"
+        }
+      }
     }
   ],
   "require": {
     "wemakecustom/wp-mu-loader": "*",
     "wp-bootstrap-hooks": "dev-dev",
+    "wp-social-menu-icons": "dev-master",
     "wpackagist-plugin/regenerate-thumbnails":">=2.2.6"
   },
   "scripts": {
