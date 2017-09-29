@@ -27,7 +27,7 @@ add_image_size( 'gallery-zoom', 900, 500, true );
 // Enqueue Scripts
 function enqueue_scripts() {
   wp_enqueue_script( 'jquery' );
-  wp_enqueue_style( 'app', get_template_directory_uri() . '/_assets/index.css');
+  wp_enqueue_style( 'app', get_template_directory_uri() . '/_assets/bundle.css');
   wp_enqueue_script( 'vendor', get_template_directory_uri() . '/_assets/vendor.js', array( 'jquery'), false, true);
   wp_enqueue_script( 'app', get_template_directory_uri() . '/_assets/app.js', array( 'vendor'), false, true);
 }
