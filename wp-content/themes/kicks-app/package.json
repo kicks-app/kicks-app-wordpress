@@ -23,6 +23,8 @@
     "babel-preset-es2015-node4": "^1.0.1",
     "babel-preset-stage-0": "^6.5.0",
     "babelify": "^7.3.0",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
     "css-loader": "^0.25.0",
     "cssnano": "^3.7.7",
     "eslint": "^1.9.0",
@@ -39,8 +41,9 @@
     "webpack": "^1.13.2"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js --debug --progress",
-    "watch": "npm run build -- --watch"
+    "build": "webpack --config ./webpack.config.js --debug --progress",
+    "watch": "npm run build -- --watch",
+    "start": "npm run watch"
   },
   "keywords": [
     "wordpress-theme"

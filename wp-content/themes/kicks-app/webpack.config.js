@@ -6,6 +6,7 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var VENDOR_PATTERN = /(node_modules|bower_components)/;
 var FILE_PATTERN = /\.(jpe?g|gif|png|svg|woff(2)?|ttf|eot)(\?[a-z0-9=\.]+)?$/;
 var OUTPUT_PATH = '_assets';
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 var isExternal = function(module) {
   var userRequest = module.userRequest;
@@ -21,6 +22,8 @@ var isExternal = function(module) {
 var extractApp = new ExtractTextPlugin(OUTPUT_PATH + '/index.css', {
   allChunks: false
 });
+
+
 
 module.exports = [{
   name: 'js',
@@ -50,7 +53,7 @@ module.exports = [{
         test: require.resolve('turbolinks'),
         loader: 'expose?turbolinks!expose?$'
       }
-      
+
     ]
   },
   externals: {
@@ -99,6 +102,13 @@ module.exports = [{
   plugins: [
     new webpack.NoErrorsPlugin(),
     extractApp,
-    new OptimizeCssAssetsPlugin()
+    new OptimizeCssAssetsPlugin(),
+    new BrowserSyncPlugin({
+      proxy: 'http://kicks-app.local',
+      files: [
+        '**/*.php'
+      ],
+      reloadDelay: 0
+    })
   ]
 }];
