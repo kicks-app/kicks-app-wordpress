@@ -16,12 +16,12 @@
       "type": "package",
       "package": {
         "name": "wp-bootstrap-hooks",
-        "version": "dev-dev",
+        "version": "dev-master",
         "type": "wordpress-muplugin",
         "source": {
           "type": "git",
-          "url": "https://github.com/rexblack/wp-bootstrap-hooks.git",
-          "reference": "dev"
+          "url": "https://github.com/benignware/wp-bootstrap-hooks.git",
+          "reference": "master"
         }
       }
     },
@@ -41,7 +41,7 @@
   ],
   "require": {
     "wemakecustom/wp-mu-loader": "*",
-    "wp-bootstrap-hooks": "dev-dev",
+    "wp-bootstrap-hooks": "dev-master",
     "wp-social-menu-icons": "dev-master",
     "wpackagist-plugin/regenerate-thumbnails":">=2.2.6"
   },

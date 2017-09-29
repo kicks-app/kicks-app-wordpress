@@ -21,9 +21,6 @@ update_option( 'thumbnail_size_w', 230 );
 update_option( 'thumbnail_size_h', 230 );
 update_option( 'thumbnail_crop', 1 );
 
-// Register custom image sizes
-add_image_size( 'gallery-zoom', 900, 500, true );
-
 // Enqueue Scripts
 function enqueue_scripts() {
   wp_enqueue_script( 'jquery' );
@@ -117,3 +114,11 @@ function bootstrap4_widgets_options($options) {
   ));
 }
 add_filter( 'bootstrap_widgets_options', 'bootstrap4_widgets_options', 1 );
+
+
+// Social menu icons
+function social_nav_menu_args($args) {
+  $args['social_icon_prefix'] = 'fa fa-';
+  return $args;
+}
+add_filter( 'wp_nav_menu_args', 'social_nav_menu_args', 1, 2 );

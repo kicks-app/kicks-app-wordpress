@@ -27,9 +27,6 @@ services:
     volumes:
     - wordpress:/var/www/html
     - ./wp-content/themes/kicks-app:/var/www/html/wp-content/themes/kicks-app
-    - /var/www/html/wp-content/themes/kicks-app/node_modules
-    - /var/www/html/wp-content/themes/kicks-app/js
-    - /var/www/html/wp-content/themes/kicks-app/css
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
@@ -43,13 +40,15 @@ services:
   composer:
     image: composer/composer:php7
     container_name: composer
-    command: update
+    command: install
     working_dir: /var/www/html
     depends_on:
     - wordpress
     volumes:
     - ./composer.json:/var/www/html/composer.json
     - wordpress:/var/www/html
+    links:
+    - wordpress:wordpress
 volumes:
   db_data:
   wordpress:
