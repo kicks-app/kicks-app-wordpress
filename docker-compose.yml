@@ -13,7 +13,7 @@ services:
     - db_data:/var/lib/mysql
     restart: always
   wordpress:
-    container_name: wordpress
+    container_name: ${COMPOSE_PROJECT_NAME}-wordpress
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
@@ -26,12 +26,12 @@ services:
     restart: always
     volumes:
     - wordpress:/var/www/html
-    - ./wp-content/themes/kicks-app:/var/www/html/wp-content/themes/kicks-app
+    - ./wp-content:/var/www/html/wp-content
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
+    container_name: ${COMPOSE_PROJECT_NAME}-phpmyadmin
     environment:
-     - PMA_ARBITRARY=1
+      PMA_ARBITRARY: 1
     restart: always
     ports:
      - 8001:80
@@ -39,13 +39,15 @@ services:
      - /sessions
   composer:
     image: composer/composer:php7
-    container_name: composer
+    container_name: ${COMPOSE_PROJECT_NAME}-composer
     command: install
     working_dir: /var/www/html
     depends_on:
     - wordpress
     volumes:
     - ./composer.json:/var/www/html/composer.json
+    - ./vendor:/var/www/html/vendor
+    - ./wp-content:/var/www/html/wp-content
     - wordpress:/var/www/html
     links:
     - wordpress:wordpress

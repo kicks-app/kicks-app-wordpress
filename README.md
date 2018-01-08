@@ -20,7 +20,13 @@ docker-compose up -d
 
 Wordpress should now be available on `localhost:8000`
 
-### Useful commands
+### Useful docker commands
+
+List all running docker services
+
+```cli
+docker ps
+```
 
 Shutdown services
 
@@ -39,6 +45,8 @@ Open bash at the wordpress container
 ```cli
 docker exec -it wordpress bash
 ```
+
+Global
 
 [One liner](https://coderwall.com/p/ewk0mq/stop-remove-all-docker-containers) to stop / remove all of Docker containers
 
