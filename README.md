@@ -3,7 +3,6 @@ kicks-app-wordpress
 
 > Wordpress development stack
 
-
 # Development
 
 ## Setup

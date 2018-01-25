@@ -46,7 +46,6 @@ services:
     - wordpress
     volumes:
     - ./composer.json:/var/www/html/composer.json
-    - ./vendor:/var/www/html/vendor
     - ./wp-content:/var/www/html/wp-content
     - wordpress:/var/www/html
     links:
