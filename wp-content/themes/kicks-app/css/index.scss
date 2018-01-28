@@ -1,7 +1,14 @@
-@import "globals/fonts";
-@import "globals/colors";
-@import "globals/root";
+// Globals
 @import "globals/accessibility";
+@import "globals/fonts";
+@import "globals/bootstrap";
+@import "globals/hamburgers";
+@import "globals/root";
+
+// Vendor
 @import "font-awesome/scss/font-awesome";
 @import "bootstrap/scss/bootstrap";
+@import "hamburgers/_sass/hamburgers/hamburgers";
+
+// App
 @import "organisms/site";

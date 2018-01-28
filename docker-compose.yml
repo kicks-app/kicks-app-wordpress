@@ -13,23 +13,21 @@ services:
     - db_data:/var/lib/mysql
     restart: always
   wordpress:
-    container_name: ${COMPOSE_PROJECT_NAME}-wordpress
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
     depends_on:
     - db
+    restart: always
     image: wordpress:latest
     ports:
     - 8000:80
-    restart: always
     volumes:
     - wordpress:/var/www/html
     - ./wp-content:/var/www/html/wp-content
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: ${COMPOSE_PROJECT_NAME}-phpmyadmin
     environment:
       PMA_ARBITRARY: 1
     restart: always
@@ -38,14 +36,14 @@ services:
     volumes:
      - /sessions
   composer:
-    image: composer/composer:php7
-    container_name: ${COMPOSE_PROJECT_NAME}-composer
+    image: composer
     command: install
     working_dir: /var/www/html
     depends_on:
     - wordpress
     volumes:
     - ./composer.json:/var/www/html/composer.json
+    - ./composer.lock:/var/www/html/composer.lock
     - ./wp-content:/var/www/html/wp-content
     - wordpress:/var/www/html
     links:

@@ -14,12 +14,12 @@
       "type": "package",
       "package": {
         "name": "wp-bootstrap-hooks",
-        "version": "v0.0.3",
+        "version": "v0.1.0-beta",
         "type": "wordpress-muplugin",
         "source": {
           "type": "git",
           "url": "https://github.com/benignware/wp-bootstrap-hooks.git",
-          "reference": "v0.0.3"
+          "reference": "v0.1.0-beta"
         }
       }
     },
@@ -65,7 +65,7 @@
   ],
   "require": {
     "wemakecustom/wp-mu-loader": "*",
-    "wp-bootstrap-hooks": ">=0.0.3",
+    "wp-bootstrap-hooks": ">=0.1.0-beta",
     "wp-social-menu-icons": ">=0.0.1",
     "wp-swiper-shortcode": ">=0.0.6",
     "wp-responsive-thumbnail": ">=0.0.1",
@@ -73,6 +73,9 @@
     "wpackagist-plugin/post-type-archive-links": ">=1.3.1",
     "wpackagist-plugin/post-thumbnail-editor": ">=2.4.8",
     "wpackagist-plugin/thumbnail-upscale": ">=1.1"
+  },
+  "require-dev": {
+    "vlucas/phpdotenv": ">=2.4.0"
   },
   "scripts": {
     "post-autoload-dump": [

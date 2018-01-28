@@ -3,63 +3,105 @@ kicks-app-wordpress
 
 > Wordpress development stack
 
-# Development
+## Development
 
-## Setup
+Download [Docker CE](https://www.docker.com/get-docker) for your OS.
 
-Install docker for [Mac OS X](https://store.docker.com/editions/community/docker-ce-desktop-mac) or [Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
+### Environment
 
-### Run server
-
-Open a terminal at the project directory and start services
+Point terminal to your project root and start up the container.
 
 ```cli
 docker-compose up -d
 ```
 
-Wordpress should now be available on `localhost:8000`
+Open your browser at [http://localhost:8000](http://localhost:8000).
 
-### Useful docker commands
+Go through Wordpress installation and activate the demo theme.
 
-List all running docker services
+### Useful commands
+
+#### Startup services
 
 ```cli
-docker ps
+docker-compose up -d
 ```
+You may omit the `-d`-flag for verbose output.
 
-Shutdown services
+#### Shutdown services
+
+In order to shutdown services, issue the following command
 
 ```cli
 docker-compose down
 ```
 
-Update composer dependencies
+#### List containers
 
 ```cli
-docker-compose run --rm composer update
+docker-compose ps
 ```
 
-Open bash at the wordpress container
+#### Remove containers
 
 ```cli
-docker exec -it wordpress bash
+docker-compose rm
 ```
 
-Global
+#### Open bash
 
-[One liner](https://coderwall.com/p/ewk0mq/stop-remove-all-docker-containers) to stop / remove all of Docker containers
+Open bash at wordpress directory
+
+```cli
+docker-compose exec wordpress bash
+```
+
+#### Update composer dependencies
+
+If it's complaining about the composer.lock file, you probably need to update the dependencies.
+
+```cli
+docker-compose run composer update
+```
+
+###### List all globally running docker containers
+
+```cli
+docker ps
+```
+
+###### Globally stop all running docker containers
 
 ```cli
 docker stop $(docker ps -a -q)
+```
+
+###### Globally remove all containers
+
+```cli
 docker rm $(docker ps -a -q)
 ```
 
+##### Remove all docker related stuff
+
+```cli
+docker system prune
+```
+
+
 ## Theme development
 
+Point your terminal at your theme directory
+
+```
+cd wp-content/themes/kicks-app
+```
+
 ### Install
+
 In order to build front-end assets you need to first install [nodejs](https://nodejs.org/en/).
 
-From theme directory in `wp-content/themes/[project]` install client dependencies
+From theme directory in `wp-content/themes/kicks-app` install client dependencies
 
 ```cli
 npm install

@@ -16,7 +16,6 @@ npm-debug.log
 # Composer
 vendor
 composer.phar
-composer.lock
 
 # Test
 test
