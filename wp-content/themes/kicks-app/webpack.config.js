@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const VENDOR_PATTERN = /(node_modules|bower_components)/;
 const FILE_PATTERN = /\.(jpe?g|gif|png|svg|woff(2)?|ttf|eot|otf)(\?[a-z0-9=\.]*)?$/;
-const OUTPUT_PATH = './_assets';
+const OUTPUT_PATH = './dist';
 
 const isExternal = function(module) {
   const userRequest = module.userRequest;
