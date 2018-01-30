@@ -28,7 +28,9 @@
 		<div class="site-header-main">
 			<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 				<div class="container d-flex justify-space-between">
-		      <a class="navbar-brand" href="#">Fixed navbar</a>
+		      <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<?php bloginfo( 'name' ); ?>
+					</a>
 		      <a class="navbar-toggler border-0 p-0" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="hamburger hamburger--squeeze">
 							<span class="hamburger-box">
@@ -49,29 +51,6 @@
 		      </div>
 				</div>
     	</nav>
-
-			<!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-				<div class="container">
-					<a class="navbar-brand" href="#"><?php bloginfo( 'name' ); ?></a>
-					<a class="" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="hamburger hamburger--squeeze">
-							<span class="hamburger-box">
-								<span class="hamburger-inner"></span>
-							</span>
-						</span>
-					</a>
-					<div class="collapse navbar-collapse" id="navbar">
-						<?php
-							// Primary navigation menu.
-							wp_nav_menu( array(
-								'menu'              => 'primary',
-								'theme_location'    => 'primary',
-								'container' => 'false'
-							));
-						?>
-					</div>
-				</div>
-    	</nav> -->
 		</div>
 	</header><!-- .site-header -->
 		<div id="content" class="site-content">

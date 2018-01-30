@@ -1,14 +1,22 @@
+// Bootstrap
+@import "bootstrap/scss/bootstrap";
+
 // Globals
 @import "globals/accessibility";
 @import "globals/fonts";
-@import "globals/bootstrap";
+@import "globals/colors";
+@import "globals/typography";
+@import "globals/grid";
 @import "globals/hamburgers";
 @import "globals/root";
+@import "globals/body";
 
 // Vendor
 @import "font-awesome/scss/font-awesome";
-@import "bootstrap/scss/bootstrap";
 @import "hamburgers/_sass/hamburgers/hamburgers";
 
-// App
+// Organisms
 @import "organisms/site";
+
+// Molecules
+@import "molecules/card";

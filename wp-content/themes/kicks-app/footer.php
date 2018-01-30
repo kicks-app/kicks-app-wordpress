@@ -13,13 +13,14 @@
 		</div><!-- .site-content -->
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div class="navbar navbar navbar-dark bg-dark text-white">
+			<div class="navbar navbar-dark bg-dark text-white">
 				<div class="container">
 					<!-- <a class="navbar-brand" href="#"><?php bloginfo( 'name' ); ?></a> -->
 
 					<div class="site-info pull-left">
-						<!-- <span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span> | -->
-						<?php bloginfo( 'description' ); ?>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<?php bloginfo( 'name' ); ?>
+						</a> | <?php bloginfo( 'description' ); ?>
 					</div><!-- .site-info -->
 
 					<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'kicks-app' ); ?>">

@@ -9,7 +9,9 @@
 ?>
 
 <?php if ( is_active_sidebar( 'sidebar-1' )  ) : ?>
-	<aside id="secondary" class="sidebar widget-area card-columns" role="complementary">
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<div class="card-columns">
+			<?php dynamic_sidebar( 'sidebar-1' ); ?>
+		</div>
 	</aside><!-- .sidebar .widget-area -->
 <?php endif; ?>

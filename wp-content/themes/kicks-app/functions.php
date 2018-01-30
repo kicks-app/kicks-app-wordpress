@@ -60,65 +60,14 @@ if (function_exists('wp_bootstrap_hooks')) {
 }
 
 // Show Font-Awesome search icon in Searchform
-function bootstrap_forms_options($options) {
+add_filter( 'bootstrap_options', function($options) {
   return array_merge($options, array(
     'search_submit_label' => '<i class="fa fa-search"></i>'
   ));
-}
-add_filter( 'bootstrap_forms_options', 'bootstrap_forms_options' );
-
-// Apply custom image size to Bootstrap gallery zoom image
-function bootstrap_gallery_options($options) {
-  return array_merge($options, array(
-    'gallery_zoom_size' => 'gallery-zoom'
-  ));
-}
-add_filter( 'bootstrap_gallery_options', 'bootstrap_gallery_options' );
-
-// Bootstrap 4 Content Options
-function bootstrap4_content_options($options) {
-  return array_merge($options, array(
-    'img_class' => 'img-fluid',
-    'align_center_class' => 'mx-auto',
-    'edit_post_link_class' => 'btn btn-secondary'
-  ));
-}
-add_filter( 'bootstrap_content_options', 'bootstrap4_content_options', 1 );
-
-// Bootstrap 4 Forms Options
-function bootstrap4_forms_options($options) {
-  return array_merge($options, array(
-    'search_submit_label' => '<i>*</i>'
-  ));
-}
-add_filter( 'bootstrap_forms_options', 'bootstrap4_forms_options', 1 );
-
-// Bootstrap 4 Gallery Options
-function bootstrap4_gallery_options($options) {
-  return array_merge($options, array(
-    'gallery_thumbnail_class' => '',
-    'gallery_thumbnail_img_class' => 'img-thumbnail mb-2',
-    'close_button_class' => 'btn btn-secondary',
-    'carousel_item_class' => 'carousel-item'
-  ));
-}
-add_filter( 'bootstrap_gallery_options', 'bootstrap4_gallery_options', 1 );
-
-// Bootstrap 4 Widget Options
-function bootstrap4_widgets_options($options) {
-  return array_merge($options, array(
-    'widget_class' => 'card',
-    'widget_modifier_class' => '',
-    'widget_header_class' => 'card-header',
-    'widget_content_class' => 'card-block'
-  ));
-}
-add_filter( 'bootstrap_widgets_options', 'bootstrap4_widgets_options', 1 );
-
+} );
 
 // Social menu icons
-function social_nav_menu_args($args) {
+add_filter( 'wp_nav_menu_args', function($args) {
   $args['social_icon_prefix'] = 'fa fa-';
   return $args;
-}
-add_filter( 'wp_nav_menu_args', 'social_nav_menu_args', 1, 2 );
+}, 1, 2 );

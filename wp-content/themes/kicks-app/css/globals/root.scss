@@ -1,17 +1,9 @@
-html {
+:root {
   height: 100%;
-  // margin-top: 0 !important;
   &.admin-bar {
     height: calc(100% - 46px);
     @media screen and (min-width: 783px) {
       height: calc(100% - 32px);
     }
-  }
-}
-
-body {
-  height: 100%;
-  > svg {
-    display: none;
   }
 }

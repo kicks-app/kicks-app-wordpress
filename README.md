@@ -19,7 +19,7 @@ Open your browser at [http://localhost:8000](http://localhost:8000).
 
 Go through Wordpress installation and activate the demo theme.
 
-### Useful commands
+### Useful docker commands
 
 #### Startup services
 
