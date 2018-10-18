@@ -19,7 +19,7 @@
 						<div class="site-info py-2">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 								<?php bloginfo( 'name' ); ?>
-							</a> | <?php bloginfo( 'description' ); ?>
+							</a>&nbsp;<span class="d-inline-block"><?php bloginfo( 'description' ); ?></span>
 						</div><!-- .site-info -->
 					</div>
 					<div class="col-lg-4">

@@ -10,8 +10,10 @@
 
 <?php if ( is_active_sidebar( 'sidebar-1' )  ) : ?>
 	<aside id="secondary" class="sidebar widget-area" role="complementary">
-		<div class="card-columns sidebar-inner">
-			<?php dynamic_sidebar( 'sidebar-1' ); ?>
+		<div class="card-columns sidebar-inner pt-3">
+			<div class="sidebar-content">
+				<?php dynamic_sidebar( 'sidebar-1' ); ?>
+			</div>
 		</div>
 	</aside><!-- .sidebar .widget-area -->
 <?php endif; ?>

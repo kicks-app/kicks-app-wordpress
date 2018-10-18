@@ -14,9 +14,13 @@ $(document).on('ready turbolinks:load', () => {
 
   console.log('height', $('.site-header').height());
 
+  const top = $('.site-header').outerHeight(true);
+
+  console.log('TOP: ', top);
+
   sidebar = new StickySidebar('.sidebar', {
     resizeSensor: true,
-    topSpacing: $('.site-header').height(),
+    topSpacing: top,
     bottomSpacing: 0,
     containerSelector: '.site-content .container',
     innerWrapperSelector: '.sidebar-inner',

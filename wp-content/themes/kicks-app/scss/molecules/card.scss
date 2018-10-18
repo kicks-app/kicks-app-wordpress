@@ -12,4 +12,7 @@
       }
     }
   }
+  &-columns & {
+    @extend .mb-3;
+  }
 }

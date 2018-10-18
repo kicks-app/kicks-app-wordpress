@@ -11,7 +11,7 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header m-b-2">
 			<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
-				<span class="sticky-post"><?php _e( 'Featured', 'twentysixteen' ); ?></span>
+				<span class="sticky-post"><?php _e( 'Featured', 'kicks-app' ); ?></span>
 			<?php endif; ?>
 			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 		</header><!-- .entry-header -->
@@ -29,7 +29,7 @@
 			<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'kicks-app' ),
 				get_the_title()
 			) );
 
@@ -45,7 +45,7 @@
 		</div><!-- .entry-content -->
 
 		<footer class="entry-footer">
-			<?php //twentysixteen_entry_meta();
+			<?php //kicks-app_entry_meta();
 			?>
 			<?php
 	      // Edit post link

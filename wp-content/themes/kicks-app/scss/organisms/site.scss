@@ -11,6 +11,22 @@
   &-header {
     $height: 56px;
     height: $height;
+    transition: all 0.25s ease;
+
+    .navbar-brand,
+    .navbar-nav .nav-link {
+      @extend .text-light;
+      transition: all 0.25s ease;
+    }
+
+    .header-image:not(.page-offset) & {
+      background: transparent !important;
+      .navbar-brand,
+      .navbar-nav .nav-link {
+        @extend .text-dark;
+      }
+    }
+
     &.fixed-top {
       .admin-bar & {
         top: 32px;
@@ -33,11 +49,10 @@
   }
 
   &-content {
-    box-sizing: border-box;
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: auto;
-    padding: 2rem 0;
+    // padding: 2rem 0;
   }
 
   &-footer {
@@ -59,4 +74,6 @@
       }
     }
   }
+
+
 }
