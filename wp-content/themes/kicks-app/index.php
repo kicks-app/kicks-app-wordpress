@@ -28,33 +28,35 @@ get_header(); ?>
 					</header>
 				<?php endif; ?>
 
+				<?php if (have_posts()): ?>
+					<div class="row">
+						<?php while ( have_posts() ) : the_post() // Start the Loop. ?>
+							<div class="col-md-6 col-lg-6">
+								<?php
+									/*
+									 * Include the Post-Format-specific template for the content.
+									 * If you want to override this in a child theme, then include a file
+									 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+									 */
+									get_template_part( 'template-parts/content', get_post_format() );
+								?>
+							</div>
+						<?php endwhile; // End the loop. ?>
+					</div>
+				<?php endif; ?>
+
 				<?php
-				// Start the loop.
-				while ( have_posts() ) : the_post();
+		      // Previous/next page navigation.
+		      call_user_func_array(function_exists('wp_bootstrap_posts_pagination') ? 'wp_bootstrap_posts_pagination' : 'the_posts_pagination', array( array(
+		        'prev_text'          => __( 'Previous page', 'kicks-app' ),
+		        'next_text'          => __( 'Next page', 'kicks-app' ),
+		        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'kicks-app' ) . ' </span>',
+		      ) ) );
+				?>
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'template-parts/content', get_post_format() );
-
-				// End the loop.
-				endwhile;
-
-				// Previous/next page navigation.
-        call_user_func_array(function_exists('wp_bootstrap_posts_pagination') ? 'wp_bootstrap_posts_pagination' : 'the_posts_pagination', array( array(
-          'prev_text'          => __( 'Previous page', 'kicks-app' ),
-          'next_text'          => __( 'Next page', 'kicks-app' ),
-          'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'kicks-app' ) . ' </span>',
-        ) ) );
-
-			// If no content, include the "No posts found" template.
-			else :
-				get_template_part( 'template-parts/content', 'none' );
-
-			endif;
-			?>
+			<?php else : // If no content, include the "No posts found" template. ?>
+				<?php get_template_part( 'template-parts/content', 'none' ); ?>
+			<?php endif; ?>
 
 			</main><!-- .site-main -->
 		</div><!-- .content-area -->

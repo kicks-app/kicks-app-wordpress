@@ -13,7 +13,13 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php the_post_thumbnail(); ?>
+	<?php if (has_post_thumbnail()): ?>
+		<div class="figure">
+			<?php the_post_thumbnail('post-thumbnail', array(
+				'class' => 'figure-img img-fluid'
+			)); ?>
+		</div>
+	<?php endif; ?>
 
 	<div class="entry-content">
 		<?php
@@ -42,8 +48,8 @@
         '<span class="edit-link">',
         '</span>'
       ) );
-    ?>  
+    ?>
   </footer>
-	
+
 
 </article><!-- #post-## -->

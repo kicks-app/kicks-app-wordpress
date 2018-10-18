@@ -12,41 +12,40 @@ get_header(); ?>
 	<div class="col-lg-8">
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
-			  SINGLE
 				<?php
 				// Start the loop.
 				while ( have_posts() ) : the_post();
-		
+
 					// Include the single post content template.
 					get_template_part( 'template-parts/content', 'single' );
-		
+
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) {
 						comments_template();
 					}
-		
+
 					if ( is_singular( 'attachment' ) ) {
             // Parent post navigation.
-            call_user_func_array(function_exists('wp_bootstrap_post_nagination') ? 'wp_bootstrap_post_nagination' : 'the_post_navigation', array( array(
+            call_user_func_array(function_exists('wp_bootstrap_post_navigation') ? 'wp_bootstrap_post_navigation' : 'the_post_navigation', array( array(
               'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'kicks-app' ),
             ) ) );
-            
+
 					} elseif ( is_singular( 'post' ) ) {
 						// Previous/next post navigation.
-					  call_user_func_array(function_exists('wp_bootstrap_post_nagination') ? 'wp_bootstrap_post_nagination' : 'the_post_navigation', array( array(
-              'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'kicks-app' ) . '</span> ' .
-                '<span class="screen-reader-text">' . __( 'Next post:', 'kicks-app' ) . '</span> ' .
-                '<span class="post-title">%title</span>',
-              'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'kicks-app' ) . '</span> ' .
+					  call_user_func_array(function_exists('wp_bootstrap_post_navigation') ? 'wp_bootstrap_post_navigation' : 'the_post_navigation', array( array(
+							'next_text' => '<span class="post-title">%title</span>' .
+								'<span class="screen-reader-text">' . __( 'Next post:', 'kicks-app' ) . '</span> ' .
+								'<span class="meta-nav" aria-hidden="true"><i class="fa fa-chevron-right"></i></span> ',
+              'prev_text' => '<span class="meta-nav" aria-hidden="true"><i class="fa fa-chevron-left"></i></span> ' .
                 '<span class="screen-reader-text">' . __( 'Previous post:', 'kicks-app' ) . '</span> ' .
-                '<span class="post-title">%title</span>',
+                '<span class="post-title">%title</span>'
             ) ) );
 					}
-		
+
 					// End of the loop.
 				endwhile;
 				?>
-		
+
 			</main><!-- .site-main -->
 		</div><!-- .content-area -->
 	</div>

@@ -1,0 +1,26 @@
+#cookie-notice {
+  background: rgba($dark, 0.75) !important;
+  font-size: inherit !important;
+  text-align: left;
+
+  .cookie-notice-container {
+    @extend .container;
+    display: flex;
+    align-items: center;
+  }
+
+  .cn {
+    &-button {
+      @extend .btn-primary;
+      background-image: none;
+      vertical-align: middle;
+      padding: $btn-padding-y $btn-padding-x;
+      line-height: $btn-line-height;
+      border-width: $btn-border-width;
+      font-weight: $btn-font-weight;
+      box-shadow: $btn-box-shadow;
+      font-size: inherit;
+      margin-right: 0;
+    }
+  }
+}

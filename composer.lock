@@ -1,24 +1,73 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "0ad93b6739cbf4e6b869217a67663352",
-    "content-hash": "f644c02347246394f966497aa2eecdef",
+    "content-hash": "b55f8a549cc34bcf3a176414a886178d",
     "packages": [
         {
+            "name": "benignware/bootstrap-hooks",
+            "version": "v0.1.0-beta.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/benignware/wp-bootstrap-hooks.git",
+                "reference": "v0.1.0-beta.2"
+            },
+            "type": "wordpress-muplugin"
+        },
+        {
+            "name": "benignware/responsive-thumbnail",
+            "version": "v0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/benignware-labs/wp-reponsive-thumbnail.git",
+                "reference": "v0.0.2"
+            },
+            "type": "wordpress-plugin"
+        },
+        {
+            "name": "benignware/social-menu-icons",
+            "version": "v0.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/benignware-labs/wp-social-menu-icons.git",
+                "reference": "v0.0.5"
+            },
+            "type": "wordpress-plugin"
+        },
+        {
+            "name": "benignware/swiper-shortcode",
+            "version": "v0.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/benignware-labs/wp-swiper-shortcode.git",
+                "reference": "v0.0.7"
+            },
+            "type": "wordpress-plugin"
+        },
+        {
+            "name": "benignware/youtube-nocookie",
+            "version": "v0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/benignware-labs/wp-youtube-nocookie.git",
+                "reference": "v0.0.2"
+            },
+            "type": "wordpress-plugin"
+        },
+        {
             "name": "composer/installers",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "049797d727261bf27f2690430d935067710049c2"
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/049797d727261bf27f2690430d935067710049c2",
-                "reference": "049797d727261bf27f2690430d935067710049c2",
+                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
                 "shasum": ""
             },
             "require": {
@@ -125,7 +174,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-12-29 09:13:20"
+            "time": "2018-08-27T06:10:37+00:00"
         },
         {
             "name": "wemakecustom/wp-mu-loader",
@@ -167,47 +216,87 @@
                 "plugins",
                 "wordpress"
             ],
-            "time": "2015-01-21 14:32:26"
+            "time": "2015-01-21T14:32:26+00:00"
         },
         {
-            "name": "wp-bootstrap-hooks",
-            "version": "v0.1.0-beta",
+            "name": "wpackagist-plugin/cookie-notice",
+            "version": "1.2.44",
             "source": {
-                "type": "git",
-                "url": "https://github.com/benignware/wp-bootstrap-hooks.git",
-                "reference": "v0.1.0-beta"
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/cookie-notice/",
+                "reference": "tags/1.2.44"
             },
-            "type": "wordpress-muplugin"
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/cookie-notice.1.2.44.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/cookie-notice/"
         },
         {
-            "name": "wp-responsive-thumbnail",
-            "version": "v0.0.1",
+            "name": "wpackagist-plugin/disable-comments",
+            "version": "1.7.1",
             "source": {
-                "type": "git",
-                "url": "https://github.com/benignware-labs/wp-reponsive-thumbnail.git",
-                "reference": "v0.0.1"
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/disable-comments/",
+                "reference": "tags/1.7.1"
             },
-            "type": "wordpress-plugin"
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.7.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/disable-comments/"
         },
         {
-            "name": "wp-social-menu-icons",
-            "version": "v0.0.1",
+            "name": "wpackagist-plugin/fakerpress",
+            "version": "0.4.11",
             "source": {
-                "type": "git",
-                "url": "https://github.com/benignware-labs/wp-social-menu-icons.git",
-                "reference": "v0.0.1"
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/fakerpress/",
+                "reference": "trunk"
             },
-            "type": "wordpress-plugin"
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/fakerpress.zip?timestamp=1521872725",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/fakerpress/"
         },
         {
-            "name": "wp-swiper-shortcode",
-            "version": "v0.0.6",
+            "name": "wpackagist-plugin/featured-galleries",
+            "version": "2.1.0",
             "source": {
-                "type": "git",
-                "url": "https://github.com/benignware-labs/wp-swiper-shortcode.git",
-                "reference": "v0.0.6"
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/featured-galleries/",
+                "reference": "tags/2.1.0"
             },
-            "type": "wordpress-plugin"
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/featured-galleries.2.1.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/featured-galleries/"
         },
         {
             "name": "wpackagist-plugin/post-thumbnail-editor",
@@ -251,15 +340,15 @@
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/regenerate-thumbnails/",
-                "reference": "tags/3.0.1"
+                "reference": "tags/3.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.3.0.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.3.0.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -290,11 +379,62 @@
             "homepage": "https://wordpress.org/plugins/thumbnail-upscale/"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "vlucas/phpdotenv",
+            "version": "v2.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/phpdotenv.git",
+                "reference": "8abb4f9aa89ddea9d52112c65bbe8d0125e2fa8e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/8abb4f9aa89ddea9d52112c65bbe8d0125e2fa8e",
+                "reference": "8abb4f9aa89ddea9d52112c65bbe8d0125e2fa8e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dotenv\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "http://www.vancelucas.com"
+                }
+            ],
+            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "time": "2018-07-29T20:33:41+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "wp-bootstrap-hooks": 10
+        "benignware/bootstrap-hooks": 10
     },
     "prefer-stable": false,
     "prefer-lowest": false,

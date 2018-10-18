@@ -7,7 +7,6 @@
  * @since Twenty Sixteen 1.0
  */
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header m-b-1">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -16,8 +15,14 @@
         <?php the_excerpt(); ?>
       </p>
     <?php endif; ?>
-  
-    <?php the_post_thumbnail(); ?>
+
+		<?php if (has_post_thumbnail()): ?>
+			<div class="figure">
+	    	<?php the_post_thumbnail('post-thumbnail', array(
+					'class' => 'figure-img img-fluid'
+				)); ?>
+			</div>
+		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -40,7 +45,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php //twentysixteen_entry_meta(); 
+		<?php //twentysixteen_entry_meta();
 		?>
 		<div class="btn-group">
 		<?php
@@ -54,7 +59,7 @@
         '<span class="edit-link">',
         '</span>'
       ) );
-		?>  
+		?>
     </div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

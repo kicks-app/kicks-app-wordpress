@@ -27,7 +27,7 @@
 	<header id="masthead" class="site-header fixed-top" role="banner">
 		<div class="site-header-main">
 			<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-				<div class="container d-flex justify-space-between">
+				<div class="container">
 		      <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<?php bloginfo( 'name' ); ?>
 					</a>
@@ -53,5 +53,13 @@
     	</nav>
 		</div>
 	</header><!-- .site-header -->
+
+
+	<?php if ( (is_front_page() || is_home() ) && has_header_image()) : ?>
+		<div class="stage jumbotron jumbotron-fluid" style="background: url('<?= get_header_image() ?>') no-repeat center; background-size: cover;">
+			<!-- <img class="stage-img" src="<?= get_header_image() ?>"/> -->
+		</div>
+	<?php endif; ?>
+
 		<div id="content" class="site-content">
-					<div class="container">
+			<div class="container">

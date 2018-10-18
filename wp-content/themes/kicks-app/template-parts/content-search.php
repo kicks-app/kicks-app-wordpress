@@ -13,14 +13,20 @@
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php the_post_thumbnail(); ?>
+	<?php if (has_post_thumbnail()): ?>
+		<div class="figure">
+			<?php the_post_thumbnail('post-thumbnail', array(
+				'class' => 'figure-img img-fluid'
+			)); ?>
+		</div>
+	<?php endif; ?>
 
 	<?php the_excerpt(); ?>
 
 	<?php if ( 'post' === get_post_type() ) : ?>
 
 		<footer class="entry-footer">
-			<?php //entry_meta(); 
+			<?php //entry_meta();
 			?>
 			<?php
 			  // Edit post link
@@ -33,7 +39,7 @@
           '<span class="edit-link">',
           '</span>'
         ) );
-      ?>  
+      ?>
 		</footer><!-- .entry-footer -->
 
 	<?php else : ?>
@@ -52,4 +58,3 @@
 
 	<?php endif; ?>
 </article><!-- #post-## -->
-

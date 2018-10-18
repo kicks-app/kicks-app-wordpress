@@ -3,9 +3,11 @@
   display: flex;
   min-height: 100%;
   flex-direction: column;
+
   .admin-bar & {
     // margin-top: 32px solid transparent;
   }
+
   &-header {
     $height: 56px;
     height: $height;
@@ -29,6 +31,7 @@
       }
     }
   }
+
   &-content {
     box-sizing: border-box;
     flex-grow: 1;
@@ -36,7 +39,24 @@
     flex-basis: auto;
     padding: 2rem 0;
   }
+
   &-footer {
     flex: 0 1 auto;
+    .nav {
+      margin-left: -$navbar-nav-link-padding-x;
+      margin-right: -$navbar-nav-link-padding-x;
+      &-link {
+        padding-left: $navbar-nav-link-padding-x;
+        padding-right: $navbar-nav-link-padding-x;
+        color: $navbar-dark-color;
+        &:hover,
+        &:focus {
+          color: $navbar-dark-hover-color;
+        }
+        &:active {
+          color: $navbar-dark-active-color;
+        }
+      }
+    }
   }
 }
