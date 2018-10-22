@@ -14,6 +14,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="turbolinks-cache-control" content="no-cache">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -26,8 +27,8 @@
 ); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'kicks-app' ); ?></a>
-	<header id="masthead" class="site-header fixed-top bg-dark" role="banner">
-		<div class="site-header-main">
+	<header id="masthead" class="site-header fixed-top" role="banner">
+		<div class="site-header-main bg-dark">
 			<nav class="navbar navbar-expand-md navbar-dark">
 				<div class="container">
 		      <a class="navbar-brand font-weight-bold" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -56,12 +57,11 @@
 		</div>
 	</header><!-- .site-header -->
 
-
 	<?php if ( (is_front_page() || is_home() ) && !is_paged() && has_header_image() ) : ?>
 		<div class="stage jumbotron jumbotron-fluid mb-0" style="background: url('<?= get_header_image() ?>') no-repeat center; background-size: cover;">
 			<!-- <img class="stage-img" src="<?= get_header_image() ?>"/> -->
 		</div>
 	<?php endif; ?>
 
-		<div id="content" class="site-content py-3">
+		<div id="content" class="site-content hyphens">
 			<div class="container">

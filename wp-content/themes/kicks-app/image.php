@@ -11,7 +11,7 @@ get_header(); ?>
 <div class="row">
 	<div class="col-lg-8">
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main py-3" role="main">
 
 			<?php
 				// Start the loop.

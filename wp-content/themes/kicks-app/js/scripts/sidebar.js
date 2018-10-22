@@ -7,16 +7,13 @@ let sidebar;
 window.ResizeSensor = ResizeSensor;
 
 $(document).on('ready turbolinks:load', () => {
-  console.log('turbolinks load', window.ResizeSensor, ResizeSensor);
   if (sidebar) {
     sidebar.destroy();
   }
 
-  console.log('height', $('.site-header').height());
+  console.log('admin', $('#wpadminbar').outerHeight());
 
-  const top = $('.site-header').outerHeight(true);
-
-  console.log('TOP: ', top);
+  const top = $('#wpadminbar').outerHeight() + $('.site-header').outerHeight();
 
   sidebar = new StickySidebar('.sidebar', {
     resizeSensor: true,

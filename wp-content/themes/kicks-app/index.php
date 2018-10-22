@@ -18,10 +18,8 @@ get_header(); ?>
 <div class="row">
 	<div class="col-lg-8">
 		<div id="primary" class="content-area">
-			<main id="main" class="site-main pt-3" role="main">
-
+			<main id="main" class="site-main py-3" role="main">
 			<?php if ( have_posts() ) : ?>
-
 				<?php if ( is_home() && ! is_front_page() ) : ?>
 					<header>
 						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>

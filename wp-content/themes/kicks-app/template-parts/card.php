@@ -4,6 +4,16 @@
 	</a>
 	<div class="card-body">
     <?php the_title( sprintf( '<h5 class="entry-title card-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h5>' ); ?>
+		<?php
+	    $tags = get_tags();
+	    if ( $tags ) : ?>
+				<div class="tags mb-3">
+	       <?php foreach ( $tags as $tag ) : ?>
+	         <a class="badge badge-secondary" href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" title="<?php echo esc_attr( $tag->name ); ?>"><?php echo esc_html( $tag->name ); ?></a>
+	       <?php endforeach; ?>
+			 	</div>
+	    <?php endif;
+		?>
     <div class="card-text">
       <?php the_excerpt() ?>
     </div>

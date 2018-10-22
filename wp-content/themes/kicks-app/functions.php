@@ -1,5 +1,8 @@
 <?php
 
+// Import post types
+require_once 'post-types/job.php';
+
 // Make theme available for translation.
 load_theme_textdomain( 'kicks-app' );
 
@@ -119,7 +122,8 @@ if (function_exists('wp_bootstrap_hooks')) {
 // Show font-awesome search icon in searchform
 add_filter( 'bootstrap_options', function($options) {
   return array_merge($options, array(
-    'search_submit_label' => '<i class="fa fa-search"></i>'
+    'search_submit_label' => '<i class="fa fa-search"></i>',
+		'post_tag_class' => 'badge badge-secondary mb-1'
   ));
 } );
 

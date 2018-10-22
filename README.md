@@ -122,3 +122,13 @@ Run webpack in watch mode
 ```cli
 npm run watch
 ```
+
+## Demo data
+
+https://codex.wordpress.org/Theme_Unit_Test
+
+## Plugins Integration
+
+### Post-Type Archive
+
+For custom post type archives to show up on the menu edit page, you will need to select "Post Type Archive" from screen options in addition to plugin activation.

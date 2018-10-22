@@ -1,5 +1,8 @@
-window.addEventListener('scroll', event => {
-  console.log('scroll', window.pageYOffset > 0);
+const handleEvent = event => {
+  const top = document.querySelector('.site-header').getBoundingClientRect().y;
 
-  document.body.classList.toggle('page-offset', window.pageYOffset > 0);
-})
+  document.body.classList.toggle('page-offset', window.pageYOffset > top);
+};
+
+window.addEventListener('resize', handleEvent);
+window.addEventListener('scroll', handleEvent);

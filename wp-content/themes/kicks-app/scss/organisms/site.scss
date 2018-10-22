@@ -10,35 +10,47 @@
 
   &-header {
     $height: 56px;
-    height: $height;
-    transition: all 0.25s ease;
+    min-height: $height;
 
-    .navbar-brand,
-    .navbar-nav .nav-link {
-      @extend .text-light;
+    .site-header-main {
+      background: rgba($dark, 0.86) !important;
       transition: all 0.25s ease;
-    }
+      @extend .text-light;
 
-    .header-image:not(.page-offset) & {
-      background: transparent !important;
       .navbar-brand,
       .navbar-nav .nav-link {
+        @extend .text-light;
+        transition: all 0.25s ease;
+      }
+
+      .header-image:not(.page-offset):not(.menu-active) & {
+        background: transparent !important;
         @extend .text-dark;
+        .navbar-brand,
+        .navbar-nav .nav-link {
+          @extend .text-dark;
+        }
       }
     }
-
-    &.fixed-top {
+    
+    &.fixed-top,
+    &.sticky-top {
+      width: 100%;
       .admin-bar & {
         top: 32px;
         @media screen and (max-width: 783px) {
           top: 46px;
         }
         @media screen and (max-width: 600px) {
-          position: absolute;
+          position: sticky;
+          top: 0;
+          + * {
+            margin-top: -56px;
+          }
         }
       }
       + * {
-        flex-basis: calc(100% - $height);
+        flex-basis: calc(100% - #{$height});
         &:before {
           content: '';
           display: block;
@@ -52,11 +64,12 @@
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: auto;
-    // padding: 2rem 0;
   }
 
   &-footer {
     flex: 0 1 auto;
+    background: rgba($dark, 0.86) !important;
+
     .nav {
       margin-left: -$navbar-nav-link-padding-x;
       margin-right: -$navbar-nav-link-padding-x;
@@ -74,6 +87,4 @@
       }
     }
   }
-
-
 }

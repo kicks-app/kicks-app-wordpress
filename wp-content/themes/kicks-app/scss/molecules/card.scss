@@ -15,4 +15,8 @@
   &-columns & {
     @extend .mb-3;
   }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
