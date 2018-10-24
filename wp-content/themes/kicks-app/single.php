@@ -13,6 +13,11 @@ get_header(); ?>
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main my-3" role="main">
 				<?php
+					if ( !(is_front_page() || is_home() ) || is_paged() && function_exists('yoast_breadcrumb') ) {
+						yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+					}
+				?>
+				<?php
 				// Start the loop.
 				while ( have_posts() ) : the_post();
 

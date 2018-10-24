@@ -9,8 +9,22 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header m-b-1">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-  		<?php if (has_excerpt()): ?>
+		<h1 class="entry-title mb-0">
+			<?= get_the_title(); ?>
+		</h1>
+		<?php
+			$tags = get_terms('job_tag');
+			if ( $tags ) : ?>
+				<div class="tags mb-3">
+				 <?php foreach ( $tags as $tag ) : ?>
+					 <a class="badge badge-secondary" href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" title="<?php echo esc_attr( $tag->name ); ?>">
+						 <?php echo esc_html( $tag->name ); ?>
+					 </a>
+				 <?php endforeach; ?>
+				</div>
+			<?php endif;
+		?>
+		<?php if (has_excerpt()): ?>
       <p class="entry-summary lead">
         <?php the_excerpt(); ?>
       </p>
@@ -42,6 +56,7 @@
 				get_template_part( 'template-parts/biography' );
 			}
 		?>
+		<?= do_shortcode('[basic-contact-form title="Jetzt bewerben!" description="Bitte füllen Sie das Bewerbungsformular aus."]'); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">

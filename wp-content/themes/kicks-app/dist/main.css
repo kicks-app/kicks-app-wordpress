@@ -8911,4 +8911,4 @@ a.text-dark:hover, .header-image:not(.page-offset):not(.menu-active) .site-heade
   .widget-tag_cloud .form-group, .widget-search .form-group {
     margin-bottom: 0; }
   .widget-tag_cloud .badge, .widget-search .badge {
-    font-size: 80% !important; }
+    font-size: 1rem !important; }

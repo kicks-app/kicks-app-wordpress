@@ -4,8 +4,18 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bac1280ca378d2334bac333c49df2ae4",
+    "content-hash": "03c4300677f651289a7fc0efa4ba9b7d",
     "packages": [
+        {
+            "name": "benignware/basic-contact-form",
+            "version": "v0.1.0-beta.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/benignware-labs/wp-basic-contact-form.git",
+                "reference": "v0.1.0-beta.4"
+            },
+            "type": "wordpress-plugin"
+        },
         {
             "name": "benignware/bootstrap-hooks",
             "version": "v0.1.0-beta.3",
@@ -219,6 +229,46 @@
             "time": "2015-01-21T14:32:26+00:00"
         },
         {
+            "name": "wpackagist-plugin/autoptimize",
+            "version": "2.4.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/autoptimize/",
+                "reference": "tags/2.4.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/autoptimize.2.4.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/autoptimize/"
+        },
+        {
+            "name": "wpackagist-plugin/cache-enabler",
+            "version": "1.3.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/cache-enabler/",
+                "reference": "tags/1.3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/cache-enabler.1.3.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/cache-enabler/"
+        },
+        {
             "name": "wpackagist-plugin/cookie-notice",
             "version": "1.2.44",
             "source": {
@@ -260,15 +310,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-comments",
-            "version": "1.7.1",
+            "version": "1.8.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/disable-comments/",
-                "reference": "tags/1.7.1"
+                "reference": "tags/1.8.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.7.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.8.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -377,6 +427,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/thumbnail-upscale/"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-seo",
+            "version": "9.0.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
+                "reference": "tags/9.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.9.0.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
         }
     ],
     "packages-dev": [
@@ -434,6 +504,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "benignware/basic-contact-form": 10,
         "benignware/bootstrap-hooks": 10
     },
     "prefer-stable": false,

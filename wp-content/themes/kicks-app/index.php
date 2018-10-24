@@ -18,6 +18,11 @@ get_header(); ?>
 <div class="row">
 	<div class="col-lg-8">
 		<div id="primary" class="content-area">
+			<?php
+				if ( !(is_front_page() || is_home() ) || is_paged() && function_exists('yoast_breadcrumb') ) {
+					yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+				}
+			?>
 			<main id="main" class="site-main py-3" role="main">
 			<?php if ( have_posts() ) : ?>
 				<?php if ( is_home() && ! is_front_page() ) : ?>

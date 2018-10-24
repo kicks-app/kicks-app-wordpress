@@ -132,3 +132,12 @@ add_filter( 'wp_nav_menu_args', function($args) {
   $args['social_icon_prefix'] = 'fa fa-';
   return $args;
 }, 1, 2 );
+
+// Setup Basic Contact Form
+function custom_shortcode_atts_basic_contact_form($out, $pairs, $atts, $shortcode) {
+  $result = array_merge($out, array(
+    'form_template' => get_template_directory() . '/contactform.php'
+  ), $atts);
+  return $result;
+}
+add_filter( 'shortcode_atts_basic-contact-form', 'custom_shortcode_atts_basic_contact_form', 10, 4);

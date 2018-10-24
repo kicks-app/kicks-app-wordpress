@@ -14,6 +14,16 @@
 				<span class="sticky-post"><?php _e( 'Featured', 'kicks-app' ); ?></span>
 			<?php endif; ?>
 			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+			<?php
+		    $tags = get_tags();
+		    if ( $tags ) : ?>
+					<div class="tags mb-3">
+		       <?php foreach ( $tags as $tag ) : ?>
+		         <a class="badge badge-secondary" href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" title="<?php echo esc_attr( $tag->name ); ?>"><?php echo esc_html( $tag->name ); ?></a>
+		       <?php endforeach; ?>
+				 	</div>
+		    <?php endif;
+			?>
 		</header><!-- .entry-header -->
 
 		<?php if (has_post_thumbnail()): ?>
@@ -25,7 +35,6 @@
 		<?php endif; ?>
 
 		<div class="entry-content">
-
 			<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
