@@ -1,9 +1,13 @@
 <div data-href="<?= get_permalink() ?>" class="card card-<?= get_post_type() ?> mb-3">
-	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-		<?php the_post_thumbnail('post-thumbnail', array('class' => 'img-top')); ?>
-	</a>
+	<?php
+		/*
+		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+			<?php the_post_thumbnail('post-thumbnail', array('class' => 'img-top')); ?>
+		</a>
+		*/
+	?>
 	<div class="card-body">
-    <?php the_title( sprintf( '<h5 class="entry-title card-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h5>' ); ?>
+    <?php the_title( sprintf( '<h5 class="entry-title card-title"><a class="text-dark" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h5>' ); ?>
 		<?php
 	    $tags = get_tags();
 	    if ( $tags ) : ?>

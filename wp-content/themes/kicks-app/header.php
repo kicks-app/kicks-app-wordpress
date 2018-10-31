@@ -31,9 +31,14 @@
 		<div class="site-header-main bg-dark">
 			<nav class="navbar navbar-expand-md navbar-dark">
 				<div class="container">
-		      <a class="navbar-brand font-weight-bold" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<?php bloginfo( 'name' ); ?>
-					</a>
+					<div class="mr-auto-">
+			      <a class="navbar-brand font-weight-bold" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<?php bloginfo( 'name' ); ?>
+						</a>
+						<?php if (( is_front_page() || is_home()) && !is_paged()): ?>
+							<div class="navbar-desc blog-description small d-none"><?php bloginfo( 'description' ); ?></div>
+						<?php endif; ?>
+					</div>
 		      <a class="navbar-toggler border-0 p-0" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="hamburger hamburger--squeeze">
 							<span class="hamburger-box">
@@ -58,7 +63,20 @@
 	</header><!-- .site-header -->
 
 	<?php if ( (is_front_page() || is_home() ) && !is_paged() && has_header_image() ) : ?>
-		<div class="stage jumbotron jumbotron-fluid mb-0" style="background: url('<?= get_header_image() ?>') no-repeat center; background-size: cover;">
+		<div class="stage mb-0">
+			<div class="prllx-container">
+				<div class="stage-bg prllx">
+					<img class="stage-img" src="<?= get_header_image() ?>"/>
+				</div>
+				<div class="stage-content">
+					<div class="container">
+						<h1 class="display-4 stage-title">
+							<?php bloginfo( 'name' ); ?>
+						</h1>
+						<div class="stage-text"><?php bloginfo( 'description' ); ?><br/></div>
+					</div>
+				</div>
+			</div>
 			<!-- <img class="stage-img" src="<?= get_header_image() ?>"/> -->
 		</div>
 	<?php endif; ?>

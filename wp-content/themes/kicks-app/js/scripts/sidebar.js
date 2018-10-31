@@ -15,7 +15,7 @@ $(document).on('ready turbolinks:load', () => {
 
   const top = $('#wpadminbar').outerHeight() + $('.site-header').outerHeight();
 
-  sidebar = new StickySidebar('.sidebar', {
+  sidebar = new StickySidebar('.sticky-sidebar', {
     resizeSensor: true,
     topSpacing: top,
     bottomSpacing: 0,

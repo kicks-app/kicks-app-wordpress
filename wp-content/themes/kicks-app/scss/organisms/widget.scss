@@ -4,19 +4,34 @@
     border: 0;
 
     .card-header {
-      display: none;
+      // display: none;
     }
 
-    .card-body {
-      padding: 0;
-    }
+    // .card-body {
+    //   padding: 0;
+    // }
 
     .form-group {
       margin-bottom: 0;
     }
 
     .badge {
-      font-size: 1rem !important;
+      // font-size: 1rem !important;
+    }
+  }
+
+  &-tag_cloud {
+
+  }
+
+  &-search,
+  &-custom-post-type-search {
+    .card-body {
+      &:before {
+        content: 'Gib einen Suchbegriff ein oder w\00e4hle eine Kategorie';
+        display: block;
+        margin-bottom: $spacer;
+      }
     }
   }
 

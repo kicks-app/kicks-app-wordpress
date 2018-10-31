@@ -11,8 +11,8 @@ add_theme_support( 'automatic-feed-links' );
 
 // Add header image support
 add_theme_support('custom-header', array(
-	'width'         => 980,
-	'height'        => 60,
+	'width'         => 1680,
+	'height'        => 600,
 	'default-image' => get_template_directory_uri() . '/img/header-image.jpg'
 ));
 
@@ -94,7 +94,9 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 function new_excerpt_more($more = null) {
   global $post;
 
-  return '&nbsp;<a class="readmore" href="'. get_permalink($post->ID) . '">' . __('Read more...', 'kicks-app') . '</a>';
+	// $msgid = $post->post_type === 'job' ? 'Apply' : 'Read more';
+	$msgid = 'Bewerben';
+  return '...<div class="card-footer mt-auto"><a class="readmore btn btn-primary" href="'. get_permalink($post->ID) . '">' . __($msgid, 'kicks-app') . '</a></div>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
@@ -123,13 +125,13 @@ if (function_exists('wp_bootstrap_hooks')) {
 add_filter( 'bootstrap_options', function($options) {
   return array_merge($options, array(
     'search_submit_label' => '<i class="fa fa-search"></i>',
-		'post_tag_class' => 'badge badge-secondary mb-1'
+		'post_tag_class' => 'badge badge-primary text-light mb-1'
   ));
 } );
 
 // Make social-menu-icons render font-awesome
 add_filter( 'wp_nav_menu_args', function($args) {
-  $args['social_icon_prefix'] = 'fa fa-';
+  $args['social_icon_prefix'] = 'fab fa-';
   return $args;
 }, 1, 2 );
 

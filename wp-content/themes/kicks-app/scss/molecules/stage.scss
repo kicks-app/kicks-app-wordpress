@@ -1,22 +1,63 @@
 .stage {
+  position: relative;
   height: 0;
   padding-bottom: 65%;
   background-size: cover;
+  border-bottom: 1px solid $border-color;
 
   @include media-breakpoint-up(md) {
     padding-bottom: 55%;
   }
 
   @include media-breakpoint-up(lg) {
-    padding-bottom: 40%;
+    padding-bottom: 42%;
   }
 
   @include media-breakpoint-up(xl) {
-    padding-bottom: 30%;
+    padding-bottom: 36%;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-bottom: 32%;
   }
 
   &-img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &-bg {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
+    // background-size: cover;
+    // background-position: left 48%;
+    // @include media-breakpoint-up(lg) {
+    //   padding-top: 56px;
+    // }
+  }
+
+  &-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+  }
+  &-text {
+    @include media-breakpoint-down(md) {
+      max-width: 90%;
+      font-size: 85%;
+    }
   }
 }

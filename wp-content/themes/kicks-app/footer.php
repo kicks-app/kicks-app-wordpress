@@ -17,9 +17,10 @@
 				<div class="row align-items-center">
 					<div class="col-lg-4">
 						<div class="site-info py-2">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<a class="text-primary" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 								<?php bloginfo( 'name' ); ?>
-							</a>&nbsp;<span class="d-inline-block"><?php bloginfo( 'description' ); ?></span>
+							</a>
+							<!--<span class="d-inline-block"><?php bloginfo( 'description' ); ?></span>-->
 						</div><!-- .site-info -->
 					</div>
 					<div class="col-lg-4">

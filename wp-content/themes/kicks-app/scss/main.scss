@@ -10,10 +10,14 @@
 @import "globals/hamburgers";
 @import "globals/root";
 @import "globals/body";
+@import "globals/theme";
+@import "globals/cards";
 
 // Vendor
 @import "bootstrap/scss/bootstrap";
-@import "font-awesome/scss/font-awesome";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/regular";
+@import "@fortawesome/fontawesome-free/scss/solid";
 @import "hamburgers/_sass/hamburgers/hamburgers";
 
 // Utils
@@ -23,10 +27,14 @@
 @import "atoms/container";
 @import "atoms/typography";
 @import "atoms/badge";
+@import "atoms/display";
+@import "atoms/btn";
 
 // Molecules
 @import "molecules/card";
+@import "molecules/navbar";
 @import "molecules/stage";
+@import "molecules/prllx";
 
 // Organisms
 @import "organisms/site";

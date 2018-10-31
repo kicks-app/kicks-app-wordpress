@@ -8,8 +8,15 @@
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header m-b-1">
-		<h1 class="entry-title mb-0">
+	<header class="entry-header mb-4">
+		<?php if (has_post_thumbnail()): ?>
+			<div class="figure mb-1">
+	    	<?php the_post_thumbnail('post-thumbnail', array(
+					'class' => 'figure-img img-fluid rounded border'
+				)); ?>
+			</div>
+		<?php endif; ?>
+		<h1 class="entry-title mb-1">
 			<?= get_the_title(); ?>
 		</h1>
 		<?php
@@ -17,7 +24,7 @@
 			if ( $tags ) : ?>
 				<div class="tags mb-3">
 				 <?php foreach ( $tags as $tag ) : ?>
-					 <a class="badge badge-secondary" href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" title="<?php echo esc_attr( $tag->name ); ?>">
+					 <a class="badge badge-primary" href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" title="<?php echo esc_attr( $tag->name ); ?>">
 						 <?php echo esc_html( $tag->name ); ?>
 					 </a>
 				 <?php endforeach; ?>
@@ -25,17 +32,9 @@
 			<?php endif;
 		?>
 		<?php if (has_excerpt()): ?>
-      <p class="entry-summary lead">
-        <?php the_excerpt(); ?>
-      </p>
-    <?php endif; ?>
-
-		<?php if (has_post_thumbnail()): ?>
-			<div class="figure">
-	    	<?php the_post_thumbnail('post-thumbnail', array(
-					'class' => 'figure-img img-fluid'
-				)); ?>
-			</div>
+			<p class="entry-summary lead">
+				<?php the_excerpt(); ?>
+			</p>
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
@@ -56,7 +55,7 @@
 				get_template_part( 'template-parts/biography' );
 			}
 		?>
-		<?= do_shortcode('[basic-contact-form title="Jetzt bewerben!" description="Bitte füllen Sie das Bewerbungsformular aus."]'); ?>
+		<?= do_shortcode('[basic-contact-form title="Jetzt bewerben!" description="Fülle das Formular aus, um mit dem Anbieter in Kontakt zu treten"]'); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">

@@ -1,17 +1,17 @@
-<div class="bcf">
+<div class="bcf mt-4">
   <?php if ($success): ?>
     <?php if ($title): ?>
-      <h3 class="bcf-title"><?= __('Thanks for your request!', 'basic-contact-form') ?></h3>
+      <h2 class="bcf-title"><?= __('Thanks for your request!', 'basic-contact-form') ?></h2>
     <?php endif; ?>
     <?php if ($description): ?>
-      <p class="bcf-description"><?= __('We\'ll get back to you as soon as we can.', 'basic-contact-form') ?></p>
+      <p class="bcf-description lead"><?= __('We\'ll get back to you as soon as we can.', 'basic-contact-form') ?></p>
     <?php endif; ?>
   <?php else: ?>
     <?php if ($title): ?>
-      <h3 class="bcf-title"><?= $title ?></h3>
+      <h2 class="bcf-title"><i class=\"fas fa-hand-point-right\"></i>&nbsp;<?= $title ?></h2>
     <?php endif; ?>
     <?php if ($description): ?>
-      <p class="bcf-description"><?= $description ?></p>
+      <p class="bcf-description lead"><?= $description ?></p>
     <?php endif; ?>
       <form class="bcf-form" method="POST">
         <?php if (in_array('name', $fields)) : ?>

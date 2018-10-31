@@ -44,6 +44,9 @@ $green:   #28a745 !default;
 $green:   #9BCCA7;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
+// $blue-light: #9CCDE4;
+//$blue-light: #89C0D8;
+$blue-light: #7EA4BB;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -61,12 +64,13 @@ $colors: map-merge(
     "cyan":       $cyan,
     "white":      $white,
     "gray":       $gray-600,
-    "gray-dark":  $gray-800
+    "gray-dark":  $gray-800,
+    "blue-light": $blue-light
   ),
   $colors
 );
 
-$primary:       $green;
+$primary:       $blue-light;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -95,7 +99,7 @@ $theme-colors: map-merge(
 $theme-color-interval:      8% !default;
 
 // The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
-$yiq-contrasted-threshold:  150 !default;
+$yiq-contrasted-threshold:  180;
 
 // Customize the light and dark text colors for use in our YIQ color contrast function.
 $yiq-text-dark:             $gray-900 !default;
