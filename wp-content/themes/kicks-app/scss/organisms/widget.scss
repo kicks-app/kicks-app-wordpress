@@ -3,27 +3,15 @@
   &-custom-post-type-tag-cloud,
   &-search {
     border: 0;
-  }
 
-  &-tag_cloud,
-  &-custom-post-type-tag-cloud {
     .card-header {
       display: none;
     }
+
     .card-body {
       padding: 0;
     }
-  }
 
-  &-search,
-  &-custom-post-type-search {
-    .card-body {
-      &:before {
-        content: 'Gib einen Suchbegriff ein oder w\00e4hle eine Kategorie';
-        display: block;
-        margin-bottom: $spacer;
-      }
-    }
     .form-group {
       margin-bottom: 0;
     }

@@ -1,20 +1,12 @@
 <?php
 
 // Import post types
-require_once 'post-types/job.php';
 
 // Make theme available for translation.
 load_theme_textdomain( 'kicks-app' );
 
 // Add default posts and comments RSS feed links to head.
 add_theme_support( 'automatic-feed-links' );
-
-// Add header image support
-add_theme_support('custom-header', array(
-	'width'         => 1680,
-	'height'        => 600,
-	'default-image' => get_template_directory_uri() . '/img/header-image.jpg'
-));
 
 // Enable support for Post Thumbnails on posts and pages.
 add_theme_support( 'post-thumbnails' );
@@ -81,42 +73,8 @@ function limit_archives( $args ) {
 }
 add_filter( 'widget_archives_args', 'limit_archives' );
 
-// Excerpt length
-define ("EXCERPT_LENGTH", 19);
 
-// Limit custom excerpt length
-function custom_excerpt_length( $length ) {
-  return EXCERPT_LENGTH;
-}
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
-
-// Override the excerpt "Read More"
-function new_excerpt_more($more = null) {
-  global $post;
-
-	// $msgid = $post->post_type === 'job' ? 'Apply' : 'Read more';
-	$msgid = 'Bewerben';
-  return '...';
-}
-add_filter('excerpt_more', 'new_excerpt_more');
-
-// Changing manual excerpt length
-add_filter('get_the_excerpt', 'manual_excerpt_length', 20);
-
-function manual_excerpt_length($excerpt) {
-  global $post;
-
-  if ($post->post_excerpt) {
-    $post_excerpt = trim(strip_tags($post->post_excerpt));
-    $excerpt = wp_trim_words( $post_excerpt, EXCERPT_LENGTH, '' );
-    if (strlen($post_excerpt) > strlen($excerpt)) {
-      $excerpt.= new_excerpt_more();
-    }
-  }
-  return $excerpt;
-}
-
-// Setup bootstrap-hooks
+// Init bootstrap hooks
 if (function_exists('wp_bootstrap_hooks')) {
   wp_bootstrap_hooks();
 }
@@ -134,12 +92,3 @@ add_filter( 'wp_nav_menu_args', function($args) {
   $args['social_icon_prefix'] = 'fab fa-lg fa-';
   return $args;
 }, 1, 2 );
-
-// Setup Basic Contact Form
-function custom_shortcode_atts_basic_contact_form($out, $pairs, $atts, $shortcode) {
-  $result = array_merge($out, array(
-    'form_template' => get_template_directory() . '/contactform.php'
-  ), $atts);
-  return $result;
-}
-add_filter( 'shortcode_atts_basic-contact-form', 'custom_shortcode_atts_basic_contact_form', 10, 4);

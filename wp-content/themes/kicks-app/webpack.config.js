@@ -5,8 +5,6 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 const context =  path.resolve(__dirname);
 
-console.log('ENV: ', process.env.NODE_ENV);
-
 const browsers = [
   'last 2 versions',
   'safari >= 7'

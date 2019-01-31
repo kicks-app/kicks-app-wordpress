@@ -1,5 +1,5 @@
 {
-  "name": "kicks-app-wp-theme",
+  "name": "kicks-app/kicks-app-wp-theme",
   "version": "0.1.0",
   "description": "Wordpress Theme",
   "main": "index.js",
@@ -41,11 +41,10 @@
     "node-sass": "^4.9.4",
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.5",
-    "sass-loader": "^7.1.0",
     "svg-sprite-loader": "^3.7.3",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.1.14"
   }
 }

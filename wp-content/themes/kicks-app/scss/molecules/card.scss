@@ -1,96 +1,9 @@
 .card {
-  border: 0;
-  margin-bottom: $spacer * 2;
+  backface-visibility: hidden;
 
   *[class*='col-'] & {
     height: 100%;
   }
-
-  *:last-child {
-    // margin-bottom: $spacer * 2;
-  }
-
-  &-header,
-  &-body,
-  &-footer,
-  .list-group-item {
-    background: transparent;
-    padding-left: 0;
-    padding-right: 0;
-    border-color: $border-color;
-    border: 0;
-  }
-
-  .list-group {
-    padding-top: $card-spacer-y;
-    padding-bottom: $card-spacer-y;
-  }
-
-  .list-group-item {
-    border: 0;
-    padding-top: $card-spacer-y / 2;
-    padding-bottom: $card-spacer-y / 2;
-
-    &:first-child {
-      padding-top: 0;
-    }
-
-    &:last-child {
-      padding-bottom: 0;
-    }
-  }
-
-  &-header,
-  &-title {
-    font-weight: $font-weight-bold;
-    border-bottom: 1px solid $border-color;
-    padding-bottom: $card-spacer-y;
-    padding-top: 0;
-  }
-
-  &-footer {
-    // padding-top: $spacer * 1;
-    border: 0;
-    padding-top: 0;
-    text-align: left;
-  }
-
-  &-body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding-top: $card-spacer-y;
-    padding-bottom: $card-spacer-y;
-
-    &:first-child {
-      padding-top: 0;
-    }
-
-    &:last-child {
-      padding-bottom: 0;
-    }
-  }
-
-  &-text {
-    // display: flex;
-    // flex-direction: column;
-    // height: 100%;
-  }
-
-  &-columns-sidebar {
-    @include media-breakpoint-down(md) {
-      columns: 1;
-    }
-    @include media-breakpoint-up(md) {
-      columns: 2;
-    }
-    .sidebar & {
-      @include media-breakpoint-up(lg) {
-        columns: 1;
-      }
-    }
-  }
-
 
   &-columns {
     @include media-breakpoint-down(md) {
@@ -102,14 +15,22 @@
     @include media-breakpoint-up(lg) {
       columns: 3;
     }
+
+    .sidebar & {
+      @include media-breakpoint-up(lg) {
+        columns: 1;
+      }
+    }
   }
 
-  // &-columns &,
-  // &-columns-sidebar & {
-  //   @extend .mb-3;
-  // }
+  .list-group {
+    padding-top: 0;
+    padding-bottom: 0;
 
-  p:last-child {
-    margin-bottom: 0;
+    &-item {
+      padding: $card-spacer-y $card-spacer-x;
+      border-color: $card-border-color;
+      background-color: transparent;
+    }
   }
 }

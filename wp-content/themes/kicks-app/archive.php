@@ -18,7 +18,7 @@
 
 get_header(); ?>
 <div class="row">
-	<div class="col-lg-12">
+	<div class="col-lg-8">
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main my-3" role="main">
 			<?php
@@ -34,7 +34,7 @@ get_header(); ?>
 				<?php if (have_posts()): ?>
 					<div class="row">
 						<?php while ( have_posts() ) : the_post() // Start the Loop. ?>
-							<div class="col-md-6 col-lg-4">
+							<div class="col-md-12 col-lg-6">
 								<?php
 									/*
 									 * Include the Post-Format-specific template for the content.
@@ -63,7 +63,7 @@ get_header(); ?>
 		</main><!-- .site-main -->
 	</section><!-- .content-area -->
   </div>
-  	<div class="col-lg-12">
+  	<div class="col-lg-4">
   <?php get_sidebar(); ?>
   </div>
 </div>

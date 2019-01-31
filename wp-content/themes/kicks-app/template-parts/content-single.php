@@ -25,7 +25,7 @@
 			</div>
 		<?php endif; ?>
 		<?php
-			$tags = get_terms('job_tag');
+			$tags = get_terms();
 			if ( $tags ) : ?>
 				<div class="tags mb-3">
 				 <?php foreach ( $tags as $tag ) : ?>
@@ -55,12 +55,9 @@
 				get_template_part( 'template-parts/biography' );
 			}
 		?>
-		<?= do_shortcode('[basic-contact-form title="Jetzt bewerben!" description="Fülle das Formular aus, um mit dem Anbieter in Kontakt zu treten"]'); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php //kicks-app_entry_meta();
-		?>
 		<div class="btn-group">
 		<?php
 		  // Edit post link

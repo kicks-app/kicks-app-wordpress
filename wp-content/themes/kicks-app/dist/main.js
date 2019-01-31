@@ -162,7 +162,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js-exposed\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var popper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! popper.js */ \"./node_modules/popper.js/dist/esm/popper.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _scripts_turbolinks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/turbolinks */ \"./js/scripts/turbolinks.js\");\n/* harmony import */ var _scripts_header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scripts/header */ \"./js/scripts/header.js\");\n/* harmony import */ var _scripts_header__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_scripts_header__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _scripts_prllx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scripts/prllx */ \"./js/scripts/prllx.js\");\n/* harmony import */ var _scripts_prllx__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_scripts_prllx__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _scripts_hamburger__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./scripts/hamburger */ \"./js/scripts/hamburger.js\");\n/* harmony import */ var _scripts_sidebar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./scripts/sidebar */ \"./js/scripts/sidebar.js\");\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js-exposed\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var popper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! popper.js */ \"./node_modules/popper.js/dist/esm/popper.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _scripts_turbolinks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/turbolinks */ \"./js/scripts/turbolinks.js\");\n/* harmony import */ var _scripts_hamburger__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scripts/hamburger */ \"./js/scripts/hamburger.js\");\n\n\n\n\n //import './scripts/sidebar';\n\n//# sourceURL=webpack:///./js/main.js?");
 
 /***/ }),
 
@@ -175,40 +175,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jque
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js-exposed\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('show.bs.collapse hide.bs.collapse', function (event) {\n  jquery__WEBPACK_IMPORTED_MODULE_0___default()(document.body).toggleClass('menu-active', event.type === 'show');\n  jquery__WEBPACK_IMPORTED_MODULE_0___default()(event.target).parents('.navbar').find('.navbar-toggler').find('.hamburger').toggleClass('is-active', event.type === 'show');\n});\n\n//# sourceURL=webpack:///./js/scripts/hamburger.js?");
-
-/***/ }),
-
-/***/ "./js/scripts/header.js":
-/*!******************************!*\
-  !*** ./js/scripts/header.js ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("var handleEvent = function handleEvent(event) {\n  window.requestAnimationFrame(function () {\n    var stage = document.querySelector('.stage');\n\n    if (!stage) {\n      return;\n    }\n\n    var header = document.querySelector('.site-header');\n    var stageHeight = stage.getBoundingClientRect().height;\n    var headerHeight = header.getBoundingClientRect().height;\n    var y = stageHeight - headerHeight - 50;\n    document.body.classList.toggle('page-offset', window.pageYOffset > y);\n  });\n};\n\nwindow.addEventListener('resize', handleEvent);\nwindow.addEventListener('scroll', handleEvent);\nwindow.addEventListener('load', handleEvent);\ndocument.addEventListener('DOMContentLoaded', handleEvent);\ndocument.addEventListener('turbolinks:load', handleEvent);\n\n//# sourceURL=webpack:///./js/scripts/header.js?");
-
-/***/ }),
-
-/***/ "./js/scripts/prllx.js":
-/*!*****************************!*\
-  !*** ./js/scripts/prllx.js ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("var MIN_OFFSET = 56;\n\nvar handleEvent = function handleEvent(event) {\n  window.requestAnimationFrame(function () {\n    var header = document.querySelector('.site-header');\n    var prllx = document.querySelectorAll('.prllx');\n    var _iteratorNormalCompletion = true;\n    var _didIteratorError = false;\n    var _iteratorError = undefined;\n\n    try {\n      for (var _iterator = prllx[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n        var element = _step.value;\n        var container = element.closest('.prllx-container');\n\n        var _element$getBoundingC = element.getBoundingClientRect(),\n            y = _element$getBoundingC.y,\n            height = _element$getBoundingC.height;\n\n        var _ref = container && container.getBoundingClientRect(),\n            containerY = _ref.y,\n            containerHeight = _ref.height;\n\n        var d = 1 - 1 / (height / containerHeight);\n        var p = window.pageYOffset / containerHeight;\n        var title = container.querySelector('.stage-content');\n        title.style.transform = \"translateY(\".concat(p * (containerHeight * 0.1), \"px) scale(\").concat(1 + p * 4, \")\");\n        title.style.opacity = \"\".concat(1 - p * 6);\n        var ty = p * height * -d;\n        element.style.transform = \"translate3d(0, \".concat(ty, \"px, 0)\");\n      }\n    } catch (err) {\n      _didIteratorError = true;\n      _iteratorError = err;\n    } finally {\n      try {\n        if (!_iteratorNormalCompletion && _iterator.return != null) {\n          _iterator.return();\n        }\n      } finally {\n        if (_didIteratorError) {\n          throw _iteratorError;\n        }\n      }\n    }\n  });\n};\n\nwindow.addEventListener('resize', handleEvent);\nwindow.addEventListener('scroll', handleEvent);\nwindow.addEventListener('load', handleEvent);\ndocument.addEventListener('DOMContentLoaded', handleEvent);\ndocument.addEventListener('turbolinks:load', handleEvent);\n\n//# sourceURL=webpack:///./js/scripts/prllx.js?");
-
-/***/ }),
-
-/***/ "./js/scripts/sidebar.js":
-/*!*******************************!*\
-  !*** ./js/scripts/sidebar.js ***!
-  \*******************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js-exposed\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var css_element_queries__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! css-element-queries */ \"./node_modules/css-element-queries/index.js\");\n/* harmony import */ var css_element_queries__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(css_element_queries__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var sticky_sidebar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sticky-sidebar */ \"./node_modules/sticky-sidebar/src/sticky-sidebar.js\");\n\n\n\nvar sidebar;\nvar SIDEBAR_SELECTOR = '.sticky-sidebar';\nwindow.ResizeSensor = css_element_queries__WEBPACK_IMPORTED_MODULE_1__[\"ResizeSensor\"];\njquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('ready turbolinks:load', function () {\n  if (sidebar) {\n    sidebar.destroy();\n    sidebar = null;\n  }\n\n  var top = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#wpadminbar').outerHeight() + jquery__WEBPACK_IMPORTED_MODULE_0___default()('.site-header').outerHeight();\n  var sidebarElement = document.querySelector(SIDEBAR_SELECTOR);\n\n  if (sidebarElement) {\n    sidebar = new sticky_sidebar__WEBPACK_IMPORTED_MODULE_2__[\"default\"]('.sticky-sidebar', {\n      resizeSensor: true,\n      topSpacing: top,\n      bottomSpacing: 0,\n      containerSelector: '.site-content .container',\n      innerWrapperSelector: '.sidebar-inner',\n      minWidth: 992 // TODO: Get bootstrap breakpoints dynamically\n\n    });\n  }\n});\n\n//# sourceURL=webpack:///./js/scripts/sidebar.js?");
 
 /***/ }),
 

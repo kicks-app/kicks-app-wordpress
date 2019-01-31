@@ -60,6 +60,7 @@
       }
       + * {
         flex-basis: calc(100% - #{$height});
+
         &:before {
           content: '';
           display: block;

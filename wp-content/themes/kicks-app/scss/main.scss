@@ -1,18 +1,5 @@
 // Globals
-@import "globals/accessibility";
-@import "globals/options";
-@import "globals/fonts";
-@import "globals/colors";
-@import "globals/typography";
-@import "globals/spacing";
-@import "globals/grid";
-@import "globals/icons";
-@import "globals/hamburgers";
-@import "globals/root";
-@import "globals/body";
-@import "globals/theme";
-@import "globals/cards";
-@import "globals/turbolinks";
+@import "globals/fa";
 
 // Vendor
 @import "bootstrap/scss/bootstrap";
@@ -22,26 +9,24 @@
 @import "@fortawesome/fontawesome-free/scss/solid";
 @import "hamburgers/_sass/hamburgers/hamburgers";
 
+// Globals
+@import "globals/hamburgers";
+@import "globals/bootstrap";
+@import "globals/accessibility";
+@import "globals/root";
+
 // Utils
 @import "utils/hyphens";
 
 // Atoms
-@import "atoms/container";
-@import "atoms/typography";
-@import "atoms/badge";
-@import "atoms/display";
-@import "atoms/btn";
-@import "atoms/turbolinks";
+// NOTE: Atoms go here
 
 // Molecules
 @import "molecules/card";
-@import "molecules/navbar";
 @import "molecules/stage";
-@import "molecules/prllx";
 
 // Organisms
 @import "organisms/site";
 @import "organisms/sidebar";
-@import "organisms/cookie-notice";
 @import "organisms/widget";
-@import "organisms/breadcrumbs";
+@import "organisms/cookie-notice";

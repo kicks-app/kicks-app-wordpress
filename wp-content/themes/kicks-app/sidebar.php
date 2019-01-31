@@ -13,7 +13,7 @@
 <?php if ( is_active_sidebar( 'sidebar-1' )  ) : ?>
 	<aside id="secondary" class="sidebar widget-area<?= $is_sidebar_layout ? ' sticky-sidebar' : ''; ?>" role="complementary">
 		<div class="sidebar-inner pt-3">
-			<div class="sidebar-content<?= $is_sidebar_layout ? ' card-columns-sidebar' : ' card-columns'; ?>">
+			<div class="sidebar-content card-columns">
 				<?php dynamic_sidebar( 'sidebar-1' ); ?>
 			</div>
 		</div>
