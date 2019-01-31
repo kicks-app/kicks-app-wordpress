@@ -26,6 +26,17 @@ services:
     volumes:
     - wordpress:/var/www/html
     - ./wp-content:/var/www/html/wp-content
+  wp-cli:
+    image: wordpress:cli
+    user: '33:33'
+    depends_on:
+      - wordpress
+    volumes:
+      - wordpress:/var/www/html
+      - ./bin/install-wp.sh:/usr/local/bin/install-wp
+    links:
+      - db
+    command: "--info"
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
