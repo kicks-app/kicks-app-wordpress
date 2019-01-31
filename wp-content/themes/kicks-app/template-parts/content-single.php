@@ -9,6 +9,14 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header mb-4">
+		<h1 class="entry-title mb-1">
+			<?= get_the_title(); ?>
+		</h1>
+		<?php if (has_excerpt()): ?>
+			<p class="entry-summary lead">
+				<?= get_the_excerpt(); ?>
+			</p>
+		<?php endif; ?>
 		<?php if (has_post_thumbnail()): ?>
 			<div class="figure mb-1">
 	    	<?php the_post_thumbnail('post-thumbnail', array(
@@ -16,9 +24,6 @@
 				)); ?>
 			</div>
 		<?php endif; ?>
-		<h1 class="entry-title mb-1">
-			<?= get_the_title(); ?>
-		</h1>
 		<?php
 			$tags = get_terms('job_tag');
 			if ( $tags ) : ?>
@@ -31,11 +36,6 @@
 				</div>
 			<?php endif;
 		?>
-		<?php if (has_excerpt()): ?>
-			<p class="entry-summary lead">
-				<?php the_excerpt(); ?>
-			</p>
-		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

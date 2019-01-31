@@ -1,27 +1,18 @@
 .widget {
   &-tag_cloud,
+  &-custom-post-type-tag-cloud,
   &-search {
     border: 0;
-
-    .card-header {
-      // display: none;
-    }
-
-    // .card-body {
-    //   padding: 0;
-    // }
-
-    .form-group {
-      margin-bottom: 0;
-    }
-
-    .badge {
-      // font-size: 1rem !important;
-    }
   }
 
-  &-tag_cloud {
-
+  &-tag_cloud,
+  &-custom-post-type-tag-cloud {
+    .card-header {
+      display: none;
+    }
+    .card-body {
+      padding: 0;
+    }
   }
 
   &-search,
@@ -32,6 +23,9 @@
         display: block;
         margin-bottom: $spacer;
       }
+    }
+    .form-group {
+      margin-bottom: 0;
     }
   }
 

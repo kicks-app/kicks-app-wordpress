@@ -6270,25 +6270,22 @@ a.text-warning:hover, a.text-warning:focus {
 a.text-danger:hover, a.text-danger:focus {
   color: #bd2130 !important; }
 
-.text-light, .site-header .site-header-main, .site-header .site-header-main .navbar-brand,
-.site-header .site-header-main .navbar-nav .nav-link,
-.site-header .site-header-main .navbar-toggler, .site-footer .nav-link, .site-footer .site-info a {
+.text-light, .site-header, .site-header .navbar-brand,
+.site-header .navbar-nav .nav-link, .site-footer .nav-link, .site-footer .site-info a {
   color: #f8f9fa !important; }
 
-a.text-light:hover, .site-header a.site-header-main:hover, .site-header .site-header-main a.navbar-brand:hover,
-.site-header .site-header-main .navbar-nav a.nav-link:hover,
-.site-header .site-header-main a.navbar-toggler:hover, .site-footer a.nav-link:hover, .site-footer .site-info a:hover, a.text-light:focus, .site-header a.site-header-main:focus, .site-header .site-header-main a.navbar-brand:focus,
-.site-header .site-header-main .navbar-nav a.nav-link:focus,
-.site-header .site-header-main a.navbar-toggler:focus, .site-footer a.nav-link:focus, .site-footer .site-info a:focus {
+a.text-light:hover, a.site-header:hover, .site-header a.navbar-brand:hover,
+.site-header .navbar-nav a.nav-link:hover, .site-footer a.nav-link:hover, .site-footer .site-info a:hover, a.text-light:focus, a.site-header:focus, .site-header a.navbar-brand:focus,
+.site-header .navbar-nav a.nav-link:focus, .site-footer a.nav-link:focus, .site-footer .site-info a:focus {
   color: #dae0e5 !important; }
 
-.text-dark, .header-image:not(.page-offset):not(.menu-active) .site-header .site-header-main, .header-image:not(.page-offset):not(.menu-active) .site-header .site-header-main .navbar-brand,
-.header-image:not(.page-offset):not(.menu-active) .site-header .site-header-main .navbar-nav .nav-link {
+.text-dark, .header-image:not(.page-offset):not(.menu-active) .site-header, .header-image:not(.page-offset):not(.menu-active) .site-header .navbar-brand,
+.header-image:not(.page-offset):not(.menu-active) .site-header .navbar-nav .nav-link {
   color: #343a40 !important; }
 
-a.text-dark:hover, .header-image:not(.page-offset):not(.menu-active) .site-header a.site-header-main:hover, .header-image:not(.page-offset):not(.menu-active) .site-header .site-header-main a.navbar-brand:hover,
-.header-image:not(.page-offset):not(.menu-active) .site-header .site-header-main .navbar-nav a.nav-link:hover, a.text-dark:focus, .header-image:not(.page-offset):not(.menu-active) .site-header a.site-header-main:focus, .header-image:not(.page-offset):not(.menu-active) .site-header .site-header-main a.navbar-brand:focus,
-.header-image:not(.page-offset):not(.menu-active) .site-header .site-header-main .navbar-nav a.nav-link:focus {
+a.text-dark:hover, .header-image:not(.page-offset):not(.menu-active) a.site-header:hover, .header-image:not(.page-offset):not(.menu-active) .site-header a.navbar-brand:hover,
+.header-image:not(.page-offset):not(.menu-active) .site-header .navbar-nav a.nav-link:hover, a.text-dark:focus, .header-image:not(.page-offset):not(.menu-active) a.site-header:focus, .header-image:not(.page-offset):not(.menu-active) .site-header a.navbar-brand:focus,
+.header-image:not(.page-offset):not(.menu-active) .site-header .navbar-nav a.nav-link:focus {
   color: #1d2124 !important; }
 
 .text-body {
@@ -10305,6 +10302,20 @@ readers do not read off random characters that represent icons */
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 @font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: normal;
+  src: url(node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.eot);
+  src: url(node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.eot?#iefix) format("embedded-opentype"), url(node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2) format("woff2"), url(node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff) format("woff"), url(node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf) format("truetype"), url(node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.svg#fontawesome) format("svg"); }
+
+.fab {
+  font-family: 'Font Awesome 5 Brands'; }
+
+/*!
+ * Font Awesome Free 5.4.2 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
   font-family: 'Font Awesome 5 Free';
   font-style: normal;
   font-weight: 900;
@@ -10425,6 +10436,18 @@ a {
   .display-4 {
     font-size: 1.9rem; } }
 
+.turbolinks-progress-bar {
+  height: 2px;
+  background-color: #7EA4BB; }
+  .admin-bar .turbolinks-progress-bar {
+    top: 46px; }
+    @media screen and (min-width: 783px) {
+      .admin-bar .turbolinks-progress-bar {
+        top: 32px; } }
+    @media screen and (max-width: 600px) {
+      .admin-bar .turbolinks-progress-bar {
+        top: 0; } }
+
 .card {
   border: 0;
   margin-bottom: 2rem; }
@@ -10467,9 +10490,6 @@ a {
       padding-top: 0; }
     .card-body:last-child {
       padding-bottom: 0; }
-  .card-text {
-    display: flex;
-    flex-direction: column; }
   @media (max-width: 991.98px) {
     .card-columns-sidebar {
       columns: 1; } }
@@ -10531,18 +10551,21 @@ a {
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    padding: 1rem;
-    text-align: center; }
+    padding: 1%;
+    text-align: center;
+    will-change: transform, opacity;
+    transform-origin: center top; }
   @media (max-width: 991.98px) {
     .stage-text {
-      max-width: 90%;
       font-size: 85%; } }
 
 .prllx {
   position: absolute;
   height: 120%;
   width: 100%;
-  z-index: -1; }
+  z-index: -1;
+  will-change: transform;
+  backface-visibility: hidden; }
   .prllx-container {
     position: absolute;
     top: 0;
@@ -10557,23 +10580,23 @@ a {
   min-height: 100%;
   flex-direction: column; }
   .site-header {
-    min-height: 56px; }
-    .site-header .site-header-main {
-      background: rgba(52, 58, 64, 0.86) !important;
-      transition: all 0.25s ease; }
-      .site-header .site-header-main .navbar-brand,
-      .site-header .site-header-main .navbar-nav .nav-link,
-      .site-header .site-header-main .navbar-toggler {
-        transition: all 0.25s ease; }
-      .site-header .site-header-main .navbar-toggler {
-        opacity: 1; }
-      .header-image:not(.page-offset):not(.menu-active) .site-header .site-header-main {
-        background: transparent !important; }
-        .header-image:not(.page-offset):not(.menu-active) .site-header .site-header-main .navbar-brand,
-        .header-image:not(.page-offset):not(.menu-active) .site-header .site-header-main .navbar-nav .nav-link {
-          color: transparent !important; }
-        .header-image:not(.page-offset):not(.menu-active) .site-header .site-header-main .navbar-toggler {
-          opacity: 0; }
+    min-height: 56px;
+    background: rgba(52, 58, 64, 0.86) !important;
+    transition: visibility 0s linear, opacity 0.25s linear, color 0.25s linear;
+    transition-delay: 0s;
+    opacity: 1;
+    visibility: visible; }
+    .site-header .navbar-brand,
+    .site-header .navbar-nav .nav-link {
+      transition: all 0.5s ease-in; }
+    .header-image:not(.page-offset):not(.menu-active) .site-header {
+      background: transparent !important;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s linear 0.25s, opacity 0.25s linear, color 0.25s linear; }
+      .header-image:not(.page-offset):not(.menu-active) .site-header .navbar-brand,
+      .header-image:not(.page-offset):not(.menu-active) .site-header .navbar-nav .nav-link {
+        color: transparent !important; }
     .site-header.fixed-top, .site-header.sticky-top {
       width: 100%; }
       .admin-bar .site-header.fixed-top, .admin-bar .site-header.sticky-top {
@@ -10605,11 +10628,15 @@ a {
     justify-content: center;
     align-items: center; }
     .site-footer .nav {
-      margin-left: -0.5rem;
-      margin-right: -0.5rem; }
+      margin-left: -0.25rem;
+      margin-right: -0.25rem; }
+      .site-footer .nav-item {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem; }
       .site-footer .nav-link {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem; }
+        padding: 0 0.1rem; }
+        .site-footer .nav-link .fa-lg {
+          vertical-align: middle; }
 
 .sidebar {
   will-change: min-height;
@@ -10623,7 +10650,7 @@ a {
 #cookie-notice {
   background: rgba(52, 58, 64, 0.75) !important;
   font-size: inherit !important;
-  text-align: left; }
+  text-align: center; }
   #cookie-notice .cookie-notice-container {
     display: flex;
     align-items: center; }
@@ -10638,12 +10665,22 @@ a {
     font-size: inherit;
     margin-right: 0; }
 
-.widget-tag_cloud, .widget-search {
+.widget-tag_cloud, .widget-custom-post-type-tag-cloud, .widget-search {
   border: 0; }
-  .widget-tag_cloud .form-group, .widget-search .form-group {
-    margin-bottom: 0; }
+
+.widget-tag_cloud .card-header, .widget-custom-post-type-tag-cloud .card-header {
+  display: none; }
+
+.widget-tag_cloud .card-body, .widget-custom-post-type-tag-cloud .card-body {
+  padding: 0; }
 
 .widget-search .card-body:before, .widget-custom-post-type-search .card-body:before {
   content: 'Gib einen Suchbegriff ein oder w\E4hle eine Kategorie';
   display: block;
   margin-bottom: 1rem; }
+
+.widget-search .form-group, .widget-custom-post-type-search .form-group {
+  margin-bottom: 0; }
+
+#breadcrumbs {
+  margin-bottom: 0; }

@@ -48,6 +48,11 @@ services:
     - wordpress:/var/www/html
     links:
     - wordpress:wordpress
+  mailhog:
+    image: mailhog/mailhog:v1.0.0
+    ports:
+    - "1025:1025"
+    - "8025:8025"
 volumes:
   db_data:
   wordpress:

@@ -11,40 +11,35 @@
   &-header {
     $height: 56px;
     min-height: $height;
+    background: rgba($dark, 0.86) !important;
+    transition: visibility 0s linear, opacity 0.25s linear, color 0.25s linear;
+    transition-delay: 0s;
+    opacity: 1;
+    visibility: visible;
+    @extend .text-light;
 
-    .site-header-main {
-      background: rgba($dark, 0.86) !important;
-      transition: all 0.25s ease;
+    .navbar-brand,
+    .navbar-nav .nav-link {
       @extend .text-light;
+      transition: all 0.5s ease-in;
+    }
+
+    .header-image:not(.page-offset):not(.menu-active) & {
+      background: transparent !important;
+      @extend .text-dark;
 
       .navbar-brand,
-      .navbar-nav .nav-link,
-      .navbar-toggler {
-        @extend .text-light;
-        transition: all 0.25s ease;
-      }
-
-      .navbar-toggler {
-        opacity: 1;
-      }
-
-      .header-image:not(.page-offset):not(.menu-active) & {
-        background: transparent !important;
+      .navbar-nav .nav-link {
         @extend .text-dark;
-
-        .navbar-brand,
-        .navbar-nav .nav-link {
-          @extend .text-dark;
-          color: transparent !important;
-          // @include media-breakpoint-up(lg) {
-          //   color: transparent !important;
-          // }
-        }
-
-        .navbar-toggler {
-          opacity: 0;
-        }
+        color: transparent !important;
+        // @include media-breakpoint-up(lg) {
+        //   color: transparent !important;
+        // }
       }
+
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s linear 0.25s, opacity 0.25s linear, color 0.25s linear;
     }
 
     &.fixed-top,
@@ -78,8 +73,6 @@
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: auto;
-    // padding-top: $spacer * 1;
-    // padding-bottom: $spacer * 1;
   }
 
   &-footer {
@@ -91,20 +84,21 @@
     align-items: center;
 
     .nav {
-      margin-left: -$navbar-nav-link-padding-x;
-      margin-right: -$navbar-nav-link-padding-x;
+      margin-left: -$navbar-nav-link-padding-x/2;
+      margin-right: -$navbar-nav-link-padding-x/2;
+
+      &-item {
+        padding-left: $navbar-nav-link-padding-x/2;
+        padding-right: $navbar-nav-link-padding-x/2;
+      }
+
       &-link {
-        padding-left: $navbar-nav-link-padding-x;
-        padding-right: $navbar-nav-link-padding-x;
-        // color: $navbar-dark-color;
-        // &:hover,
-        // &:focus {
-        //   color: $navbar-dark-hover-color;
-        // }
-        // &:active {
-        //   color: $navbar-dark-active-color;
-        // }
+        padding: 0 0.1rem;
         @extend .text-light;
+
+        .fa-lg {
+          vertical-align: middle;
+        }
       }
     }
   }

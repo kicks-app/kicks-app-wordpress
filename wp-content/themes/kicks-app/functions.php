@@ -96,7 +96,7 @@ function new_excerpt_more($more = null) {
 
 	// $msgid = $post->post_type === 'job' ? 'Apply' : 'Read more';
 	$msgid = 'Bewerben';
-  return '...<div class="card-footer mt-auto"><a class="readmore btn btn-primary" href="'. get_permalink($post->ID) . '">' . __($msgid, 'kicks-app') . '</a></div>';
+  return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
@@ -131,7 +131,7 @@ add_filter( 'bootstrap_options', function($options) {
 
 // Make social-menu-icons render font-awesome
 add_filter( 'wp_nav_menu_args', function($args) {
-  $args['social_icon_prefix'] = 'fab fa-';
+  $args['social_icon_prefix'] = 'fab fa-lg fa-';
   return $args;
 }, 1, 2 );
 

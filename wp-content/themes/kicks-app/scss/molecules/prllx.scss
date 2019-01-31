@@ -4,6 +4,8 @@
   height: 120%;
   width: 100%;
   z-index: -1;
+  will-change: transform;
+  backface-visibility: hidden;
 
   &-container {
     // perspective: 1px;

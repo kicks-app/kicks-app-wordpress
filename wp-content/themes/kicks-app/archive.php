@@ -34,7 +34,7 @@ get_header(); ?>
 				<?php if (have_posts()): ?>
 					<div class="row">
 						<?php while ( have_posts() ) : the_post() // Start the Loop. ?>
-							<div class="col-md-6 col-lg-6">
+							<div class="col-md-6 col-lg-4">
 								<?php
 									/*
 									 * Include the Post-Format-specific template for the content.

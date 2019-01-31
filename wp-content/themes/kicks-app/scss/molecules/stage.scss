@@ -51,12 +51,14 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    padding: 1rem;
+    padding: 1%;
     text-align: center;
+    will-change: transform, opacity;
+    transform-origin: center top;
+
   }
   &-text {
     @include media-breakpoint-down(md) {
-      max-width: 90%;
       font-size: 85%;
     }
   }

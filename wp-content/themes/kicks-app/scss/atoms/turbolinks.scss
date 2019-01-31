@@ -1,0 +1,16 @@
+.turbolinks {
+  &-progress-bar {
+    height: $turbolinks-progress-width;
+    background-color: $turbolinks-progress-color;
+
+    .admin-bar & {
+      top: 46px;
+      @media screen and (min-width: 783px) {
+        top: 32px;
+      }
+      @media screen and (max-width: 600px) {
+        top: 0;
+      }
+    }
+  }
+}

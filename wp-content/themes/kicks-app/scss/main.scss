@@ -12,11 +12,13 @@
 @import "globals/body";
 @import "globals/theme";
 @import "globals/cards";
+@import "globals/turbolinks";
 
 // Vendor
 @import "bootstrap/scss/bootstrap";
 @import "@fortawesome/fontawesome-free/scss/fontawesome";
 @import "@fortawesome/fontawesome-free/scss/regular";
+@import "@fortawesome/fontawesome-free/scss/brands";
 @import "@fortawesome/fontawesome-free/scss/solid";
 @import "hamburgers/_sass/hamburgers/hamburgers";
 
@@ -29,6 +31,7 @@
 @import "atoms/badge";
 @import "atoms/display";
 @import "atoms/btn";
+@import "atoms/turbolinks";
 
 // Molecules
 @import "molecules/card";
@@ -41,3 +44,4 @@
 @import "organisms/sidebar";
 @import "organisms/cookie-notice";
 @import "organisms/widget";
+@import "organisms/breadcrumbs";

@@ -38,20 +38,41 @@ get_header(); ?>
 			?>
 			<main id="main" class="site-main my-3" role="main">
 				<?php if (( is_front_page() || is_home()) && !is_paged()): ?>
-					<div class="site-intro mb-3 pb-1">
+					<section class="site-intro mb-4 pb-2">
 						<small class="d-none"><?php bloginfo( 'description' ); ?></small>
-						<p class="lead">
+						<h1 class="h1 d-none">Finde den passenden Job!</h1>
+						<p class="lead text-center">
 							Auf top-tipp-job-de findest Du Deinen nächsten Neben- oder Gelegenheitsjob.
 						</p>
 						<?php if ($sticky_post): ?>
-							<div class="card card-job border p-4 w-50">
-								<div class="card-body">
-									<h4>z.B. <?= get_the_title($sticky_post); ?></h4>
-									<div class="card-text"><?= get_the_excerpt($sticky_post); ?></div>
+							<div class="card card-job border-0 p-0 w-50 mx-auto mb-4">
+								<div class="card-body text-center">
+									<h4 class="card-title border-0 mb-1">z.B. <?= get_the_title($sticky_post); ?></h4>
+									<div class="card-text">
+										<!--<?= get_the_excerpt($sticky_post); ?></div>-->
+										<!-- <a class="btn btn-primary btn-lg" href="<?php echo get_permalink($sticky_post); ?>">
+											Jetzt bewerben
+										</a> -->
+										<a class="btn btn-outline-primary btn-lg" href="<?= get_permalink($sticky_post); ?>">
+											<i class="fas fa-hand-point-right"></i>&nbsp;Jetzt bewerben
+										</a>
+									</div>
 								</div>
 							</div>
 						<?php endif; ?>
-					</div>
+						<!--
+						<div class="d-flex justify-content-around text-primary">
+							<span>
+								<i class="fas fa-hand-point-right"></i>&nbsp;Direktkontakt zum Anbieter
+							</span>
+							<span>
+								<i class="fas fa-hand-point-right"></i>&nbsp;Exklusive Angebote
+							</span>
+							<span>
+								<i class="fas fa-hand-point-right"></i>&nbsp;Keine Registrierung erforderlich
+							</span>
+						</div>-->
+					</section>
 				<?php endif; ?>
 
 			<?php if ( have_posts() ) : ?>
@@ -82,7 +103,7 @@ get_header(); ?>
 				<?php endif; ?>
 				<div class="text-center pb-2">
 					<!-- btn btn-sm btn-outline-secondary -->
-					<a class="lead btn btn-outline-primary btn-lg" href="<?php echo get_post_type_archive_link( 'job' ); ?>">
+					<a class="btn btn-outline-primary btn-lg" href="<?php echo get_post_type_archive_link( 'job' ); ?>">
 						<i class="fas fa-hand-point-right"></i>&nbsp;Alle Jobs anzeigen
 					</a>
 				</div>

@@ -10,7 +10,7 @@ function create_post_type_job() {
         'singular_name' => __( 'Job', 'kicks-app' )
       ),
       'has_archive' => true,
-      'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail' ),
+      'supports' => array( 'title', 'thumbnail', 'editor', 'page-attributes', 'excerpt' ),
       'public' => true,
       'taxonomies' => array('job_tag')
     )

@@ -25,7 +25,8 @@
 			*/
 		?>
     <div class="card-text">
-      <?php the_excerpt() ?>
+      <?= get_the_excerpt($post) ?>
+			<a class="readmore btn btn-primary d-table mt-2" href="<?= get_permalink(); ?>"><?= __('Bewerben', 'kicks-app'); ?></a>
     </div>
 	</div>
 </div>

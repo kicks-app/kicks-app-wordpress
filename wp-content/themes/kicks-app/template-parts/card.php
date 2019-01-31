@@ -19,7 +19,7 @@
 	    <?php endif;
 		?>
     <div class="card-text">
-      <?php the_excerpt() ?>
+      <?= get_the_excerpt($post) ?>
     </div>
 	</div>
 </div>

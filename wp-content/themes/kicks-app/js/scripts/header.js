@@ -1,15 +1,24 @@
-const MIN_OFFSET = 550;
-
-const header = document.querySelector('.site-header');
-const prllx = document.querySelectorAll('.prllx')
-
 const handleEvent = event => {
-  const top = header.getBoundingClientRect().top + MIN_OFFSET;
+  window.requestAnimationFrame(() => {
+    const stage = document.querySelector('.stage');
 
-  console.log('scroll', window.pageYOffset);
+    if (!stage) {
+      return;
+    }
 
-  document.body.classList.toggle('page-offset', window.pageYOffset > top);
+    const header = document.querySelector('.site-header');
+    const stageHeight = stage.getBoundingClientRect().height;
+    const headerHeight = header.getBoundingClientRect().height;
+    const y = stageHeight - headerHeight - 50;
+
+    document.body.classList.toggle('page-offset', window.pageYOffset > y);
+  });
 };
 
 window.addEventListener('resize', handleEvent);
 window.addEventListener('scroll', handleEvent);
+window.addEventListener('load', handleEvent);
+
+
+document.addEventListener('DOMContentLoaded', handleEvent);
+document.addEventListener('turbolinks:load', handleEvent);
